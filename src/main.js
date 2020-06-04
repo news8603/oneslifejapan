@@ -24,10 +24,7 @@ Vue.use(VueI18n)
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
 
-<<<<<<< HEAD
-=======
 // Vue.prototype.$axios = axios;
->>>>>>> db1ba40... 20200603
 
 new Vue({
     router,

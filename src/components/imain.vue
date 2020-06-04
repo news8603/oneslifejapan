@@ -26,13 +26,14 @@
       <ul>
         <li @click="trya">スキンケア</li>
         <li>健康用品</li>
-        <li>美容品</li>
+        <router-link to="/onesnew">美容品</router-link>
         <li>店舗検察</li>
         <li  @click="dialogFormVisible = true">問い合わせ</li>
         <li>ABOUT ONE'S LIFE</li>
       </ul>
     </div>
  </el-col>
+
 </el-row>
 
 
@@ -63,17 +64,15 @@
 </el-col>
 </el-row>
 </div>
+
 </div>
+
 </template>
 
 <script>
 import imainbottom from "./imainbottom";
-<<<<<<< HEAD
 import axios from "axios"
 
-=======
-import axios from 'axios'
->>>>>>> db1ba40... 20200603
 export default {
   name: 'imain',
   components: { 
@@ -135,33 +134,6 @@ export default {
     },
     methods:{
           trya:function(){
-<<<<<<< HEAD
-            axios.get("https://open.duyiedu.com/api/meituan/login",{
-              params:{
-                appkey:"wlh0604_1588907673004",
-                  userName:"admian",
-                  password:"111",
-                  rePassword:"111"
-              }
-            })
-
-// this.$axios({
-//   method:"get",
-//   url:"/proxyApi",
-//   data:{
-//     appkey:"wlh0604_1588907673004",
-//     userName:"admian",
-//     password:"111",
-//     rePassword:"111"
-//   }
-// }).then(res=>{
-//   console.log(res);
-// })
-
-
-
-
-=======
             axios.get("https://open.duyiedu.com/api/meituan/list/goodsList.json",{
                   params:{
                     appkey:"wlh0604_1588907673004",
@@ -169,7 +141,6 @@ export default {
             }).then(res=>{
               console.log(res);
             })
->>>>>>> db1ba40... 20200603
           }
     }
 }

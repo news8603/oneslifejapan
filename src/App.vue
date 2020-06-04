@@ -1,10 +1,15 @@
 <template>
   <div id="app">
 <el-container  >
-  <el-header > <topmenu  ></topmenu></el-header>
-  <el-main><imain></imain></el-main>
+  <el-header > 
+    <topmenu  ></topmenu>
+    
+</el-header>
+  <el-main>
+    <imain></imain>
+</el-main>
   <el-footer style="background:#081f2c"><copyright></copyright>
-  <news></news></el-footer>
+</el-footer>
 </el-container>
   <el-backtop background-color: #f2f5f6;></el-backtop>
 
@@ -52,13 +57,13 @@ body{
 import topmenu from './components/topmenu'
 import copyright from './components/copyright'
 import imain from './components/imain'
-import news from "./components/news"
+
 export default {
 components: {
       imain,
       topmenu,
       copyright,
-      news,
+
   }
 }
 </script>
