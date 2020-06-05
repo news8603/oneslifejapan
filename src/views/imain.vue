@@ -24,8 +24,8 @@
   <el-col :span="24" >
     <div class="navi">
       <ul>
-        <li @click="trya">スキンケア</li>
-        <li>健康用品</li>
+        <router-link to="/skincare" tag="li">スキンケア</router-link>
+        <router-link to="/health" tag="li">健康用品</router-link>
         <router-link to="/onesnew" tag="li">美容品</router-link>
         <li>店舗検察</li>
         <li  @click="dialogFormVisible = true">問い合わせ</li>

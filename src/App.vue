@@ -2,21 +2,18 @@
   <div id="app">
 <el-container  >
   <el-header > 
-    <topmenu  ></topmenu>
-    
+    <topmenu></topmenu>
 </el-header>
   <el-main>
     <imain></imain>
+<router-view></router-view>
 </el-main>
-  <el-footer style="background:#081f2c"><copyright></copyright>
+  <el-footer style="background:#081f2c">
+    <copyright></copyright>
 </el-footer>
 </el-container>
   <el-backtop background-color: #f2f5f6;></el-backtop>
-
-
-
-  </div>
-
+ </div>
 </template>
 
 <style lang="less">
@@ -56,7 +53,7 @@ body{
 <script>
 import topmenu from './components/topmenu'
 import copyright from './components/copyright'
-import imain from './components/imain'
+import imain from './views/imain'
 
 export default {
 components: {
