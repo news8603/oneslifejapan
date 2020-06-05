@@ -6,7 +6,7 @@
   <el-col :span="8" class="setleft" >
     <i class="el-icon-s-fold source " @click="menutable = true" type="primary" ></i>
   </el-col>
-  <el-col :span="8"><div class="menulogo" style="margin:auto"></div></el-col>
+  <el-col :span="8"><router-link :to="{name:'index'}"  class="menulogo" style="margin:auto">aa</router-link></el-col>
   <el-col :span="8" class="setright">
     <i class="el-icon-search source" @click="bottable = true"></i>
     <i class="el-icon-user source" @click="table = true"></i>
@@ -49,7 +49,7 @@
       <el-table-column property="address" label="地址"></el-table-column>
     </el-table>
 </el-drawer>
-
+<router-view></router-view>
 
 <!-- </div> -->
   </div>

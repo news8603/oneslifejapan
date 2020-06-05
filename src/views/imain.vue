@@ -27,9 +27,9 @@
         <router-link to="/skincare" tag="li">スキンケア</router-link>
         <router-link to="/health" tag="li">健康用品</router-link>
         <router-link to="/onesnew" tag="li">美容品</router-link>
-        <li>店舗検察</li>
+        <router-link to="/find" tag="li">店舗検察</router-link>
         <li  @click="dialogFormVisible = true">問い合わせ</li>
-        <li>ABOUT ONE'S LIFE</li>
+        <router-link to="/about" tag="li">ABOUT ONE'S LIFE</router-link>
       </ul>
     </div>
  </el-col>
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-// import imainbottom from "./imainbottom";
+// import imainbottom from "../components/imainbottom";
 import axios from "axios"
 
 export default {

@@ -1,7 +1,6 @@
 <template>
-
   <div class="inews">
-    <topmenu />
+    <!-- <topmenu /> -->
 <div v-for="item in news.data" :key="item.id">
   <el-row  type="flex" justify="center" align="middle">
   <el-col :span="4" :xs="18" >
@@ -23,11 +22,11 @@
 
 <script>
 import axios from "axios";
-import topmenu from "../components/topmenu";
+// import topmenu from "../components/topmenu";
 export default {
   name:"inews",
   components:{
-    topmenu,
+    // topmenu,
   },
   data(){
     return{

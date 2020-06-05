@@ -6,7 +6,7 @@
 </el-header>
   <el-main>
     <imain></imain>
-<router-view></router-view>
+<!-- <router-view></router-view> -->
 </el-main>
   <el-footer style="background:#081f2c">
     <copyright></copyright>
