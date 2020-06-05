@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import inews from '../components/news.vue'
-import App from "../App.vue"
-
+import imainbottom from "../views/imainbottom.vue"
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
+        path: '',
         name: 'Home',
-        component: App,
-
+        component: imainbottom,
     },
     {
         path: '/onesnew',
@@ -19,7 +16,19 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component:
             () =>
-            import ( /* webpackChunkName: "inews" */ '../components/news.vue')
+            import ( /* webpackChunkName: "inews" */ '../views/news.vue')
+    },
+    {
+        path: "/skincare",
+        name: "skincare",
+        component: () =>
+            import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue")
+    },
+    {
+        path: "/health",
+        name: health,
+        component: () =>
+            import ( /* webpackChunkName: "health" */ "../views/health.vue")
     }
 ]
 

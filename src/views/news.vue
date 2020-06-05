@@ -23,7 +23,7 @@
 
 <script>
 import axios from "axios";
-import topmenu from "./topmenu";
+import topmenu from "../components/topmenu";
 export default {
   name:"inews",
   components:{

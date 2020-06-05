@@ -26,7 +26,7 @@
       <ul>
         <li @click="trya">スキンケア</li>
         <li>健康用品</li>
-        <router-link to="/onesnew">美容品</router-link>
+        <router-link to="/onesnew" tag="li">美容品</router-link>
         <li>店舗検察</li>
         <li  @click="dialogFormVisible = true">問い合わせ</li>
         <li>ABOUT ONE'S LIFE</li>
@@ -60,7 +60,8 @@
 <div class="imainset">
 <el-row >
   <el-col :span="24">
-<imainbottom></imainbottom>
+<!-- <imainbottom></imainbottom> -->
+<router-view></router-view>
 </el-col>
 </el-row>
 </div>
@@ -70,13 +71,13 @@
 </template>
 
 <script>
-import imainbottom from "./imainbottom";
+// import imainbottom from "./imainbottom";
 import axios from "axios"
 
 export default {
   name: 'imain',
   components: { 
-    imainbottom,
+    // imainbottom,
   },
    data() {
       return {
