@@ -1,18 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import imainbottom from "../components/imainbottom.vue"
-import imain from "../views/imain.vue"
+import store from "../store/index"
+
+// import imain from "../views/imain.vue"
 Vue.use(VueRouter)
 
-const routes = [{
-        path: "",
-        name: "index",
-        component: imain,
-        children: [{
-                path: '/home',
-                name: 'home',
-                component: imainbottom,
-            },
+const routes = [
+    // {
+    //     path: "",
+    //     name: "index",
+    //     component: imain,
+    // },
+    {
+        path: '',
+        name: 'home',
+        component: imainbottom,
+        children:[
             {
                 path: '/onesnew',
                 name: 'inews',
@@ -21,40 +25,62 @@ const routes = [{
                 // which is lazy-loaded when the route is visited.
                 component:
                     () =>
-                    import ( /* webpackChunkName: "inews" */ '../views/news.vue')
-            },
-            {
-                path: "/skincare",
-                name: "skincare",
-                component: () =>
-                    import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue")
-            },
-            {
-                path: "/health",
-                name: "health",
-                component: () =>
-                    import ( /* webpackChunkName: "health" */ "../views/health.vue")
-            },
-            {
-                path: "/find",
-                name: "find",
-                component: () =>
-                    import ( /* webpackChunkName: "find" */ "../views/find.vue")
-            },
-            {
-                path: "/about",
-                name: "about",
-                component: () =>
-                    import ( /* webpackChunkName: "about" */ "../views/about.vue")
-            }
+                    import ( /* webpackChunkName: "inews" */ '../views/news.vue'),             
+
+       
+                   },
         ]
     },
 
+    {
+        path: "/skincare",
+        name: "skincare",
+        component: () =>
+            import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue")
+    },
+    {
+        path: "/health",
+        name: "health",
+        component: () =>
+            import ( /* webpackChunkName: "health" */ "../views/health.vue")
+    },
+    {
+        path: "/find",
+        name: "find",
+        component: () =>
+            import ( /* webpackChunkName: "find" */ "../views/find.vue")
+    },
+    {
+        path: "/about",
+        name: "about",
+        component: () =>
+            import ( /* webpackChunkName: "about" */ "../views/about.vue")
+    },
+    {
+        path:"/beauty",
+        name:"beauty",
+        component: ()=>
+                import (/* webpackChunkName: "beauty" */ "../views/beauty.vue")
+    }
 ]
+
+
+
+
 
 const router = new VueRouter({
     mode: 'history',
     routes
 })
+
+router.beforeEach((to,from,next)=>{
+if(to.path == "/onesnew"){
+    store.state.isShow = false;
+}else{
+    store.state.isShow=true;
+}
+    next();
+})
+
 
 export default router

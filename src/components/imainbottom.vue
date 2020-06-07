@@ -1,5 +1,6 @@
 <template>
-  <div class="imainbottom">
+  <div class="imainbottom" >
+  <span v-if="this.$store.state.isShow">
  <div class="bastwidth"> 
 <el-row  type="flex" justify="center" >
   <el-col><img src="../news.jpg" alt="" class="titleimg"></el-col>
@@ -15,7 +16,7 @@
 <div class="titleinfo">
 <p align="left">{{ item.time }}</p>
 <p align="left">{{ item.info }}</p>
-<p align="right" class="moretext">more</p>
+<router-link tag="p" to="/onesnew" align="right" class="moretext">more</router-link>
 </div>
 </el-col>
 </el-row>
@@ -115,7 +116,10 @@
 </el-col>
 </el-row>
 </div>
+</span>
+<router-view></router-view>
 </div>
+
 </template>
 
 <script>
@@ -190,10 +194,9 @@ export default {
       }
     },
     mounted() {
-      console.log('Current Swiper instance object', this.swiper)
-      this.swiper.slideTo(3, 1000, false)
-    },
+      this.swiper.slideTo(3, 1000, false);
 
+    },
 }
 </script>
 

@@ -6,7 +6,7 @@
   <el-col :span="8" class="setleft" >
     <i class="el-icon-s-fold source " @click="menutable = true" type="primary" ></i>
   </el-col>
-  <el-col :span="8"><router-link :to="{name:'index'}"  class="menulogo" style="margin:auto">aa</router-link></el-col>
+  <el-col :span="8"><router-link :to="{name:'home'}"  class="menulogo" style="margin:auto" tag="div"></router-link></el-col>
   <el-col :span="8" class="setright">
     <i class="el-icon-search source" @click="bottable = true"></i>
     <i class="el-icon-user source" @click="table = true"></i>
@@ -49,7 +49,7 @@
       <el-table-column property="address" label="地址"></el-table-column>
     </el-table>
 </el-drawer>
-<router-view></router-view>
+<!-- <router-view></router-view> -->
 
 <!-- </div> -->
   </div>
@@ -114,7 +114,6 @@ handleScroll(){
     this.e=false;
   }
 }
-
     },
      mounted: function () {
       window.addEventListener('scroll', this.handleScroll, false); 
@@ -167,7 +166,6 @@ handleScroll(){
           transition-duration: 0.3s;
           }
       .menulogo{
-
           width: 85px;
           background-image: url(../logo.png);
           width: 100px;
@@ -175,6 +173,9 @@ handleScroll(){
           background-repeat: no-repeat;
           transition-property: height;
           transition-duration: 0.3s;
+        }
+        .menulogo:hover{
+          cursor: pointer;
         }
       .setright{
           top:30px;
@@ -199,7 +200,9 @@ handleScroll(){
           background-position-x: center;
           transition-property: height;
           transition-duration: 0.3s;
-
+        }
+        .menulogo:hover{
+          cursor: pointer;
         }
       .setright{
         top:10px;

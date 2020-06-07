@@ -36,14 +36,19 @@ export default {
     }
   },
   mounted: function(){
+    axios.get("http://localhost:3004/posts",{
+      params:{
+        id:1-2
+      }
+    }).then(res=>{console.log(res)});
  axios.get("https://open.duyiedu.com/api/meituan/city/recents.json",{
    params:{
       appkey:"wlh0604_1588907673004"
    }
  }).then(res=>{
-   console.log(res.data);
+  //  console.log(res.data);
    this.news=res.data
-   console.log(this.news)
+  //  console.log(this.news)
  })
   }
   

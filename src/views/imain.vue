@@ -1,6 +1,6 @@
 <template>
   <div class="imain">
-  <el-row>
+  <el-row v-if="this.$store.state.isShow">
   <el-col :span="24">
   <div class="block">
     <span class="demonstration"></span>
@@ -20,13 +20,13 @@
   </div>
  </el-col>
 </el-row>
-  <el-row>
+  <el-row v-if="this.$store.state.isShow">
   <el-col :span="24" >
     <div class="navi">
       <ul>
         <router-link to="/skincare" tag="li">スキンケア</router-link>
         <router-link to="/health" tag="li">健康用品</router-link>
-        <router-link to="/onesnew" tag="li">美容品</router-link>
+        <router-link to="/beauty" tag="li">美容品</router-link>
         <router-link to="/find" tag="li">店舗検察</router-link>
         <li  @click="dialogFormVisible = true">問い合わせ</li>
         <router-link to="/about" tag="li">ABOUT ONE'S LIFE</router-link>
