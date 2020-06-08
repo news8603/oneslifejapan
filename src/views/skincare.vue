@@ -1,7 +1,9 @@
 <template>
     <div class="skincare">
       <div class="skinbanner">
+          <div class="bannerinfo">スキンケア</div>
       </div>
+      <div class="allinfo">
  <div class="selectall">
     <div class="selectinfo"> 
         <div>ご使用の時間帯</div>
@@ -29,6 +31,7 @@
             </el-select>
          </div>
     </div>
+ </div>
  </div>
     </div>
 </template>
@@ -79,24 +82,45 @@ export default {
         background-repeat: no-repeat;
         background-size: contain;
        background-position: calc( 100vw - 50% );
-    }
-}
-</style>
-<style lang="less" scoped>
-ul li{
-      display: block;
-    }
-.skincare{
-    // height: 900px;
+       position: relative;
+       .bannerinfo{
+           position:absolute;
+           top:30%;
+           left:20%;
+           font-size: 3em;
+       }
+        }
+ .allinfo{
+    max-width: 1290px;
+    margin: auto;
     .selectall{
         display: flex;
-            flex-direction:row;
+        flex-direction:row;
      .selectinfo{
-     
          text-align: left;
          margin: 10px;
 
-     }
+            }
+        }
+   }
+}
+ul li{
+      display: block;
+    }
+
+@media screen and(max-width: 900px){
+    .skincare{
+      .skinbanner{
+         display: none;
+               }
+   .allinfo{
+    .selectall{
+        margin-top:50px;
+        .selectinfo{
+      
+        }
+    }
+ }
     }
 }
 </style>
