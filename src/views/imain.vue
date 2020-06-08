@@ -1,6 +1,6 @@
 <template>
   <div class="imain">
-  <el-row v-if="this.$store.state.isShow">
+  <el-row v-show="this.$store.state.isShow">
   <el-col :span="24">
   <div class="block">
     <span class="demonstration"></span>
@@ -20,7 +20,7 @@
   </div>
  </el-col>
 </el-row>
-  <el-row v-if="this.$store.state.isShow">
+  <el-row v-show="this.$store.state.isShow">
   <el-col :span="24" >
     <div class="navi">
       <ul>
@@ -33,7 +33,6 @@
       </ul>
     </div>
  </el-col>
-
 </el-row>
 
 
@@ -54,24 +53,16 @@
     <el-button type="primary" @click="dialogFormVisible = false">送信るす</el-button>
   </div>
 </el-dialog>
-
-
-
 <div class="imainset">
 <el-row >
   <el-col :span="24">
-<!-- <imainbottom></imainbottom> -->
 <router-view></router-view>
 </el-col>
 </el-row>
 </div>
-
 </div>
-
 </template>
-
 <script>
-// import imainbottom from "../components/imainbottom";
 import axios from "axios"
 
 export default {
@@ -143,6 +134,9 @@ export default {
               console.log(res);
             })
           }
+    },
+    mounted(){
+      console.log("main加载了")
     }
 }
 </script>

@@ -159,10 +159,10 @@ handleScroll(){
             transition-property: height;
             transition-duration: 0.3s;
     .setleft{
-        top:30px;
-        position: relative;
+          top:30px;
+          position: relative;
           text-align: left;
-        transition-property: top;
+          transition-property: top;
           transition-duration: 0.3s;
           }
       .menulogo{
@@ -171,7 +171,7 @@ handleScroll(){
           width: 100px;
           height: 100px;
           background-repeat: no-repeat;
-          transition-property: height;
+          transition-property: height ;
           transition-duration: 0.3s;
         }
         .menulogo:hover{
@@ -195,11 +195,11 @@ handleScroll(){
     }
       .menulogo{
             background-image: url(../logo.png);
-          height: 45px;
-          background-repeat: no-repeat;
-          background-position-x: center;
-          transition-property: height;
-          transition-duration: 0.3s;
+            height: 45px;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            transition-property: height;
+            transition-duration: 0.3s;
         }
         .menulogo:hover{
           cursor: pointer;

@@ -16,22 +16,19 @@ const routes = [
         path: '',
         name: 'home',
         component: imainbottom,
-        children:[
-            {
-                path: '/onesnew',
-                name: 'inews',
-                // route level code-splitting
-                // this generates a separate chunk (about.[hash].js) for this route
-                // which is lazy-loaded when the route is visited.
-                component:
-                    () =>
-                    import ( /* webpackChunkName: "inews" */ '../views/news.vue'),             
-
-       
-                   },
-        ]
     },
+    {
+        path: '/onesnew',
+        name: 'inews',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component:
+            () =>
+            import ( /* webpackChunkName: "inews" */ '../views/news.vue'),
 
+
+    },
     {
         path: "/skincare",
         name: "skincare",
@@ -57,10 +54,10 @@ const routes = [
             import ( /* webpackChunkName: "about" */ "../views/about.vue")
     },
     {
-        path:"/beauty",
-        name:"beauty",
-        component: ()=>
-                import (/* webpackChunkName: "beauty" */ "../views/beauty.vue")
+        path: "/beauty",
+        name: "beauty",
+        component: () =>
+            import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue")
     }
 ]
 
@@ -73,12 +70,12 @@ const router = new VueRouter({
     routes
 })
 
-router.beforeEach((to,from,next)=>{
-if(to.path == "/onesnew"){
-    store.state.isShow = false;
-}else{
-    store.state.isShow=true;
-}
+router.beforeEach((to, from, next) => {
+    if (to.path == "/onesnew" || to.path == "/skincare") {
+        store.state.isShow = false;
+    } else {
+        store.state.isShow = true;
+    }
     next();
 })
 

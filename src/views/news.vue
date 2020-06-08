@@ -1,9 +1,10 @@
 <template>
   <div class="inews">
     <!-- <topmenu /> -->
+    <h1 class="title">ニュース</h1>
 <div v-for="item in news.data" :key="item.id">
   <el-row  type="flex" justify="center" align="middle">
-  <el-col :span="4" :xs="18" >
+  <el-col :span="3" :xs="18" >
     <el-card :body-style="{ padding: '3px' }">
       <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
     </el-card>
@@ -17,9 +18,9 @@
 </el-row>
   <el-divider ></el-divider>
 </div>
+
 </div>
 </template>
-
 <script>
 import axios from "axios";
 // import topmenu from "../components/topmenu";
@@ -36,35 +37,41 @@ export default {
     }
   },
   mounted: function(){
-    axios.get("http://localhost:3004/posts",{
-      params:{
-        id:1-2
-      }
-    }).then(res=>{console.log(res)});
+    // axios.get("http://localhost:3000/posts",{
+    //   params:{
+    //     id:1,
+    //   }
+    // }).then(res=>{console.log(res)});
+    this.$nextTick(()=>{console.log("加载了",this.$route.path);})
+ 
  axios.get("https://open.duyiedu.com/api/meituan/city/recents.json",{
    params:{
       appkey:"wlh0604_1588907673004"
    }
  }).then(res=>{
-  //  console.log(res.data);
+   console.log(res.data);
+  // this.news="";
    this.news=res.data
-  //  console.log(this.news)
+   console.log(this.news)
  })
-  }
+  },
   
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .inews{
-
-
+  h1{
+    color:#00000096;
+    margin-top: 50px;
+  }
   .inewsinfo{
     display:block;
     padding: 15px;
     text-align: left;
-    
   }
-
-
+.el-divider--horizontal{
+  width: 70%;
+      margin:24px auto;
+}
 }
 </style>

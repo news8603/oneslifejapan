@@ -109,7 +109,6 @@
   <p>新しいわたしに出会う鍵。</p>
   <p >アプリ、誕生。</p>
   <p class="buttoninfo3">詳細はこちらから</p>
-
   </div>
   </div>
 </div>
@@ -117,7 +116,7 @@
 </el-row>
 </div>
 </span>
-<router-view></router-view>
+<!-- <router-view></router-view> -->
 </div>
 
 </template>
@@ -194,6 +193,7 @@ export default {
       }
     },
     mounted() {
+      console.log("imainbottom加载了")
       this.swiper.slideTo(3, 1000, false);
 
     },

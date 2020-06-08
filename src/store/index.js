@@ -4,13 +4,10 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-    isShow:'true',
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    state: {
+        isShow: 'true',
+    },
+    mutations: {},
+    actions: {},
+    modules: {}
 })

@@ -6,9 +6,8 @@
 </el-header>
   <el-main>
     <imain></imain>
-<!-- <router-view></router-view> -->
 </el-main>
-  <el-footer style="background:#081f2c">
+  <el-footer style="background:#0n81f2c">
     <copyright></copyright>
 </el-footer>
 </el-container>
@@ -34,6 +33,9 @@ body{
   }
   .el-main{
     padding: 0px;
+  }
+  .el-footer{
+    padding:0px;
   }
 }
 
