@@ -16,16 +16,26 @@
 </div>
 
 <el-drawer
-  title="菜单栏!"
+   direction="ltr"
   :visible.sync="menutable"
-  direction="ltr"
   :size="setsize()">
-   <el-table :data="gridData">
-      <el-table-column property="date" label="日期" width="150"></el-table-column>
-      <el-table-column property="name" label="姓名" width="200"></el-table-column>
-      <el-table-column property="address" label="地址"></el-table-column>
-    </el-table>
+  <el-row>
+  <el-col :span="24"><h1 class="menuclasstitle">メニュー</h1></el-col>
+  <el-col :span="24"><div class="menuclass" @click="innerDrawer = true">スキンケア</div></el-col>
+  <el-col :span="24"><div class="menuclass" >健康用品</div></el-col>
+  <el-col :span="24"><div class="menuclass" >美容品</div></el-col>
+
+  <el-col :span="24"><div class="menuclass">ワンズライフジャパンのストーリー</div></el-col>
+  <el-col :span="24"><div class="menuclass">店舗検索</div></el-col>
+  <el-col :span="24"><div class="menuclass">お問い合わせ</div></el-col>
+  <el-col :span="24"><div class="menuclass">iOS版公式アプリ</div></el-col>
+
+</el-row>
+  <div>
+  </div>
 </el-drawer>
+
+
 <el-drawer
   title="登录页面!"
   :visible.sync="table"
@@ -39,15 +49,17 @@
     </el-table>
 </el-drawer>
 <el-drawer
-  title="登录页面另外一个!"
   :visible.sync="bottable"
   direction="btt"
   :size="setsize()">
-   <el-table :data="gridData">
-      <el-table-column property="date" label="日期" width="150"></el-table-column>
-      <el-table-column property="name" label="姓名" width="200"></el-table-column>
-      <el-table-column property="address" label="地址"></el-table-column>
-    </el-table>
+  <h2>検 索</h2>
+ <el-input 
+ v-model="input" 
+ placeholder="ここで入力してください"
+ >
+ </el-input>
+  <div class="buttonfind buttonfindr" ><el-button>検 索</el-button></div>
+  <div class="buttonfind buttonfindl"><el-button @click="findinput()">キャンセル</el-button></div>
 </el-drawer>
 <!-- <router-view></router-view> -->
 
@@ -66,26 +78,13 @@ export default {
         bottable:false,
         table: false,
         menutable: false,
-        // direction: 'ltr',
-         gridData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }],
-      };
-    },
+        input:"",
+        gridData:[{
+
+        }],
+        }
+      },
+
     methods:{
     handleClose(done) {
         this.$confirm('确认关闭？')
@@ -103,17 +102,20 @@ export default {
       {
         return "60%"
       }
-},
-handleScroll(){
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ;
-  if(scrollTop>500){
-    this.a=false;
-    this.e=true;
-  }else {
-    this.a=true;
-    this.e=false;
-  }
-}
+    },
+      handleScroll(){
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ;
+        if(scrollTop>500){
+          this.a=false;
+          this.e=true;
+        }else {
+          this.a=true;
+          this.e=false;
+        }
+      },
+      findinput(){
+        this.input="";
+      }
     },
      mounted: function () {
       window.addEventListener('scroll', this.handleScroll, false); 
@@ -123,6 +125,31 @@ handleScroll(){
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="less">
+
+.menuclasstitle{
+  padding-bottom: 50px;
+  text-align: left;
+  width: 85%;
+  margin: auto;
+  color: #5d5d5d;
+
+}
+
+.menuclass{
+  text-align: left;
+  width: 85%;
+  margin: auto;
+  padding: 35px;
+  color: #5d5d5d;
+   transition-duration: 0.5s;
+   border-bottom: 1px solid #eeeeee;
+}
+.menuclass:hover{
+  cursor: pointer;
+  color:#505050;
+  background-color: #eeeeee;
+   transition-duration: 0.5s;
+}
 .topmenu{
       .source{
         font-size: 1.5em;
@@ -145,8 +172,35 @@ handleScroll(){
       a {
         color: #42b983;
       }
-
+      .el-drawer{
+          // background-color:#fafafa;
+          overflow: auto;
+            .el-icon-close:before
+            {
+              color:#a4a4a5cf;
+            }
+       }
+       .el-input__inner{
+        width: 70%;
+          }
+          .el-button{
+            width: 50%;
+          }
+.buttonfind{
+  display: inline-block;
+  margin: auto;
+  width: 50% ;
+  padding: 35px;
 }
+.buttonfindr{
+  text-align: right;
+}
+.buttonfindl{
+  text-align: left;
+}
+}
+
+
 .menut{
             background-color:#ffffff;
             box-shadow:-1px -5px 12px 0px #081f2c7d;
@@ -212,7 +266,7 @@ handleScroll(){
         transition-duration: 0.3s;
           }
   height: 50px;
-  transition-property: height;
+  transition-property: height ;
   transition-duration: 0.3s;
  }
 .el-popup-parent--hidden{
