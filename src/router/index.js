@@ -58,7 +58,8 @@ const routes = [
         name: "beauty",
         component: () =>
             import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue")
-    }
+    },
+
 ]
 
 
@@ -71,10 +72,10 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.path == "/onesnew" || to.path == "/skincare") {
-        store.state.isShow = false;
-    } else {
+    if (to.path == "/" ) {
         store.state.isShow = true;
+    } else {
+        store.state.isShow = false;
     }
     next();
 })

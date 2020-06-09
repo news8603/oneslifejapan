@@ -5,7 +5,7 @@
     <topmenu></topmenu>
 </el-header>
   <el-main>
-    <imain></imain>
+   <imain></imain>
 </el-main>
   <el-footer style="background:#0n81f2c">
     <copyright></copyright>
@@ -28,8 +28,10 @@ body{
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+
   .el-header{
     padding:0 15px;
+
   }
   .el-main{
     padding: 0px;
