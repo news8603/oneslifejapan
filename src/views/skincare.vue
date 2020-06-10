@@ -42,9 +42,8 @@ v-for="item in careinfo"
       <div style="padding: 14px;">
         <p>一生の美しさと輝き</p>
         <div class="infoline"></div>
-          <p style="text-align: left;">{{ item.jan }}</p>
-          <p style="text-align: left;">{{ item.price }}</p>
-          <p class="button ">詳細はこちらから</p>
+          <p style="text-align: left;">JAN CODE:{{ item.jan }}</p>
+          <p style="text-align: right;">{{ item.price }}</p>
 
 
       </div>
@@ -131,19 +130,19 @@ export default {
   
 
   .image {
+    background-color:#f8f8f8 ;
     width: 100%;
     display: block;
+  
   }
   .button{
      padding: 15px;
-  color: rgba(32, 32, 32, 0.9);
-  transition-duration : 0.4s;
+  transition-duration : 0.3s;
+  border: 1px solid rgba(255,255,255,0);
   }
   .button:hover{
-    border: 1px solid #f8f8f8;
-    padding: 15px;
-    background: #f8f8f8;
-    transition-duration : 0.4s;
+    border: 1px solid #e0e0e0;
+    transition-duration : 0.3s;
   }
 .infoline{
   margin-top: 10px;
