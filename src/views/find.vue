@@ -77,29 +77,31 @@ shopinfo:[
 },
 }
 </script>
-<style lang="less" scoped>
+<style lang="less" >
 
 .find{
     width: 100%;
     background-color: #f5f5f5;
+    padding-top: 45px;
     padding-bottom: 45px;
     height: 100%;
   .infofind{
         max-width: 1290px;
         width: 80%;
         margin: auto;
-        margin-top: 35px;
             .infotitle{
                 letter-spacing: 15px;
             }
-
+        .el-collapse{
+            .el-collapse-item__header{
+                padding: 15px;
             .shopinfo{
                 padding:10px;
                 padding-left:35px;
                 text-align: left;
                  }
-
-
+}
+ }
 }
 }
 

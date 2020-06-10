@@ -33,7 +33,26 @@
     </div>
  </div>
  </div>
+ <div class="allinfo-p">
+<div class="infogrid" 
+v-for="item in careinfo"
+:key="item.id">
+  <div  class="button">
+      <img src="../11-1.png" class="image">
+      <div style="padding: 14px;">
+        <p>一生の美しさと輝き</p>
+        <div class="infoline"></div>
+          <p style="text-align: left;">{{ item.jan }}</p>
+          <p style="text-align: left;">{{ item.price }}</p>
+          <p class="button ">詳細はこちらから</p>
+
+
+      </div>
     </div>
+
+</div>
+</div>
+</div>
 </template>
 <script>
 export default {
@@ -65,6 +84,43 @@ export default {
           value: 'option4',
           label: '目もと',
         }],
+        careinfo:[{
+            id:"1",
+            jan:"1213154",
+            price:"151120円",
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+              
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+            name:"test"
+        },{
+            id:"2",
+                jan:"1213154",
+                price:"151120円",
+            name:"test"
+        }],
         valuetime: '',
         valueinfo:''
         }
@@ -72,6 +128,34 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+  
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+  .button{
+     padding: 15px;
+  color: rgba(32, 32, 32, 0.9);
+  transition-duration : 0.4s;
+  }
+  .button:hover{
+    border: 1px solid #f8f8f8;
+    padding: 15px;
+    background: #f8f8f8;
+    transition-duration : 0.4s;
+  }
+.infoline{
+  margin-top: 10px;
+    background-color: #eeeeee;
+    height: 1px;
+    width: 100%;
+}
+
+  .price{
+    display: inline-block;
+    line-height: 30px;
+  }
 .skincare{
     .skinbanner{
         margin: 20px 0px ;
@@ -99,14 +183,34 @@ export default {
      .selectinfo{
          text-align: left;
          margin: 10px;
-
             }
         }
    }
+
+   .allinfo-p{
+     display:inline-grid;
+    max-width: 1290px;
+ grid-template-columns: repeat(4, 25%);
+      .infogrid{
+        margin: 15px;
+        padding:15px
+   }
+   }
+}
+.infogrid:hover{
+  cursor: pointer;
 }
 ul li{
       display: block;
     }
+@media screen and(max-width: 1220px){
+.skincare{
+   .allinfo-p{
+     grid-template-columns: repeat(3, 33.33%);
+  }
+ }
+}
+
 
 @media screen and(max-width: 900px){
     .skincare{
@@ -116,11 +220,26 @@ ul li{
    .allinfo{
     .selectall{
         margin-top:50px;
-        .selectinfo{
-      
-        }
+
     }
  }
-    }
+
+   .allinfo-p{
+     display:inline-grid;
+ grid-template-columns: repeat(2, 50%);
+   }
 }
+}
+
+
+@media screen and(max-width: 600px){
+.skincare{
+   .allinfo-p{
+     grid-template-columns: repeat(1, 100%);
+   
+  }
+ }
+}
+
+
 </style>

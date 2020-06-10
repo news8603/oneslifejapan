@@ -24,7 +24,6 @@
   <el-col :span="24"><div class="menuclass" @click="innerDrawer = true">スキンケア</div></el-col>
   <el-col :span="24"><div class="menuclass" >健康用品</div></el-col>
   <el-col :span="24"><div class="menuclass" >美容品</div></el-col>
-
   <el-col :span="24"><div class="menuclass">ワンズライフジャパンのストーリー</div></el-col>
   <el-col :span="24"><div class="menuclass">店舗検索</div></el-col>
   <el-col :span="24"><div class="menuclass">お問い合わせ</div></el-col>
