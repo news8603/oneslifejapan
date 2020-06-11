@@ -6,13 +6,7 @@ import store from "../store/index"
 // import imain from "../views/imain.vue"
 Vue.use(VueRouter)
 
-const routes = [
-    // {
-    //     path: "",
-    //     name: "index",
-    //     component: imain,
-    // },
-    {
+const routes = [{
         path: '',
         name: 'home',
         component: imainbottom,
@@ -59,11 +53,13 @@ const routes = [
         component: () =>
             import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue")
     },
-
+    {
+        path: "/newapp",
+        name: "newapp",
+        component: () =>
+            import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue")
+    },
 ]
-
-
-
 
 
 const router = new VueRouter({
@@ -72,7 +68,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.path == "/" ) {
+    if (to.path == "/") {
         store.state.isShow = true;
     } else {
         store.state.isShow = false;

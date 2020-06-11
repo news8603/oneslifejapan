@@ -21,31 +21,37 @@
   :size="setsize()">
   <el-row>
   <el-col :span="24"><h1 class="menuclasstitle">メニュー</h1></el-col>
-  <el-col :span="24"><div class="menuclass" @click="innerDrawer = true">スキンケア</div></el-col>
-  <el-col :span="24"><div class="menuclass" >健康用品</div></el-col>
-  <el-col :span="24"><div class="menuclass" >美容品</div></el-col>
-  <el-col :span="24"><div class="menuclass">ワンズライフジャパンのストーリー</div></el-col>
-  <el-col :span="24"><div class="menuclass">店舗検索</div></el-col>
-  <el-col :span="24"><div class="menuclass">お問い合わせ</div></el-col>
-  <el-col :span="24"><div class="menuclass">iOS版公式アプリ</div></el-col>
-
+  <el-col :span="24"><div  class="menuclass" @click="menugo(1)">スキンケア</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(2)">健康用品</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(3)">美容品</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(4)">ワンズライフジャパンのストーリー</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(5)">店舗検索</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(6)">お問い合わせ</div></el-col>
+  <el-col :span="24"><div class="menuclass"  @click="menugo(7)">iOS版公式アプリ</div></el-col>
 </el-row>
   <div>
   </div>
 </el-drawer>
 
-
 <el-drawer
-  title="登录页面!"
   :visible.sync="table"
   direction="rtl"
   :size="setsize()"
   >
-   <el-table :data="gridData">
-      <el-table-column property="date" label="日期" width="150"></el-table-column>
-      <el-table-column property="name" label="姓名" width="200"></el-table-column>
-      <el-table-column property="address" label="地址"></el-table-column>
-    </el-table>
+  <p>マイアカウントにログインする</p>
+      <div class="line"></div>
+    <el-form :model="loginform">
+      <p class="logininfo" >メールアドレス</p>
+      <el-input v-model="loginform.mail" autocomplete="off"></el-input>
+      <p class="logininfo"  >パスワード</p> 
+      <el-input v-model="loginform.password" autocomplete="off" type="password"></el-input>
+     <p><el-checkbox label="この情報を保存する" name="type"></el-checkbox></p> 
+      <el-button type="primary">ログイン</el-button>
+      </el-form>
+      <div class="line"></div>
+        <p >パスワードを忘れた場合はこちら</p>
+        <p >はじめてのお客さま</p>
+        <p >マイアカウントを作成する</p>
 </el-drawer>
 <el-drawer
   :visible.sync="bottable"
@@ -57,12 +63,31 @@
  placeholder="ここで入力してください"
  >
  </el-input>
-  <div class="buttonfind buttonfindr" ><el-button>検 索</el-button></div>
-  <div class="buttonfind buttonfindl"><el-button @click="findinput()">キャンセル</el-button></div>
+  <div class="buttonfind" ><el-button>検 索</el-button></div>
+  <div class="buttonfind" ><el-button @click="findinput()">キャンセル</el-button></div>
 </el-drawer>
 <!-- <router-view></router-view> -->
 
 <!-- </div> -->
+<div class="topform">
+<el-dialog title="問い合わせ" :visible.sync="dialogFormVisible">
+  <el-form :model="form"  size="mini" >
+  <p style="text-align: left;">名前</p>
+  <el-input v-model="form.name" autocomplete="off" ></el-input>
+  <p style="text-align: left;">メールアドレス</p>
+  <el-input v-model="form.mail" autocomplete="off"></el-input>
+  <p style="text-align: left;">問い合わせ内容</p>  
+  <el-input type="textarea" v-model="form.info" autocomplete="off" :rows="5"></el-input>
+
+  </el-form>
+  <div slot="footer" class="dialog-footer">
+    <el-button @click="dialogFormVisible = false">キャンセル</el-button>
+    <el-button type="primary" @click="dialogFormVisible = false">送信する</el-button>
+  </div>
+</el-dialog>
+</div>
+
+
   </div>
 </template>
 
@@ -71,6 +96,13 @@ export default {
   name: 'topmenu',
    data() {
       return {
+         dialogFormVisible: false,
+         form: {
+          name: '',
+          mail:'',
+          info:'',
+        },
+        formLabelWidth: '120px',
         a:true,
         // e:false,
         show:true,
@@ -81,17 +113,48 @@ export default {
         gridData:[{
 
         }],
+        loginform:{
+          mail:"",
+          password:"",
+        }
         }
       },
 
     methods:{
-    handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(() => {
-            done();
-          })
-          .catch(() => {});
-      },
+    menugo(e){
+     switch(e){
+       case 1:
+         this.$router.push("/skincare");
+         this.menutable=false;
+          break;
+       case 2:
+         this.$router.push("/health");
+         this.menutable=false;
+          break;
+       case 3:
+         this.$router.push("/beauty");
+         this.menutable=false;
+          break;
+       case 4:
+         this.$router.push("/about");
+         this.menutable=false;
+          break;
+       case 5:
+         this.$router.push("/find");
+         this.menutable=false;
+        break;
+      case 6:
+         this.dialogFormVisible = true;
+         this.menutable=false;
+         break;
+        case 7:
+          this.$router.push("/newapp")
+          this.menutable=false;
+        break;
+       default:
+       
+     }
+    },
     setsize(){
       if(document.body.clientWidth<=500)
       {
@@ -125,6 +188,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="less">
 
+
+.topform{
+.el-dialog{
+  width: 95%;
+}
+}
 .menuclasstitle{
   padding-bottom: 50px;
   text-align: left;
@@ -138,7 +207,7 @@ export default {
   text-align: left;
   width: 85%;
   margin: auto;
-  padding: 35px;
+  padding: 25px;
   color: #5d5d5d;
    transition-duration: 0.5s;
    border-bottom: 1px solid #eeeeee;
@@ -150,6 +219,21 @@ export default {
    transition-duration: 0.5s;
 }
 .topmenu{
+  .logininfo{
+    text-align: left;
+    margin-left: 10%;
+  }
+  .line{
+    height: 1px;
+    background-color: #e0e0e0;
+    width: 80%;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .el-button{
+    width: auto !important;
+  }
       .source{
         font-size: 1.5em;
         margin: 0 0.2em;
@@ -172,7 +256,6 @@ export default {
         color: #42b983;
       }
       .el-drawer{
-          // background-color:#fafafa;
           overflow: auto;
             .el-icon-close:before
             {
@@ -180,23 +263,18 @@ export default {
             }
        }
        .el-input__inner{
-        width: 70%;
+         width: 80%;
+        margin-bottom: 15px;
           }
           .el-button{
-            width: 50%;
+            width: 200px;
           }
 .buttonfind{
   display: inline-block;
   margin: auto;
-  width: 50% ;
-  padding: 35px;
+  padding:20px;
 }
-.buttonfindr{
-  text-align: right;
-}
-.buttonfindl{
-  text-align: left;
-}
+
 }
 
 

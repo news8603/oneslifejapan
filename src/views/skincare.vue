@@ -44,11 +44,8 @@ v-for="item in careinfo"
         <div class="infoline"></div>
           <p style="text-align: left;">JAN CODE:{{ item.jan }}</p>
           <p style="text-align: right;">{{ item.price }}</p>
-
-
       </div>
     </div>
-
 </div>
 </div>
 </div>
@@ -56,9 +53,7 @@ v-for="item in careinfo"
 <script>
 export default {
     name:"skincare",
-    mounted(){
-        console.log("skincare加载了")
-    },
+
     data(){
         return{
         optionstime: [{
@@ -123,6 +118,9 @@ export default {
         valuetime: '',
         valueinfo:''
         }
+    },
+    methods:{
+
     }
 }
 </script>

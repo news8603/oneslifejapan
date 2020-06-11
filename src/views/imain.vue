@@ -50,7 +50,7 @@
   </el-form>
   <div slot="footer" class="dialog-footer">
     <el-button @click="dialogFormVisible = false">キャンセル</el-button>
-    <el-button type="primary" @click="dialogFormVisible = false">送信るす</el-button>
+    <el-button type="primary" @click="dialogFormVisible = false">送信する</el-button>
   </div>
 </el-dialog>
 <div class="imainset">
