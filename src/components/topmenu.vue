@@ -3,15 +3,30 @@
 
   <div :class="{menut:a,menue:e}">
 <el-row>
+
   <el-col :span="8" class="setleft" >
     <i class="el-icon-s-fold source " @click="menutable = true" type="primary" ></i>
+       <i class="el-icon-search source" @click="bottable = true"></i>
+       <i class="el-icon-user source" @click="table = true"></i>
+        <!-- <i class="el-icon-shopping-cart-full source"></i> -->
   </el-col>
   <el-col :span="8"><router-link :to="{name:'home'}"  class="menulogo" style="margin:auto" tag="div"></router-link></el-col>
   <el-col :span="8" class="setright">
-    <i class="el-icon-search source" @click="bottable = true"></i>
-    <i class="el-icon-user source" @click="table = true"></i>
-    <i class="el-icon-shopping-cart-full source"></i>
+
+   
+    <el-dropdown>
+      <span class="el-dropdown-link i18n">
+      {{ i18nchoose }}<i class="el-icon-arrow-down el-icon--right" style="margin-right: 10px;"></i>
+     </span>
+        <el-dropdown-menu slot="dropdown">
+          
+        <el-dropdown-item ><span @click="zh">简体中文</span></el-dropdown-item>
+        <el-dropdown-item><span @click="en">ENGLISH</span></el-dropdown-item>
+        <el-dropdown-item><span @click="jp">日本語</span></el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
     </el-col>
+    {{ $t("app.apptry") }}
 </el-row>
 </div>
 
@@ -96,6 +111,7 @@ export default {
   name: 'topmenu',
    data() {
       return {
+        i18nchoose:"日本語",
          dialogFormVisible: false,
          form: {
           name: '',
@@ -121,6 +137,20 @@ export default {
       },
 
     methods:{
+      zh(){
+        this.i18nchoose="简体中文",
+      this.$i18n.locale="zh"//i18n国际化转换
+       },
+      en(){
+        this.i18nchoose="ENGLISH",
+
+      this.$i18n.locale="en"//i18n国际化转换
+      },
+      jp(){
+        this.i18nchoose="日本語",
+
+      this.$i18n.locale="jp"//i18n国际化转换
+      },
     menugo(e){
      switch(e){
        case 1:
@@ -188,7 +218,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="less">
 
-
+.i18n:hover{
+  cursor: pointer;
+}
 .topform{
 .el-dialog{
   width: 95%;

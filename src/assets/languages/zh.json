@@ -1,0 +1,53 @@
+{
+    "app": {
+        "apptry": "这里是中文"
+    },
+    "shopinfo": [{
+            "shopid": "1",
+            "shopname": "一生美东京银座总店",
+            "shopinfo": "东京中央区银座1-27-12 5楼,〒104-0061",
+            "shopimg": "",
+            "shopgo": "",
+            "shoptime": "",
+            "shoptel": "03-6264-4400/03-6264-4452"
+        },
+        {
+            "shopid": "2",
+            "shopname": "一生美浅草店",
+            "shopinfo": "东京都台东区西浅草2-1-12 1楼,〒104-0061",
+            "shopimg": "",
+            "shopgo": "",
+            "shoptime": "",
+            "shoptel": "03-5811-1612/03-5811-1611"
+
+        },
+        {
+            "shopid": "3",
+            "shopname": "一生美大阪临海店",
+            "shopinfo": "大阪府泉南郡田尻町临空港北5-6",
+            "shopimg": "",
+            "shoptime": "",
+            "shoptel": "072-479-4400",
+            "shopgo": ""
+        },
+        {
+            "shopid": "4",
+            "shopname": "一生美大阪中央店",
+            "shopinfo": "大阪府大阪市中央区南千叶3-6-5 2楼20楼,〒06-4704-8068",
+            "shopimg": "",
+            "shoptime": "",
+            "shoptel": "06-4704-8068",
+            "shopgo": ""
+        },
+        {
+            "shopid": "5",
+            "shopname": "一生美御前琦店",
+            "shopinfo": "静冈县御前崎市御前崎1412-1,〒437-1621 ",
+            "shopimg": "",
+            "shoptime": "",
+            "shoptel": "0548-63-3333",
+            "shopgo": ""
+        }
+    ]
+
+}

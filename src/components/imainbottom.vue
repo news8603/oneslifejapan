@@ -34,7 +34,8 @@
   <el-row>
   <el-col :span="24" ><div class="imainbottomimg-1">
     <div class="imb-1-info bottomhover">
-      <p >一生の美しさと輝き</p>
+      <p 
+      >一生の美しさと輝き</p>
       <p class="buttoninfo2">詳細はこちらから</p>
       </div>
   </div>
@@ -184,7 +185,6 @@ export default {
       };
     },
     methods:{
-
 
     },
     computed: {

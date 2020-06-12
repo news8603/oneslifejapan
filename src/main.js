@@ -26,9 +26,26 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
 
 // Vue.prototype.$axios = axios;
 
+
+const i18n = new VueI18n({
+    locale: 'jp',
+    // 定义默认语言为日语
+
+    messages: {
+
+        'zh': require('@/assets/languages/zh.json'),
+        'en': require('@/assets/languages/en.json'),
+        'jp': require('@/assets/languages/jp.json')
+
+    }
+
+});
+
+
+
 new Vue({
+    i18n,
     router,
     store,
     render: h => h(App)
 }).$mount('#app')
-

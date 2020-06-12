@@ -5,13 +5,14 @@
   
 <el-collapse v-model="activeNames" @change="handleChange">
   <el-collapse-item 
-  v-for="item in shopinfo"
+  v-for="item in i18nshopinfo"
   :title="item.shopname" :name="shopid"
   :key="item.shopid">
     <div class="shopinfo">{{ item.shopinfo }}</div>
     <div class="shopinfo">{{ item.shoptel }}</div>
     <div class="shopinfo">{{ item.shopimg }}</div>
     <div class="shopinfo">{{ item.shopgo }}</div>
+   <div>{{ infoimg[item.shopid].inimg }}</div>
     <div class="shopinfo">{{item.shoptime}}</div>
   </el-collapse-item>
 
@@ -25,56 +26,32 @@ export default {
     name:"find",
 data(){
     return{
-shopinfo:[
-    {
-        shopid:"1",
-        shopname:'株式会社ワンズライフジャパン',
-        shopinfo:'東京中央区銀座１−２７−１２キャビネットビル５階,〒104-0061',
-        shopimg:'',
-        shopgo:'',
-        shoptime:'',
-        shoptel:"03-6264-4400/03-6264-4452"
-    },
-    {
-        shopid:"2",
-        shopname:"ワンズドラッグ浅草",
-        shopinfo:"東京都台東区西浅草2-1-12 豚八ビル 別館1F,〒104-0061",
-        shopimg:"",
-        shopgo:"",
-        shoptime:"",
-        shoptel:"03-5811-1612/03-5811-1611"
-
-    },
+        infoimg:[{
+            inimg: require('../01.jpg')
+        },
         {
-        shopid:"3",
-        shopname:"ワンズドラッグ大阪りんくう店",
-        shopinfo:"大阪府泉南郡田尻町りんくうポート北５番６号 ",
-        shopimg:"",
-        shoptime:"",
-        shoptel:"072-479-4400",
-        shopgo:""
-    },
-            {
-        shopid:"4",
-        shopname:"大阪中央ドラッグ",
-        shopinfo:"大阪府大阪市中央区南船場３ー６ー５芦池ビル２Ｆ２０号,〒06-4704-8068",
-        shopimg:"",
-        shoptime:"",
-        shoptel:"06-4704-8068",
-        shopgo:""
-    },
+            inimg: require('../02.jpg')
+        },
         {
-        shopid:"5",
-        shopname:"御前崎グランドホテル",
-        shopinfo:"静岡県御前崎市御前崎１４１２−１,〒437-1621 ",
-        shopimg:"",
-        shoptime:"",
-        shoptel:"0548-63-3333",
-        shopgo:""
-    },
-]
+            inimg: require('../03.jpg')
+        },
+        {
+            inimg: require('../1-1.jpg')
+        },
+        {
+            inimg: require('../1-2.jpg')
+        },
+    ]
     }
 },
+computed:{
+   i18nshopinfo:function(){
+
+  let shopinfo=this.$t('shopinfo');
+  console.log(shopinfo);
+       return  shopinfo;
+   }
+}
 }
 </script>
 <style lang="less" >
@@ -95,12 +72,12 @@ shopinfo:[
         .el-collapse{
             .el-collapse-item__header{
                 padding: 15px;
+}
             .shopinfo{
-                padding:10px;
+                padding:5px;
                 padding-left:35px;
                 text-align: left;
                  }
-}
  }
 }
 }
