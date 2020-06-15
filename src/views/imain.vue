@@ -7,7 +7,8 @@
     <el-carousel >
       <el-carousel-item v-for="item in imaininfo" :key="item.index">
       <div class="grid-content bg-purple-dark " >
-      <div class=imaincss :style="{backgroundImage:'url('+item.infoimg+')'}" >
+      <div class="imaincss"  >
+        <img :src="item.infoimg" alt="" class="imainimg">
         <div class="imaininfo">
          <p> {{ item.info }}</p>
          <p> {{ item.info1 }}</p>
@@ -78,14 +79,14 @@ export default {
           info:"一生の美しさと輝き",
           info1:"を届けします",
           bottoninfo:"詳細はこちらから",
-          infoimg:require('../01.jpg'),
+          infoimg:require('../banner1.png'),
         },
         {
           index:2,
           info:"2222",
           info1:"を届けします",
           bottoninfo:"詳細はこちらから",
-          infoimg:require('../01.jpg'),
+          infoimg:require('../banner2.png'),
         },
         {
           index:3,
@@ -184,12 +185,20 @@ body{
               background-size: auto 100%    ;
               background-position: 100%;
               position: relative;
+              overflow: hidden;
+              background-color: #e0e0e0;
+              .imainimg{
+                position: absolute;
+                right:calc(50% - 950px);
+                width: 2000px;
+                top: -100px;
+              }
                   .imaininfo{
-                    font-size:2rem;
+                    font-size:1.2rem;
                     line-height: 1;
                     color:#282828;
                     position: fixed;
-                    top: 150px;
+                    top: 180px;
                     left: 20vw;
                         .buttoninfo{      
                           line-height: 25px;
@@ -218,11 +227,11 @@ body{
               background-position: 100%;
               position: relative;
                   .imaininfo{
-                    font-size:2rem;
+                    font-size:1.2rem;
                     line-height: 1;
                     color:#282828;
                     position: fixed;
-                    top: 150px;
+                    top: 180px;
                     left: 20vw;
                         .buttoninfo{      
                           line-height: 32px;
@@ -253,7 +262,7 @@ body{
           margin-bottom: 0px;
           .imaincss{
             .imaininfo{
-              font-size:1.5rem;
+              font-size:1.2rem;
               position: fixed;
               top:680px;
                right:0;

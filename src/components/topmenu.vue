@@ -26,7 +26,7 @@
   </el-dropdown-menu>
 </el-dropdown>
     </el-col>
-    {{ $t("app.apptry") }}
+
 </el-row>
 </div>
 

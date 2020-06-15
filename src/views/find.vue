@@ -5,14 +5,16 @@
   
 <el-collapse v-model="activeNames" @change="handleChange">
   <el-collapse-item 
-  v-for="item in i18nshopinfo"
+  v-for="(item,s) in i18nshopinfo"
   :title="item.shopname" :name="shopid"
   :key="item.shopid">
     <div class="shopinfo">{{ item.shopinfo }}</div>
     <div class="shopinfo">{{ item.shoptel }}</div>
     <div class="shopinfo">{{ item.shopimg }}</div>
     <div class="shopinfo">{{ item.shopgo }}</div>
-   <div>{{ infoimg[item.shopid].inimg }}</div>
+       <el-card shadow="hover" class="shopimg">
+        <img :src="infoimg[s].inimg" alt="" class="shopimg-info">
+    </el-card>
     <div class="shopinfo">{{item.shoptime}}</div>
   </el-collapse-item>
 
@@ -27,19 +29,19 @@ export default {
 data(){
     return{
         infoimg:[{
-            inimg: require('../01.jpg')
+            inimg: require('../shop-1.jpg')
         },
         {
-            inimg: require('../02.jpg')
+            inimg: require('../shop-2.jpg')
         },
         {
-            inimg: require('../03.jpg')
+            inimg: require('../shop-3.jpg')
         },
         {
-            inimg: require('../1-1.jpg')
+            inimg: require('../shop-4.jpg')
         },
         {
-            inimg: require('../1-2.jpg')
+            inimg: require('../shop-5.jpg')
         },
     ]
     }
@@ -78,8 +80,38 @@ computed:{
                 padding-left:35px;
                 text-align: left;
                  }
+            .shopimg{
+                margin-left: 50px;
+                width: 250px;
+                height: 250px;
+                .el-card__body{
+                    padding: 5px;
+                .shopimg-info{
+                width: 240px;
+                height: 240px;
+                }
+            }
+            }
  }
 }
 }
-
+@media screen and (max-width: 900px){
+    .find{
+        .infofind{
+         .el-collapse{
+                .shopimg{
+                margin: auto;
+                width: 210px;
+                height: 210px;
+                 .el-card__body {
+                 .shopimg-info{
+                width: 200px;
+                height: 200px;
+                }
+}
+}
+            }
+            }
+    }
+}
 </style>
