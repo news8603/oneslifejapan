@@ -50,7 +50,6 @@ computed:{
    i18nshopinfo:function(){
 
   let shopinfo=this.$t('shopinfo');
-  console.log(shopinfo);
        return  shopinfo;
    }
 }

@@ -37,7 +37,7 @@
 <div class="infogrid" 
 v-for="item in careinfo"
 :key="item.id">
-  <div  class="button">
+<router-link :to="{name:'commodityinfo',params:{id:item.id}}" tag="div" class="button" >
       <img src="../11-1.png" class="image">
       <div style="padding: 14px;">
         <p>一生の美しさと輝き</p>
@@ -45,7 +45,8 @@ v-for="item in careinfo"
           <p style="text-align: left;">JAN CODE:{{ item.jan }}</p>
           <p style="text-align: right;">{{ item.price }}</p>
       </div>
-    </div>
+
+</router-link>
 </div>
 </div>
 </div>
