@@ -39,6 +39,7 @@ export default {
     name: "commodityinfo",
     data(){
         return{
+            imgtry:"../../static/shop-1.jpg",
              id:this.$route.params.id,
              swiperOptions: {
                 pagination: {
@@ -68,10 +69,7 @@ export default {
 
     },
     mounted(){
-         console.log(this.$route.params.id);
-         console.log('Current Swiper instance object', this.swiper)
-      this.swiper.slideTo(3, 1000, false)
-
+      this.swiper.slideTo(1, 1000, false)
     }
 }
 </script>
