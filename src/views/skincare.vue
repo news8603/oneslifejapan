@@ -80,7 +80,7 @@ export default {
           label: '目もと',
         }],
         careinfo:[{
-            id:"1",
+            id:"4582147597729",
             jan:"1213154",
             price:"151120円",
             name:"test"
