@@ -75,8 +75,8 @@
 
             <!-- 以下为手机端显示画面 -->
              <span class="hidden-md-and-up">
-            <el-collapse v-model="activeName" accordion>
-            <el-collapse-item :title="aboutProduct.about" name="1">
+            <el-collapse v-model="activeName" accordion class="phoneshow">
+            <el-collapse-item :title="aboutProduct.about" name="1" >
                     <div v-html="item.details.replace(/\n/g,'<br\>')" class="productinfo"></div>
                     <p></p>
                     <div v-html="item.detailsinfo.replace(/\n/g,'<br\>')" class="productinfo"></div>
@@ -222,6 +222,16 @@ export default {
         .productinfo{
 
             margin: 25px;
+        }
+    }
+    .phoneshow{
+        margin: auto;
+        width: 95%;
+        
+        .el-collapse-item__header{
+            margin-left: 20px;
+font-size:1.1em;
+           
         }
     }
 }
