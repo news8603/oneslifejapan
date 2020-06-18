@@ -63,7 +63,7 @@ const routes = [{
         path: "/commodityinfo/:id",
         name: "commodityinfo",
         component: () =>
-            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
     }
 ]
 

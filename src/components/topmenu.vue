@@ -312,7 +312,7 @@ export default {
 
 .menut{
             background-color:#ffffff;
-            box-shadow:-1px -5px 12px 0px #081f2c7d;
+            box-shadow:-1px -5px 12px 0px #dcdcdcc7;
             position: fixed;
             top:0px;
             z-index: 3;
