@@ -28,7 +28,7 @@
                
                 </el-col>
             </el-row>
-             <div class="computershow">
+             <div class="computershow" mode="out-in">
             <el-row class="info">
                <el-row type="flex" justify="space-between" class="maxwidth">
                    <el-col :span="5"  :sm="20" class="infotitle" :class="{infotitleActive:cssshow}"><div @click="isshow(1)">{{ aboutProduct.about }}</div></el-col>
@@ -75,6 +75,7 @@
 
             <!-- 以下为手机端显示画面 -->
              <span class="hidden-md-and-up">
+                 <div class="back">
             <el-collapse v-model="activeName" accordion class="phoneshow">
             <el-collapse-item :title="aboutProduct.about" name="1" >
                     <div v-html="item.details.replace(/\n/g,'<br\>')" class="productinfo"></div>
@@ -94,6 +95,7 @@
                       <div v-html="item.ingredient.replace(/\n/g,'<br\>')" class="productinfo"></div>
             </el-collapse-item>
             </el-collapse>
+            </div>
             </span>
 <!-- 手机端显示画面结束 -->
 
@@ -227,10 +229,10 @@ export default {
     .phoneshow{
         margin: auto;
         width: 95%;
-        
         .el-collapse-item__header{
             margin-left: 20px;
-font-size:1.1em;
+            font-size:1.1em;
+
            
         }
     }
@@ -249,6 +251,16 @@ font-size:1.1em;
         .computershow{ 
             display: none;
           }
+        .phoneshow{
+     
+            .productinfo{
+                margin-left: 45px;
+                margin-right: 45px;
+                text-align: left;
+            }
+  
         }
+        }
+    
 }
 </style>
