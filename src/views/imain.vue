@@ -5,18 +5,22 @@
   <div class="block">
     <span class="demonstration"></span>
     <el-carousel >
-      <el-carousel-item v-for="item in imaininfo" :key="item.index">
+     
+      <el-carousel-item v-for="(item,s) in imaininfo" :key="s">
+         <span  @click="towhere(s)">
       <div class="grid-content bg-purple-dark " >
       <div class="imaincss"  >
         <img :src="item.infoimg" alt="" class="imainimg">
         <div class="imaininfo">
          <p> {{ item.info }}</p>
          <p> {{ item.info1 }}</p>
-         <p class="buttoninfo">{{ item.bottoninfo }}</p>
+         <p class="buttoninfo" @click="towhere(s)"> {{ item.bottoninfo }}</p> 
           </div>
         </div>
       </div>
+         </span>
       </el-carousel-item>
+   
     </el-carousel>
   </div>
  </el-col>
@@ -73,6 +77,7 @@ export default {
   },
    data() {
       return {
+        towhich:"",
         imaininfo:
         [{
           index:1,
@@ -134,6 +139,10 @@ export default {
             }).then(res=>{
               console.log(res);
             })
+          },
+          towhere:function(t){
+              this.$router.push("/product-details"+t)
+            
           }
     },
     mounted(){
