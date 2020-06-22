@@ -222,7 +222,6 @@ export default {
             border-bottom: 1px solid #9f9f9f;
         }
         .productinfo{
-
             margin: 25px;
         }
     }
@@ -232,8 +231,6 @@ export default {
         .el-collapse-item__header{
             margin-left: 20px;
             font-size:1.1em;
-
-           
         }
     }
 }
