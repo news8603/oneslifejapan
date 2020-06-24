@@ -28,9 +28,10 @@ export default {
 .copyright{
   background-color: #081f2c;
   color:#ffffff;
+  font-size: 12px;
 }
 .source{
-  font-size: 1.5em;
+  /* font-size: 1.5rem; */
   margin: 0 1.5em;
 }
 h3 {

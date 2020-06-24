@@ -1,5 +1,5 @@
 <template>
-<div class="product-details0">
+<div class="product-details0" :style="bjBS">
 <div class="bijin-1 productP bijin-abs" :style="bj1imgStart"></div>
 <div class="bijin-title bijin-abs bijin-item-1" :style="bj1imgStart1">{{ this.$t("productBijin.bijinTitle1") }}</div>
 <div class="bijin-item-info bijin-abs" :style="bj1imgStart2">
@@ -101,7 +101,8 @@ export default {
             bj1img15:{opacity:0},
             bj1img16:{opacity:0,top:"3530px"},
             bj1img17:{opacity:0,top:"5460px"},
-            bj1img18:{opacity:0}
+            bj1img18:{opacity:0},
+            bjBs:{},
         }
     },
     methods:{
@@ -109,22 +110,25 @@ export default {
     },
     mounted(){
         let this$=this;
+        let isPhone=document.body.clientWidth;
+       console.log("屏幕宽度为",isPhone)
         if(document.documentElement.scrollTop || document.body.scrollTop<100){
-        this$.bj1imgStart={opacity:1,top:"180px"};
-        this$.bj1imgStart1={opacity:1,top:"150px"};
-        this$.bj1imgStart2={opacity:1,top:"250px"}
+        this$.bj1imgStart={opacity:1,top:"15vh"};
+        this$.bj1imgStart1={opacity:1,top:"7vh"};
+        this$.bj1imgStart2={opacity:1,top:"20vh"}
         }
         const scroll$= fromEvent(document, 'scroll').pipe(
         );
         scroll$.subscribe(function downD(){
         let whereScoll=document.documentElement.scrollTop || document.body.scrollTop;
         console.log(whereScoll);
+  if (isPhone>500){
         if( whereScoll > 100  && whereScoll < 300){
             this$.bj1img={opacity:1,top:"700px"}
         }else if( whereScoll >300 && whereScoll < 700)
         {
-            this$.bj1img1={opacity:1,top:"750px"};
-            this$.bj1img2={opacity:1,top:"850px"} 
+            this$.bj1img1={opacity:1,top:"850px"};
+            this$.bj1img2={opacity:1,top:"920px"} 
         }else if( whereScoll >900 && whereScoll < 1700)
         {
             this$.bj1img3={opacity:1,top:"1460px"};
@@ -154,16 +158,201 @@ export default {
             this$.bj1img18={opacity:1};
 
         }
+    }else{//这里开始进行手机端的动画配置
+ 
+            this$.bj1img={opacity:1,top:"890px"};
+            this$.bj1img1={opacity:1,top:"460px"};
+            this$.bj1img2={opacity:1,top:"490px"};
+            this$.bj1img3={opacity:1,top:"840px"};
+            this$.bj1img4={opacity:1,top:"880px"};
+            this$.bj1img5={opacity:1,top:"1340px"};
+            this$.bj1img6={opacity:1,top:"1360px"};
+            this$.bj1img7={opacity:1,top:"1408px"};
+            this$.bj1img8={opacity:1};
+            this$.bj1img9={opacity:1};
+            this$.bj1img10={opacity:1};
+            this$.bj1img11={opacity:1};
+            this$.bj1img12={opacity:1,top:"2250px"};
+            this$.bj1img13={opacity:1,top:"1930px"};
+            this$.bj1img14={opacity:1};
+            this$.bj1img15={opacity:1};
+            this$.bj1img16={opacity:1,top:"2020px"};
+            this$.bj1img17={opacity:1,top:"2600px"};
+            this$.bj1img18={opacity:1};
+            this$.bjBS={"min-width":"420px"}
+    }
     });
     }
 }
 </script>
 <style lang="less" scoped>
+@media screen and(min-width: 1280px){
+.product-details0{
+    .bijin-title{
+    font-size: 1.5rem;
+    color: #d5a74f;
+    }
+}
+}
+@media screen and(max-width:500px){
+.product-details0{
+    width: 420px ;
+    max-height: 3200px;
+    overflow: hidden;
+    // line-height:0.5em;
+    font-size: 0.4rem;
+    .bijin-title{
+    font-size: 0.6rem;
+    color: #d5a74f;
+}
+.bijin-item-1{
+    top:150px;
+    left:15px;
+    width: 80%;
+    
+     transition:all 0.6s ease-out 0.2s;
+        }
+.bijin-item-info{
+    line-height: 1.6em;
+    margin-left:15px;
+    width: 85%;
+
+}
+.bijin-2{
+    width: 100%;
+    height:1450px;
+    background-image:url(../bijin-2.png);
+    z-index: -1;
+    top:570px;
+    // opacity: 0;
+    transition: 0.6s;
+}
+.bijin-item-2{
+    width:100%;
+    left:15px;
+}
+.bijin-item-info-2{
+font-size: 0.6rem;
+    width: 90%;
+    left:8%;
+
+}
+.bijin-info{
+   top:800px;
+   width:40%;
+   left:44%;
+
+}
+.bijin-info-1{
+   top:800px;
+   width:40%;
+   left:72%;
+
+//    font-size: 1.2rem;
+}
+.bijin-item-3{
+    width: 100%;
+    left:10%;
+}
+.bijin-item-3-info{
+    width: 90%;
+    // font-size: 0.8em;
+    line-height: 1.6em;
+    left:5%;
+}
+
+.bijin-3{
+    width: 840px;
+    height:1500px;
+    background-image:url(../bijin-3.png);
+    z-index: -1;
+    // top:2080px;
+    left:-235px;
+       transition: 0.6s;
+}
+.bijin-item-4{
+    // top:2200px;
+    width: 100%;
+    left:10px;
+    transition: all 0.6s ease-out 0.2s;
+}
+.bijin-item-4-info{
+    width: 92%;
+    left:10px;
+    // font-size: 0.75em;
+    line-height: 0.8rem;
+}
+.bijin-4{
+    width: 100%;
+    height:1400px;
+    background-image:url(../bijin-4.png);
+    z-index: -1;
+    top:1500px;
+    right:0px;
+    transition: 0.6s;
+}
+.bijin-item-5-info{
+    top:1960px;
+    left:15px;
+    width: 44%;
+    transition: all 0.6s ease-out 0.6s;
+     line-height: 0.7rem;
+
+}
+.bijin-item-5{
+    left:15px;
+    transition:0.6s;
+}
+.bijin-item-6{
+    left:250px;
+    transition: 0.6s;
+}
+.bijin-item-6-info{
+    top:2050px;
+    left:240px;
+    width: 40%;
+    line-height:0.7rem;
+    transition: all 0.6s ease-out 0.8s;
+
+}
+.bijin-item-9{
+    left:15px;
+    transition: 0.6s;
+}
+.bijin-item-9-info{
+    top:2630px;
+    left:15px;
+    width: 85%;
+    line-height: 0.7rem;
+    transition: all 0.6s ease-out 0.8s;
+}
+.bijin-item-7{
+    top:2380px;
+    left:250px;
+}
+.bijin-item-7-info{
+  top:2410px;
+    left:260px;
+      width: 32%;
+      font-size: 0.6rem;
+    line-height: 1rem;
+      transition: all 0.6s ease-out 0.2s;
+}
+.bijin-6{
+    width: 75%;
+    height:950px;
+    background-image:url(../bijin-6.png);
+    z-index: -1;
+    top:2960px;
+    right:0px;
+    transition:0.6s;
+}
+}
+}
 .product-details0{
     position: relative;
     max-width: 1280px;
     min-width: 1280px;
-    width: 100%;
     height: 6830px;
     margin: auto;
     clear: both;
@@ -171,12 +360,12 @@ export default {
     line-height: 2em;
 }
 .bijin-1{
-        width: 500px;
-        height: 550px;
+        width:45%;
+        height:30%;
         top:180px;
         right:0px;
         background-image:url(../bijin-1.png);
-          transition:0.6s;
+        transition:0.6s;
 }
 .bijin-item-1{
     top:150px;
@@ -185,7 +374,7 @@ export default {
         }
 .bijin-item-info{
     margin-left:45px;
-    width:60%;
+    width:55%;
     top:250px;
      transition:all 0.6s ease-out 0.4s;
 
@@ -202,7 +391,7 @@ export default {
     color:#333333;
 }
 .bijin-text-ps{
-    font-size: 0.5em;
+    font-size: 0.4rem;
     left:15px;
     color:#6f6f6f;
 }
@@ -223,7 +412,7 @@ export default {
    
 //    top:750px;
    width: 60%;
-   right: -50px;
+   left:35%;
 //    opacity: 0;
    transition: 0.6s;
 }
@@ -231,21 +420,21 @@ export default {
      animation-delay:2s;
    top:850px;
    width:40%;
-   left:560px;
+   left:38%;
 //    opacity: 0;
    transition:all 0.6s ease-out 0.2s;
 }
 .bijin-info{
-   top:1350px;
+   top:1360px;
    width:40%;
-   left:610px;
-   font-size: 1.2em;
+   left:48%;
+//    font-size: 1.2rem;
 }
 .bijin-info-1{
-   top:1350px;
+   top:1360px;
    width:40%;
-   left:920px;
-   font-size: 1.2em;
+   left:75%;
+//    font-size: 1.2rem;
 }
 .bijin-item-3{
    top:1460px;
@@ -305,7 +494,6 @@ export default {
     top:3580px;
     right:0px;
     transition: 0.6s;
-
 }
 .bijin-item-5{
     top:3220px;
@@ -358,7 +546,7 @@ export default {
     width: 25%;
 }
 .bijin-6{
-    width: 950px;
+    width: 75%;
     height:950px;
     background-image:url(../bijin-6.png);
     z-index: -1;
@@ -374,7 +562,7 @@ export default {
 .bijin-item-9-info{
     top:5420px;
     left:240px;
-    width: 80%;
+    width: 70%;
     transition: all 0.6s ease-out 0.8s;
 }
 
