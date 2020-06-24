@@ -59,7 +59,7 @@ body{
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-      -webkit-text-size-adjust:none;
+      // -webkit-font-size-adjust:none;
 
   .el-header{
     padding:0 15px;

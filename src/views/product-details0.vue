@@ -108,14 +108,66 @@ export default {
     methods:{
 
     },
+    created(){
+        let that$=this;
+          that$.bj1imgStart={opacity:0,top:"100px"};
+            that$.bj1imgStart1={opacity:0,top:"60px"};
+            that$.bj1imgStart2={opacity:0,top:"120px"}
+            that$.bj1img={opacity:0,top:"890px"};
+            that$.bj1img1={opacity:0,top:"310px"};
+            that$.bj1img2={opacity:0,top:"340px"};
+            that$.bj1img3={opacity:0,top:"610px"};
+            that$.bj1img4={opacity:0,top:"650px"};
+            that$.bj1img5={opacity:0,top:"950px"};
+            that$.bj1img6={opacity:0,top:"1010px"};
+            that$.bj1img7={opacity:0,top:"1040px"};
+            that$.bj1img8={opacity:0};
+            that$.bj1img9={opacity:0};
+            that$.bj1img10={opacity:0};
+            that$.bj1img11={opacity:0};
+            that$.bj1img12={opacity:0,top:"1620px"};
+            that$.bj1img13={opacity:0,top:"1390px"};
+            that$.bj1img14={opacity:0};
+            that$.bj1img15={opacity:0};
+            that$.bj1img16={opacity:0,top:"1430px"};
+            that$.bj1img17={opacity:0,top:"1980px"};
+            that$.bj1img18={opacity:0};
+            that$.bjBS={"min-width":"420px"}
+
+    },
     mounted(){
         let this$=this;
         let isPhone=document.body.clientWidth;
        console.log("屏幕宽度为",isPhone)
         if(document.documentElement.scrollTop || document.body.scrollTop<100){
-        this$.bj1imgStart={opacity:1,top:"15vh"};
-        this$.bj1imgStart1={opacity:1,top:"7vh"};
-        this$.bj1imgStart2={opacity:1,top:"20vh"}
+        this$.bj1imgStart={opacity:1,top:"100px"};
+        this$.bj1imgStart1={opacity:1,top:"60px"};
+        this$.bj1imgStart2={opacity:1,top:"180px"}
+        }
+        if(isPhone<500){//这里开始进行手机端的动画配置
+            this$.bj1imgStart={opacity:1,top:"100px"};
+            this$.bj1imgStart1={opacity:1,top:"60px"};
+            this$.bj1imgStart2={opacity:1,top:"120px"}
+            this$.bj1img={opacity:1,top:"890px"};
+            this$.bj1img1={opacity:1,top:"310px"};
+            this$.bj1img2={opacity:1,top:"340px"};
+            this$.bj1img3={opacity:1,top:"610px"};
+            this$.bj1img4={opacity:1,top:"650px"};
+            this$.bj1img5={opacity:1,top:"950px"};
+            this$.bj1img6={opacity:1,top:"1010px"};
+            this$.bj1img7={opacity:1,top:"1040px"};
+            this$.bj1img8={opacity:1};
+            this$.bj1img9={opacity:1};
+            this$.bj1img10={opacity:1};
+            this$.bj1img11={opacity:1};
+            this$.bj1img12={opacity:1,top:"1620px"};
+            this$.bj1img13={opacity:1,top:"1390px"};
+            this$.bj1img14={opacity:1};
+            this$.bj1img15={opacity:1};
+            this$.bj1img16={opacity:1,top:"1430px"};
+            this$.bj1img17={opacity:1,top:"1980px"};
+            this$.bj1img18={opacity:1};
+            this$.bjBS={"min-width":"420px"}
         }
         const scroll$= fromEvent(document, 'scroll').pipe(
         );
@@ -158,28 +210,6 @@ export default {
             this$.bj1img18={opacity:1};
 
         }
-    }else{//这里开始进行手机端的动画配置
- 
-            this$.bj1img={opacity:1,top:"890px"};
-            this$.bj1img1={opacity:1,top:"460px"};
-            this$.bj1img2={opacity:1,top:"490px"};
-            this$.bj1img3={opacity:1,top:"840px"};
-            this$.bj1img4={opacity:1,top:"880px"};
-            this$.bj1img5={opacity:1,top:"1340px"};
-            this$.bj1img6={opacity:1,top:"1360px"};
-            this$.bj1img7={opacity:1,top:"1408px"};
-            this$.bj1img8={opacity:1};
-            this$.bj1img9={opacity:1};
-            this$.bj1img10={opacity:1};
-            this$.bj1img11={opacity:1};
-            this$.bj1img12={opacity:1,top:"2250px"};
-            this$.bj1img13={opacity:1,top:"1930px"};
-            this$.bj1img14={opacity:1};
-            this$.bj1img15={opacity:1};
-            this$.bj1img16={opacity:1,top:"2020px"};
-            this$.bj1img17={opacity:1,top:"2600px"};
-            this$.bj1img18={opacity:1};
-            this$.bjBS={"min-width":"420px"}
     }
     });
     }
@@ -197,7 +227,7 @@ export default {
 @media screen and(max-width:500px){
 .product-details0{
     width: 420px ;
-    max-height: 3200px;
+    max-height: 2550px;
     overflow: hidden;
     // line-height:0.5em;
     font-size: 0.4rem;
@@ -206,16 +236,16 @@ export default {
     color: #d5a74f;
 }
 .bijin-item-1{
-    top:150px;
+    top:120px;
     left:15px;
-    width: 80%;
-    
+    width: 90%;
+    font-size: 1rem;
      transition:all 0.6s ease-out 0.2s;
         }
 .bijin-item-info{
     line-height: 1.6em;
-    margin-left:15px;
-    width: 85%;
+    margin-left:20px;
+    width: 55%;
 
 }
 .bijin-2{
@@ -223,28 +253,28 @@ export default {
     height:1450px;
     background-image:url(../bijin-2.png);
     z-index: -1;
-    top:570px;
+    top:360px;
     // opacity: 0;
     transition: 0.6s;
 }
 .bijin-item-2{
     width:100%;
-    left:15px;
+    left:25px;
 }
 .bijin-item-info-2{
 font-size: 0.6rem;
-    width: 90%;
-    left:8%;
+    width: 40%;
+    left:50%;
 
 }
 .bijin-info{
-   top:800px;
+   top:580px;
    width:40%;
-   left:44%;
+   left:47%;
 
 }
 .bijin-info-1{
-   top:800px;
+   top:580px;
    width:40%;
    left:72%;
 
@@ -255,30 +285,30 @@ font-size: 0.6rem;
     left:10%;
 }
 .bijin-item-3-info{
-    width: 90%;
+    width: 50%;
     // font-size: 0.8em;
     line-height: 1.6em;
-    left:5%;
+    left:19%;
 }
 
 .bijin-3{
-    width: 840px;
+    width: 600px;
     height:1500px;
     background-image:url(../bijin-3.png);
     z-index: -1;
     // top:2080px;
-    left:-235px;
+    left:-108px;
        transition: 0.6s;
 }
 .bijin-item-4{
     // top:2200px;
     width: 100%;
-    left:10px;
+    left:35px;
     transition: all 0.6s ease-out 0.2s;
 }
 .bijin-item-4-info{
-    width: 92%;
-    left:10px;
+    width: 75%;
+    left:35px;
     // font-size: 0.75em;
     line-height: 0.8rem;
 }
@@ -292,46 +322,54 @@ font-size: 0.6rem;
     transition: 0.6s;
 }
 .bijin-item-5-info{
-    top:1960px;
-    left:15px;
+    top:1420px;
+    left:18px;
     width: 44%;
+
     transition: all 0.6s ease-out 0.6s;
-     line-height: 0.7rem;
+     line-height: 1rem;
 
 }
 .bijin-item-5{
     left:15px;
     transition:0.6s;
+    font-size: 1rem;
 }
 .bijin-item-6{
-    left:250px;
+    left:230px;
     transition: 0.6s;
+    font-size: 1rem;
+
 }
 .bijin-item-6-info{
-    top:2050px;
+    top:1480px;
     left:240px;
     width: 40%;
-    line-height:0.7rem;
+    line-height:1rem;
     transition: all 0.6s ease-out 0.8s;
 
 }
 .bijin-item-9{
     left:15px;
     transition: 0.6s;
+    font-size: 1rem;
+
 }
 .bijin-item-9-info{
-    top:2630px;
+    top:2030px;
     left:15px;
     width: 85%;
-    line-height: 0.7rem;
+    line-height: 1rem;
     transition: all 0.6s ease-out 0.8s;
 }
 .bijin-item-7{
-    top:2380px;
+    top:1740px;
     left:250px;
+    font-size: 1rem;
+
 }
 .bijin-item-7-info{
-  top:2410px;
+  top:1770px;
     left:260px;
       width: 32%;
       font-size: 0.6rem;
@@ -343,7 +381,7 @@ font-size: 0.6rem;
     height:950px;
     background-image:url(../bijin-6.png);
     z-index: -1;
-    top:2960px;
+    top:2280px;
     right:0px;
     transition:0.6s;
 }
@@ -427,13 +465,13 @@ font-size: 0.6rem;
 .bijin-info{
    top:1360px;
    width:40%;
-   left:48%;
+   left:600px;
 //    font-size: 1.2rem;
 }
 .bijin-info-1{
    top:1360px;
    width:40%;
-   left:75%;
+   left:930px;
 //    font-size: 1.2rem;
 }
 .bijin-item-3{
