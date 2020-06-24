@@ -110,6 +110,8 @@ export default {
     },
     created(){
         let that$=this;
+        let isPhone=document.body.clientWidth;
+if(isPhone<500){
           that$.bj1imgStart={opacity:0,top:"100px"};
             that$.bj1imgStart1={opacity:0,top:"60px"};
             that$.bj1imgStart2={opacity:0,top:"120px"}
@@ -133,6 +135,7 @@ export default {
             that$.bj1img17={opacity:0,top:"1980px"};
             that$.bj1img18={opacity:0};
             that$.bjBS={"min-width":"420px"}
+            }
 
     },
     mounted(){
