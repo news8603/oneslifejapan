@@ -328,7 +328,6 @@ font-size: 0.6rem;
     top:1420px;
     left:18px;
     width: 44%;
-
     transition: all 0.6s ease-out 0.6s;
      line-height: 1rem;
 
