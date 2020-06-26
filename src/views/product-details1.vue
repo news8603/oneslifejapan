@@ -5,7 +5,7 @@
         <div class="tsgfinfo1 bgP" :style="tsgfdh1">
             <div v-html="this.$t('product6GF.tsgfinfotitle1').replace(/\n/g,'<br\>')"></div>
             <p></p>
-            <div v-html="this.$t('product6GF.tsgfinfotitle2').replace(/\n/g,'<br\>')" style="font-size:4rem"></div>
+            <div v-html="this.$t('product6GF.tsgfinfotitle2').replace(/\n/g,'<br\>')" class="iiifont" ></div>
         </div>
         <div class="tsgfimg3 bgP bgimg" :style="tsgfdh1" ></div>
         <div class="tsgfimg4 bgP bgimg" :style="tsgfdh1" ></div>
@@ -59,27 +59,33 @@ export default {
     name:"product-details1",
     data(){
         return{
-            tsgfdh1:{ opacity: 0 },
-            tsgfdh2:{ opacity: 0 },
-            tsgfdh3:{ opacity: 0 },
-            tsgfdh4:{ opacity: 0 },
-            tsgfdh5:{ opacity: 0 },
-            tsgfdh6:{ opacity: 0 },
-
-
-
+            tsgfdh1:{ opacity:0 },
+            tsgfdh2:{ opacity:0 },
+            tsgfdh3:{ opacity:0 },
+            tsgfdh4:{ opacity:0 },
+            tsgfdh5:{ opacity:0 },
+            tsgfdh6:{ opacity:0 },
         }
     },
     mounted(){
         let this$=this;
-        if(document.documentElement.scrollTop || document.body.scrollTop<100){
-                    this$.tsgfdh1={ opacity:1 };
+        let isPhone=document.body.clientWidth;
 
+        if(document.documentElement.scrollTop || document.body.scrollTop<100){
+            this$.tsgfdh1={ opacity:1 };
+        }
+        if (isPhone<500){
+            this$.tsgfdh2={ opacity:1 };
+            this$.tsgfdh3={ opacity:1 };
+            this$.tsgfdh4={ opacity:1 };
+            this$.tsgfdh5={ opacity:1 };
+            this$.tsgfdh6={ opacity:1 };
         }
         const mouseS$=fromEvent(document,'scroll');
         mouseS$.subscribe(function(){
             let scrollH=document.documentElement.scrollTop || document.body.scrollTop;
             console.log(scrollH);
+            if(isPhone>500){
             if (scrollH > 400 && scrollH < 600){
                     this$.tsgfdh2={ opacity: 1 }
             }else if(scrollH > 600 && scrollH < 1100){
@@ -90,6 +96,7 @@ export default {
                     this$.tsgfdh5={ opacity: 1 }
             }else if(scrollH > 2680){
                     this$.tsgfdh6={ opacity: 1 }
+            }
             }
         })
     },
@@ -106,6 +113,217 @@ export default {
     background-repeat: no-repeat;
     background-size:contain;
 }
+@media screen and(max-width: 500px){
+.iiifont{
+font-size: 1.5rem;
+}
+.tsgftitle-1{
+   color: #7ec1d0;
+   font-size: 1rem;
+}
+.tsgftitle-2{
+   color: #7ec1d0;
+   font-size: 1.5rem;
+}
+.tsgftitle-3{
+
+   font-size: 1.5rem;
+}
+.tsgftitle-4{
+
+   font-size: 1rem;
+}
+.ininfo{
+   margin-inline-start: 20px;
+}
+    .product-details1{
+        position: relative;
+        width: 420px;
+        height: 1590px;
+        margin: auto;
+        clear: both;
+        text-align: left;
+        overflow: hidden;
+        line-height: 2em;
+        margin: auto;
+         .tsgfimg1{
+            background-image: url(../6G0004.png);
+            top:80px;
+            width: 230px;
+            height: 230px;
+            transition: 0.6s;
+
+    }
+        .tsgfimg2{
+        background-image: url(../6G0006.png);
+        top:130px;
+        width: 200px;
+        height: 200px;
+        left:40px;
+        z-index: -1;
+        transition:all 0.6s ease-out 0.5s;
+    }
+       .tsgfinfo1{
+        color: #7ec1d0;
+        top:140px;
+        left:205px;
+        line-height: 1rem;
+        text-align: center;
+        transition:all 0.6s ease-out 0.7s;
+    }
+       .tsgfimg3{
+        background-image: url(../6G0010.png);
+        top:100px;
+        width: 30px;
+        height: 30px;
+        left:340px;
+        z-index: -1;
+        transition:all 0.6s ease-out 1s;
+    }
+      .tsgfimg4{
+        background-image: url(../6G0006.png);
+        top:300px;
+        width: 300px;
+        height: 300px;
+        left:180px;
+        z-index: -1;
+        transition:all 0.6s ease-out 1.2s;
+    }
+        .tsgfinfo2{
+        top:300px;
+        left:40px;
+        width: 75%;
+        transition:0.6s;
+        font-size: 0.5rem;
+        line-height: 1rem;
+    }
+        .tsgfimg5{
+       background-image: url(../6G0010.png);
+        top:325px;
+        width: 40px;
+        height: 40px;
+        left:20px;
+        z-index: -1;
+       transition: 0.6s;
+    }
+      .tsgfimg6{
+       background-image: url(../6G0006.png);
+        top:455px;
+        width: 200px;
+        height: 200px;
+        left:-30px;
+        z-index: -1;
+       transition:all 0.6s ease-out 0.5s;
+    }
+     .tsgfimg7{
+        background-image: url(../6G0003.png);
+        top:455px;
+        width:150px;
+        height: 150px;
+        left:10px;
+        z-index: -1;
+       transition:all 0.6s ease-out 1s;
+     }
+         .tsgfinfo3{
+        top:475px;
+        width:55%;
+        height: 300px;
+        left:160px;
+        z-index: -1;
+        font-size: 0.6rem;
+        line-height: 1rem;
+        transition:all 0.6s ease-out 0.4s;
+    }
+        .tsgfimg8{
+        background-image: url(../6G0009.png);
+        top:625px;
+        width:220px;
+        height: 220px;
+        right: -65px;
+        z-index: -1;
+             transition: 0.6s;
+    }
+        .tsgfinfo4{
+       top:665px;
+        width:60%;
+        height: 300px;
+        left:10px;
+        z-index: -1;
+        line-height: 1rem;
+        font-size: 0.6rem;
+        transition:all 0.6s ease-out 0.4s;
+    }
+        .tsgfimg9{
+        background-image: url(../6G0002.png);
+        top:885px;
+        width:300px;
+        height: 300px;
+        left: 0px;
+        z-index: -1;
+        transition: 0.6s;
+    }
+      .tsgfimg10{
+        background-image: url(../6G0001.png);
+        top:1050px;
+        width:280px;
+        height: 280px;
+        left:20px;
+        z-index: -1;
+         transition:all 0.6s ease-out 0.4s;
+    }
+      .tsgfinfo5{
+        top:880px;
+        width:52%;
+        height: 300px;
+        left:190px;
+        font-size: 0.6rem;
+        line-height: 1.2rem;
+        z-index: -1;
+         transition:all 0.6s ease-out 0.8s;
+    }
+      .tsgfimg11{
+        background-image: url(../6G0006.png);
+        top:1280px;
+        width:450px;
+        height: 450px;
+        right:-100px;
+        z-index: -1;
+       transition: 0.6s;
+    }
+          .tsgfimg12{
+        background-image: url(../6G0000.png);
+        top:1300px;
+        width:400px;
+        height: 400px;
+        left:0px;
+        z-index: -1;
+         transition:all 0.6s ease-out 0.4s;
+    }
+        .tsgfinfo6{
+        top:1400px;
+        width:40%;
+        height: 300px;
+        left:230px;
+        z-index: -1;
+         transition:all 0.6s ease-out 0.8s;
+
+    }
+           .tsgfimg13{
+        background-image: url(../6G0011.png);
+        top:1350px;
+        width:35px;
+        height: 35px;
+        left:230px;
+        z-index: -1;
+         transition:all 0.6s ease-out 0.4s;
+
+    }
+}
+}
+@media screen and(min-width: 500px){
+.iiifont{
+        font-size: 4rem;
+    }
 .tsgftitle-1{
    color: #7ec1d0;
    font-size: 1.5rem;
@@ -184,7 +402,7 @@ export default {
         top:770px;
         left:80px;
         width: 50%;
-transition:0.6s;
+        transition:0.6s;
     }
         .tsgfimg5{
        background-image: url(../6G0010.png);
@@ -282,7 +500,6 @@ transition:0.6s;
         left:30px;
         z-index: -1;
          transition:all 0.6s ease-out 0.4s;
-
     }
     .tsgfinfo6{
         top:3630px;
@@ -303,5 +520,8 @@ transition:0.6s;
          transition:all 0.6s ease-out 0.4s;
 
     }
+
 }
+}
+
 </style>

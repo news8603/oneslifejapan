@@ -232,7 +232,6 @@ if(isPhone<500){
     width: 420px ;
     max-height: 2550px;
     overflow: hidden;
-    // line-height:0.5em;
     font-size: 0.4rem;
     .bijin-title{
     font-size: 0.6rem;
