@@ -344,6 +344,7 @@ font-size: 1.5rem;
    margin-inline-start: 20px;
 }
 .product-details1{
+    
     position: relative;
     max-width: 1280px;
     min-width: 1280px;

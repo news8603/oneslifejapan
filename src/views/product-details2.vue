@@ -24,7 +24,7 @@
         </div>
         <div class="gf12img11 gfP" :style="gfimg4"></div>
         <div class="gf12info3 gfP" :style="gfimg4">
-            <span class="gf12infotitle">{{this.$t('product12GF.gf12title4')}}</span>
+           <span class="gf12infotitle">{{this.$t('product12GF.gf12title4')}}</span>
             <span class="gf12infotitle1">{{this.$t('product12GF.gf12title5')}}</span>
             <br><br>
             <div v-html="this.$t('product12GF.gf12info3').replace(/\n/g,'<br\>')"></div>
