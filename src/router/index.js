@@ -88,6 +88,12 @@ const routes = [{
         name: "product-details3",
         component: () =>
             import ( /* webpackChunkName: "product-details3" */ "../views/product-details3.vue")
+    },
+    {
+        path: "/airmask",
+        name: "airmask",
+        component: () =>
+            import ( /* webpackChunkName: "airmask" */ "../views/airmask.vue")
     }
 ]
 

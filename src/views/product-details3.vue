@@ -1,6 +1,5 @@
 <template>
     <div class="product-details3">
-
         <div class="collagentinfo1 bgP" :style="collshow1">
             <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle1') }}</span>
             <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle2') }}</span>
