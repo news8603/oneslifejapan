@@ -15,10 +15,6 @@ import ElementUI from 'element-ui'
 // import locale from '/node_modules/element-ui/lib/locale/lang/en'
 
 
-
-
-
-
 Vue.config.productionTip = false
 Vue.use(VueI18n)
 Vue.use(ElementUI)

@@ -1,56 +1,65 @@
 <template>
     <div class="airmask">
- <div class="banner">
-        <span class="start-point">1</span>
-        Banner
-    </div>
-    <div class="section">
-        <div class="side-bar">side-bar</div>
-        <div class="content">content</div>
-    </div>
-    </div>
+<div class="try">
+    <div class="try1"></div>
+    <div class="try2"></div>
+    <div class="try3"></div>
+</div>
+</div>
+
 </template>
+
 <script>
 import ScrollMagic from 'scrollmagic'
+import {TimelineMax} from '../esm'
 export default {
     name:"airmask",
     mounted(){
-       var controller = new ScrollMagic.Controller();
-        var scene = new ScrollMagic.Scene({
-            triggerElement: '.section',//触发元素
-            triggerHook: "onLeave",//触发元素开始离开视口时触发
-            offset: 0,//从开始点滚动多少px触发（施法前摇）
-            duration: 0//效果持续的距离（法术持续时间/距离）
 
-        }).setPin(".side-bar");//固定需要固定的元素
-        controller.addScene(scene);
+    var controller = new ScrollMagic.Controller();
 
-    }
+    var horizontalSlide = new TimelineMax()
+        // animate panels
+        .to(".try1", 1, {
+            x: "-20%"
+        })
+        .to(".try2", 1, {
+            x: "-40%"
+        })
+        .to(".try3", 1, {
+            x: "-80%"
+        })
+
+    new ScrollMagic.Scene({
+            triggerElement: ".try",
+            triggerHook: "onLeave",
+            duration: "400%",
+            setTween:horizontalSlide
+        })
+        .setPin(".try")
+        // .setTween(horizontalSlide)
+        .addTo(controller);
+
+}
 }
 </script>
 <style lang="less" scoped>
-        html,body {
-            margin: 0;
-            padding: 0;
-        }
-        .banner {
-            background: #ccc;
-            height: 500px;
-        }
-        .section {
-            padding: 100px 15px;
-            background: rgba(0, 0, 255, 0.521);
-            height: 2000px;
-        }
-        .side-bar {
-            position: absolute;
-            width: 200px;
-            height: 300px;
-            background: rgb(245, 96, 96);
-        }
-        .content {
-            height: 200px;
-            background: gray;
-            padding-left: 200px;
-        }
+.try{
+    height: 1500px;
+}
+.try1{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+}
+.try2{
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+}
+.try3{
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+}
 </style>
