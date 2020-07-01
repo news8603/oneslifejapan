@@ -8,16 +8,15 @@
 </div>
 
 </template>
-
 <script>
 import ScrollMagic from 'scrollmagic'
 import {TimelineMax} from '../esm'
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
 export default {
     name:"airmask",
     mounted(){
-
     var controller = new ScrollMagic.Controller();
-
     var horizontalSlide = new TimelineMax()
         // animate panels
         .to(".try1", 1, {
@@ -29,17 +28,14 @@ export default {
         .to(".try3", 1, {
             x: "-80%"
         })
-
-    new ScrollMagic.Scene({
+    const scenc=new ScrollMagic.Scene({
             triggerElement: ".try",
             triggerHook: "onLeave",
             duration: "400%",
-            setTween:horizontalSlide
         })
-        .setPin(".try")
-        // .setTween(horizontalSlide)
-        .addTo(controller);
-
+        scenc.setPin(".try");
+        scenc.setTween(horizontalSlide);
+        scenc.addTo(controller);
 }
 }
 </script>
