@@ -9,12 +9,13 @@
 
 </template>
 <script>
-import ScrollMagic from 'scrollmagic'
+// import ScrollMagic from 'scrollmagic'
+import * as ScrollMagic from 'scrollmagic'
 import {TimelineMax} from '../esm'
 // import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'
 // import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
 export default {
-    name:"airmask",
+    name:"Airmask",
     mounted(){
     var controller = new ScrollMagic.Controller();
     var horizontalSlide = new TimelineMax()
