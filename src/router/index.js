@@ -19,7 +19,7 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component:
             () =>
-            import ( /* webpackChunkName: "inews" */ '../views/News.vue'),
+            import ( /* webpackChunkName: "inews" */ '../views/news.vue'),
 
 
     },
@@ -27,43 +27,43 @@ const routes = [{
         path: "/skincare",
         name: "skincare",
         component: () =>
-            import ( /* webpackChunkName: "skincare" */ "../views/Skincare.vue")
+            import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue")
     },
     {
         path: "/health",
         name: "health",
         component: () =>
-            import ( /* webpackChunkName: "health" */ "../views/Health.vue")
+            import ( /* webpackChunkName: "health" */ "../views/health.vue")
     },
     {
         path: "/find",
         name: "find",
         component: () =>
-            import ( /* webpackChunkName: "find" */ "../views/Find.vue")
+            import ( /* webpackChunkName: "find" */ "../views/find.vue")
     },
     {
         path: "/About",
         name: "About",
         component: () =>
-            import ( /* webpackChunkName: "About" */ "../views/About.vue")
+            import ( /* webpackChunkName: "About" */ "../views/about.vue")
     },
     {
         path: "/beauty",
         name: "beauty",
         component: () =>
-            import ( /* webpackChunkName: "beauty" */ "../views/Beauty.vue")
+            import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue")
     },
     {
         path: "/newapp",
         name: "newapp",
         component: () =>
-            import ( /* webpackChunkName: "newapp" */ "../views/Newapp.vue")
+            import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue")
     },
     {
         path: "/ommodityinfo/:id",
         name: "commodityinfo",
         component: () =>
-            import ( /* webpackChunkName: "commodityinfo" */ "../views/Commodityinfo.vue"),
+            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
     },
     {
         path: "/product-details0",
@@ -93,7 +93,7 @@ const routes = [{
         path: "/airmask",
         name: "airmask",
         component: () =>
-            import ( /* webpackChunkName: "airmask" */ "../views/Airmask.vue")
+            import ( /* webpackChunkName: "airmask" */ "../views/airmask.vue")
     }
 ]
 
