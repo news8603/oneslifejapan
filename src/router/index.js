@@ -42,10 +42,10 @@ const routes = [{
             import ( /* webpackChunkName: "find" */ "../views/find.vue")
     },
     {
-        path: "/About",
-        name: "About",
+        path: "/about",
+        name: "about",
         component: () =>
-            import ( /* webpackChunkName: "About" */ "../views/about.vue")
+            import ( /* webpackChunkName: "About" */ "../views/About.vue")
     },
     {
         path: "/beauty",
@@ -100,6 +100,12 @@ const routes = [{
         name: "gold",
         component: () =>
             import ( /* webpackChunkName: "gold" */ "../views/Gold.vue")
+    },
+    {
+        path: "/eyes",
+        name: "eyes12gf",
+        component: () =>
+            import ( /* webpackChunkName: "Eyes12gf" */ "../views/Eyes12fg.vue")
     }
 ]
 
