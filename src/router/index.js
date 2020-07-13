@@ -106,6 +106,12 @@ const routes = [{
         name: "eyes12gf",
         component: () =>
             import ( /* webpackChunkName: "Eyes12gf" */ "../views/Eyes12fg.vue")
+    },
+    {
+        path: "/try",
+        name: "try",
+        component: () =>
+            import ( /* webpackChunkName: "try" */ "../views/try.vue")
     }
 ]
 
