@@ -1,4 +1,5 @@
 <template>
+<!-- 化妆品的产品列表页面 -->
     <div class="skincare">
       <div class="skinbanner">
           <div class="bannerinfo">スキンケア</div>

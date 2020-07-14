@@ -1,4 +1,5 @@
 <template>
+<!-- 新闻列表页面，现在暂时调用了一个公共借口模拟数据 -->
   <div class="inews">
     <!-- <topmenu /> -->
     <h1 class="title">ニュース</h1>

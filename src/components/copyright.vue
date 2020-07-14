@@ -1,4 +1,5 @@
 <template>
+<!-- 整个页面写的是copyright的内容 -->
   <div class="copyright">
 
 

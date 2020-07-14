@@ -1,4 +1,5 @@
 <template>
+<!-- 这个是店铺检索的页面 -->
     <div class="find">
         <div class="infofind">
             <h1 class="infotitle">店舗検索</h1>

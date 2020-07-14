@@ -1,4 +1,5 @@
 <template>
+<!-- 这个文件写的是about one's life页面的内容 -->
   <div class="about">
     <div class="aboutimg1 aboutB">
       <div class="aboutinfo2 title1">{{this.$t('about.abouttitle2')}}</div>

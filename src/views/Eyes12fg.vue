@@ -1,4 +1,5 @@
 <template>
+<!-- 12GF眼霜的内页 -->
   <div class="eyes12gf">
     <div class="eyeimg1 eyeB" :style="eyeimg1">
       <div class="eyeinfo1 eyestitle" :style="eyeimg1">{{this.$t('eyes.eyestitle1')}}</div>

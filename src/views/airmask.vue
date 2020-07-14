@@ -1,4 +1,5 @@
 <template>
+<!-- 这个页面写的是空气口罩的产品内页 -->
   <div class="airmask">
     <div class="airmaskbackR airP"></div>
     <div class="airmaskimg1 airP" :style="airmask1">

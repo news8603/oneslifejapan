@@ -1,4 +1,5 @@
 <template>
+<!-- 黄金棒的内页 -->
   <div class="gold">
     <div class="goldimg1 goldP" :style="goldimg1"></div>
     <div class="goldimg2 goldP" :style="goldimg1"></div>

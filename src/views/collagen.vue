@@ -1,4 +1,5 @@
 <template>
+<!-- 这个页面写的是胶原蛋白粉的内页内容 -->
     <div class="collagen">
         <div class="collagentinfo1 bgP" :style="collshow1">
             <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle1') }}</span>

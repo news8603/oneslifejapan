@@ -1,4 +1,5 @@
 <template>
+<!-- 这里是整个页面最上方的玫瑰花导航条 -->
   <div class="topmenu">
     <div :class="{menut:a,menue:e}">
       <el-row>

@@ -6,7 +6,7 @@
 <el-row  type="flex" justify="center" >
   <el-col><img src="../news.jpg" alt="" class="titleimg"></el-col>
 </el-row>
-<!-- 这里遍历data中的news，显示的是新着情报 -->
+<!-- 这里遍历data中的news，显示的是新着情报部分的内容 -->
 <span v-for="item in news" :key="item.index">
 <el-row  type="flex" justify="center" align="middle" >
 <el-col :xs="20" :sm="6">
@@ -48,37 +48,22 @@
 <el-row>
    <el-col>
      <!-- 以下遍历i18n的json文件中的imainbottomRecommend数组类中的内容，把推荐列表的文字信息遍历在页面中 -->
-  <!-- <swiper ref="mySwiper" :options="swiperOptions" style="width: 80%;" >
-    <swiper-slide></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-2.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-3.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-4.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
-  </swiper> -->
-
-
-
-    <div v-swiper:mySwiper="swiperOptions">
+    <div v-swiper:mySwiper="swiperOptions" style="width: 80%;">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" :key="s" v-for="(item,s) in imainbottomRecommend">
+      <div class="swiper-slide"  
+      v-for="(item,s) in imainbottomRecommend"
+      :key="s">
         <div class="bottomhover">
-          <img src="../11-1.png" alt="" style="width:100%">
-          <p>{{this.$t(item.info)}}</p>
-          <p class="buttoninfo3">{{this.$t(item.bottoninfo)}}</p>
+          <!-- img标签中的图片是data中的imainbottomRecommendImg的图片内容 -->
+          <img :src="imainbottomRecommendImg[s].img" alt="" style="width:100%">
+          <p>{{item.info}}</p>
+          <p class="buttoninfo3">{{item.bottoninfo}}</p>
         </div>
       </div>
         <div class="swiper-pagination" slot="pagination"></div>
     </div>
   </div>
-
-
-
-
-    <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+<div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
     <div class="swiper-button-next"></div>
    </el-col>
 </el-row>
@@ -92,8 +77,9 @@
    <el-col> 
      <div class="imainbottomimg-2 bottomhover">
        <div class="imaininfo-3">
-     <p>12GFアイクリーム</p>
-     <p class="buttoninfo3">詳細はこちらから</p>
+         <!-- 12GF眼霜的广告词 -->
+     <p>{{this.$t('hp.12GF')}}</p>
+     <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
      </div>
      </div>
      </el-col>
@@ -106,23 +92,25 @@
          <img src="../11-5.png" alt="" class="mainbottoming-inn">
         </div>
        <div class="imaininfo-3">
-     <p>12GFアイクリーム</p>
-     <p class="buttoninfo3">詳細はこちらから</p>
+         <!-- 黄金棒的广告词 -->
+     <p>{{this.$t('hp.gold')}}</p>
+     <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
      </div>
      </div>
      </el-col>
 </el-row>
 <div class=" bastwidth-color">
 <div class="bastwidth">
+  <!-- 以下部分是进入about one's life的标签跳转 ，图片地址没有写在data中，在HTML部分替换图片就好-->
 <el-row type="flex" justify="center" style="width:90%" class="">
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info1')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info2')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info3')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
 </el-row>
 <el-row type="flex" justify="center" style="width:90%" class="">
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info4')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info5')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info6')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
 </el-row>
 </div>
 <el-row :span="24">
@@ -131,9 +119,10 @@
   <img src="../11-7.png" alt="" class="imainbottoming-app-img">
   <div class="bastwidth">
   <div class="imainbottoming-app-info bottomhover">
-  <p>新しいわたしに出会う鍵。</p>
-  <p >アプリ、誕生。</p>
-  <p class="buttoninfo3">詳細はこちらから</p>
+    <!-- 以下是APP的画面内容部分 -->
+  <p>{{this.$t('app.info')}}</p>
+  <p >{{this.$t('app.info2')}}</p>
+  <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
   </div>
   </div>
 </div>
@@ -159,6 +148,24 @@ export default {
           infoimg:require('../1-2.jpg'),
         }
         ],
+        imainbottomRecommendImg:[{
+          img:require('../11-1.png')
+        },
+        {
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        },{
+          img:require('../11-1.png')
+        }],
           swiperOptions: {
           slidesPerView : 1,
           pagination: {
@@ -207,7 +214,7 @@ export default {
     },
     computed: {
       swiper() {
-        return this.$refs.mySwiper.$swiper
+return this.$refs.mySwiper.$swiper
       },
       itopimg:function(){
         return this.$t('itopimg');
@@ -218,13 +225,13 @@ export default {
     },
     mounted() {
       console.log("imainbottom加载了")
+      console.log('Current Swiper instance object', this.swiper);
       this.swiper.slideTo(3, 1000, false);
 
     },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="less" >
 
 body{
