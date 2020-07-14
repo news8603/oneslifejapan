@@ -85,15 +85,15 @@ const routes = [{
     },
     {
         path: "/product-details3",
-        name: "product-details3",
-        component: () =>
-            import ( /* webpackChunkName: "product-details3" */ "../views/product-details3.vue")
-    },
-    {
-        path: "/airmask",
         name: "airmask",
         component: () =>
             import ( /* webpackChunkName: "airmask" */ "../views/Airmask.vue")
+    },
+    {
+        path: "/collagen",
+        name: "collagen",
+        component: () =>
+            import ( /* webpackChunkName: "collagen" */ "../views/collagen.vue")
     },
     {
         path: "/gold",

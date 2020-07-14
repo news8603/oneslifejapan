@@ -1,5 +1,5 @@
 <template>
-    <div class="product-details3">
+    <div class="collagen">
         <div class="collagentinfo1 bgP" :style="collshow1">
             <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle1') }}</span>
             <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle2') }}</span>
@@ -47,7 +47,7 @@
 <script>
 import { fromEvent} from 'rxjs'
 export default {
-    name:"product-details3",
+    name:"collagen",
     data(){
         return{
             collshow1:{opacity: 0},

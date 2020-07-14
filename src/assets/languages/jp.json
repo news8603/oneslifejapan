@@ -1,6 +1,114 @@
 {
-    "app": {
-        "apptry": "足裏シート"
+    "hp": {
+        "menu": "メニュー",
+        "collagen": "一生の美しさと輝き",
+        "bottom": "詳細はこちらから"
+    },
+    "inquiry": {
+        "title": "問い合わせ",
+        "name": "名前",
+        "mail": "メールアドレス",
+        "info": "問い合わせ内容",
+        "cancel": "キャンセル",
+        "send": "送信する"
+    },
+    "menutitle": {
+        "skin": "スキンケア",
+        "health": "健康用品",
+        "beauty": "美容品",
+        "search": "店舗検察",
+        "inquiry": "問い合わせ",
+        "about": "ABOUT ONE'S LIFE"
+    },
+    "menutitlephone": {
+        "skin": "スキンケア",
+        "health": "健康用品",
+        "beauty": "美容品",
+        "about": "ワンズライフジャパンのストーリー",
+        "search": "店舗検察",
+        "inquiry": "問い合わせ",
+        "onesapp": "iOS版公式アプリ"
+    },
+    "imaininfo": [{
+            "index": "1",
+            "info": "一生の美しさと輝き",
+            "info1": "を届けします",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "2",
+            "info": "这里是英文",
+            "info1": "を届けします",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "3",
+            "info": "一生の美しさと輝き",
+            "info1": "を届けします",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "4",
+            "info": "一生の美しさと輝き",
+            "info1": "を届けします",
+            "bottoninfo": "詳細はこちらから"
+        }
+    ],
+    "itopimg": [{
+            "index": "1",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "2",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        }
+    ],
+    "imainbottomRecommend": [{
+            "index": "1",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "2",
+            "info": "这里是英文",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "3",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "4",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        }, {
+            "index": "5",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "6",
+            "info": "这里是英文",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "7",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        },
+        {
+            "index": "8",
+            "info": "一生の美しさと輝き",
+            "bottoninfo": "詳細はこちらから"
+        }
+    ],
+    "companyTitle": {
+        "yuisu": "YUISU",
+        "ones": "ONE'S LIFE",
+        "fuji": "FUJI"
     },
     "shopinfo": [{
             "shopid": "0",

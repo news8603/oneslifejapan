@@ -1,10 +1,12 @@
 <template>
+<!-- 这个页面写的是主页轮播图和菜单栏下方的页面 -->
   <div class="imainbottom" >
   <span v-if="this.$store.state.isShow">
  <div class="bastwidth"> 
 <el-row  type="flex" justify="center" >
   <el-col><img src="../news.jpg" alt="" class="titleimg"></el-col>
 </el-row>
+<!-- 这里遍历data中的news，显示的是新着情报 -->
 <span v-for="item in news" :key="item.index">
 <el-row  type="flex" justify="center" align="middle" >
 <el-col :xs="20" :sm="6">
@@ -24,9 +26,11 @@
    <div class="titleline"></div>
 </el-row>
 </span>
+<!-- 以下遍历的是i18n中的json文件中的itopimg的内容，将itopimg中的中文映射到页面上，图片是从data中的itopimgPage -->
    <el-row  type="flex" justify="center" >
-  <el-col :span="10" v-for="item in itopimg" :key="item.index" class="bottomhover">
-  <img :src="item.infoimg" class="imainbottomimg " >
+  <el-col :span="10" v-for="(item,s) in itopimg" :key="s" class="bottomhover">
+    <!-- img标签中的图片是data中的itopimgPage的图片内容 -->
+  <img :src="itopimgPage[s].infoimg" class="imainbottomimg " >
     <p>{{ item.info }}</P>
     <div class="buttoninfo1">{{ item.bottoninfo }}</div>
   </el-col>
@@ -35,16 +39,17 @@
   <el-col :span="24" ><div class="imainbottomimg-1">
     <div class="imb-1-info bottomhover">
       <p 
-      >一生の美しさと輝き</p>
-      <p class="buttoninfo2">詳細はこちらから</p>
+      >{{this.$t('hp.collagen')}}</p>
+      <p class="buttoninfo2">{{this.$t('hp.bottom')}}</p>
       </div>
   </div>
   </el-col>
 </el-row>
 <el-row>
    <el-col>
-  <swiper ref="mySwiper" :options="swiperOptions" style="width: 80%;" >
-    <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
+     <!-- 以下遍历i18n的json文件中的imainbottomRecommend数组类中的内容，把推荐列表的文字信息遍历在页面中 -->
+  <!-- <swiper ref="mySwiper" :options="swiperOptions" style="width: 80%;" >
+    <swiper-slide></swiper-slide>
     <swiper-slide><div class="bottomhover"><img src="../11-2.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
     <swiper-slide><div class="bottomhover"><img src="../11-3.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
     <swiper-slide><div class="bottomhover"><img src="../11-4.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
@@ -53,7 +58,26 @@
     <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
     <swiper-slide><div class="bottomhover"><img src="../11-1.png" alt="" style="width:100%"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
-  </swiper>
+  </swiper> -->
+
+
+
+    <div v-swiper:mySwiper="swiperOptions">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" :key="s" v-for="(item,s) in imainbottomRecommend">
+        <div class="bottomhover">
+          <img src="../11-1.png" alt="" style="width:100%">
+          <p>{{this.$t(item.info)}}</p>
+          <p class="buttoninfo3">{{this.$t(item.bottoninfo)}}</p>
+        </div>
+      </div>
+        <div class="swiper-pagination" slot="pagination"></div>
+    </div>
+  </div>
+
+
+
+
     <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
     <div class="swiper-button-next"></div>
    </el-col>
@@ -127,17 +151,11 @@ export default {
   name: 'imainbottom',
    data() {
       return {
-        itopimg:
+        itopimgPage:
         [{
-          index: 1,
-          info:"一生の美しさと輝き",
-          bottoninfo:"詳細はこちらから",
           infoimg:require('../1-1.jpg'),
         },
         {
-          index: 2,
-          info:"一生の美しさと輝き",
-          bottoninfo:"詳細はこちらから",
           infoimg:require('../1-2.jpg'),
         }
         ],
@@ -190,6 +208,12 @@ export default {
     computed: {
       swiper() {
         return this.$refs.mySwiper.$swiper
+      },
+      itopimg:function(){
+        return this.$t('itopimg');
+      },
+      imainbottomRecommend:function(){
+        return this.$t('imainbottomRecommend');
       }
     },
     mounted() {
@@ -284,7 +308,7 @@ body{
   cursor: pointer;
           .buttoninfo1,
           .buttoninfo2,
-          .buttoninfo3,
+          .buttoninfo3
                 {
                 border: 1px solid #081f2c;
                 line-height: 25px;
@@ -346,7 +370,7 @@ body{
 .imainbottomimg-2{
   background-image: url("../02.jpg");
   background-position: center 45% ;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 500px;
   width:100%;
@@ -362,7 +386,7 @@ body{
 .imainbottoming-in{
   margin-top: 8px;
   position: relative;
-  background-color: #e9e9e9;
+  background-color: #f0f0f0;
   height: 420px;
   overflow: hidden;
       .mainbottoming-inn{
