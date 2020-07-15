@@ -1,9 +1,11 @@
 <template>
   <!-- 这个页面写的是每个产品的详细介绍，产品的详细介绍只有这一页，会通过动态路由把所有的内容映射到这一个页面中，索引数值为产品的JAN嘛 -->
   <div class="commodityinfo">
+    <!-- 这里遍历i18n的json文件中的commodityinfo数组类，这个数组类中记录着此网站中所有的产品信息，通过jan码调取映射 -->
     <div v-for="(item,index) in commodityinfo" :key="index">
-      <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.type}}</div>
       <div v-if="item.jan===id">
+      <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.type}}</div>
+
         <el-row class="maxwidth">
           <el-col :xs="24" :sm="24" :md="10">
             <div v-swiper:mySwiper="swiperOption">

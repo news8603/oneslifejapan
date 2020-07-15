@@ -29,13 +29,17 @@
 <!-- 以下遍历的是i18n中的json文件中的itopimg的内容，将itopimg中的中文映射到页面上，图片是从data中的itopimgPage -->
    <el-row  type="flex" justify="center" >
   <el-col :span="10" v-for="(item,s) in itopimg" :key="s" class="bottomhover">
+    <!-- goWhere方法用来给动态路由push路径，通过jan码进行动态映射 -->
+    <span @click="goWhere(item.jan)">
     <!-- img标签中的图片是data中的itopimgPage的图片内容 -->
   <img :src="itopimgPage[s].infoimg" class="imainbottomimg " >
     <p>{{ item.info }}</P>
     <div class="buttoninfo1">{{ item.bottoninfo }}</div>
+    </span>
   </el-col>
 </el-row>
   <el-row>
+    <!-- 以下内容是主页中的胶原蛋白粉的画面和文字信息，取自i18n的json文件中的hp.collagen -->
   <el-col :span="24" ><div class="imainbottomimg-1">
     <div class="imb-1-info bottomhover">
       <p 
@@ -53,29 +57,33 @@
       <div class="swiper-slide"  
       v-for="(item,s) in imainbottomRecommend"
       :key="s">
+      <span  @click="goWhere(item.jan)">
         <div class="bottomhover">
           <!-- img标签中的图片是data中的imainbottomRecommendImg的图片内容 -->
           <img :src="imainbottomRecommendImg[s].img" alt="" style="width:100%">
           <p>{{item.info}}</p>
           <p class="buttoninfo3">{{item.bottoninfo}}</p>
         </div>
+        </span>
       </div>
-        <div class="swiper-pagination" slot="pagination"></div>
     </div>
+        <div class="swiper-pagination" slot="pagination"></div>
+
   </div>
 <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
     <div class="swiper-button-next"></div>
    </el-col>
 </el-row>
 <el-row type="flex" justify="center" style="width:80%">
-   <el-col ><div class="bottomhover"><img src="../logo-1.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="bottomhover"><img src="../logo-2.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="bottomhover"><img src="../logo-3.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>12GFアイクリーム</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+   <el-col ><div class="bottomhover"><img src="../logo-1.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.yuisu')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+   <el-col ><div class="bottomhover"><img src="../logo-2.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.ones')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+   <el-col ><div class="bottomhover"><img src="../logo-3.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.fuji')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
 </el-row>
 </div>
 <el-row type="flex" justify="center" :span="24">
    <el-col> 
      <div class="imainbottomimg-2 bottomhover">
+         <img src="../02.jpg" alt="" class="mainbottoming-inn">
        <div class="imaininfo-3">
          <!-- 12GF眼霜的广告词 -->
      <p>{{this.$t('hp.12GF')}}</p>
@@ -150,21 +158,14 @@ export default {
         ],
         imainbottomRecommendImg:[{
           img:require('../11-1.png')
-        },
-        {
-          img:require('../11-1.png')
         },{
-          img:require('../11-1.png')
+          img:require('../11-2.png')
         },{
-          img:require('../11-1.png')
+          img:require('../11-8.png')
         },{
-          img:require('../11-1.png')
+          img:require('../11-4.png')
         },{
-          img:require('../11-1.png')
-        },{
-          img:require('../11-1.png')
-        },{
-          img:require('../11-1.png')
+          img:require('../11-9.png')
         }],
           swiperOptions: {
           slidesPerView : 1,
@@ -210,7 +211,9 @@ export default {
       };
     },
     methods:{
-
+      goWhere:function(jan){
+          this.$router.push({name:'commodityinfo',params:{id:jan}});
+      }
     },
     computed: {
       swiper() {
@@ -353,10 +356,9 @@ body{
   margin-top: 10px;
   width:97%;
 }
-.swiper-pagination{
- margin-top: 30px;
- position: relative !important;
-}
+  .swiper-slide{
+    margin-bottom: 30px;
+  }
 .imainbottomimg-1{
     width: 82%;
     margin: 15px auto;
@@ -375,13 +377,18 @@ body{
     }
 }
 .imainbottomimg-2{
-  background-image: url("../02.jpg");
-  background-position: center 45% ;
-  background-size: contain;
-  background-repeat: no-repeat;
+  // background-image: url("../02.jpg");
+  // background-position: center 45% ;
+  // background-size: cover;
+  // background-repeat: no-repeat;
   height: 500px;
   width:100%;
   position: relative;
+      .mainbottoming-inn{
+        position: absolute;
+        right:calc(40% - 290px);
+        height: 480px;
+      }
   .imaininfo-3{
     width: 300px;
     right:20%;
@@ -398,7 +405,7 @@ body{
   overflow: hidden;
       .mainbottoming-inn{
         position: absolute;
-        right:calc(40% - 380px);
+        right:calc(40% - 220px);
         height: 480px;
       }
     }
@@ -407,7 +414,7 @@ body{
   left: calc(40% - 200px);
   top:35%;
   .buttoninfo3{
-    width: 150%;
+    width: 70%;
   }
  }
 }
@@ -476,7 +483,8 @@ body{
     }
   }
   .swiper-slide{
-    margin-top: 75px;
+    margin-top: 115px;
+    margin-bottom: 30px;
   }
    .bastwidth-color .imainbottoming-app{
     height: 200px;
@@ -501,12 +509,19 @@ body{
 }
   }
 .imainbottomimg-2 {
-  margin-bottom: 100px;
-  background-position: 33% center;
+width: 100%;
+    background-position: 33% center;
+    overflow: hidden;
+    height: 590px;
+    padding-bottom: 20px;
+       .mainbottoming-inn{
+         right: calc(40% - 600px);
+      }
 .imaininfo-3{
   margin: auto;
   position: static;
   padding-top: 500px;
+  
 }
 }
 .imainbottoming-out{

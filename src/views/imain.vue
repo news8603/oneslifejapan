@@ -1,5 +1,5 @@
 <template>
-<!-- 这个文件，是轮播图部分和菜单栏 -->
+  <!-- 这个文件，是轮播图部分和菜单栏 -->
   <div class="imain">
     <el-row v-show="this.$store.state.isShow">
       <el-col :span="24">
@@ -189,11 +189,22 @@ body {
           left: 20vw;
           .buttoninfo {
             line-height: 25px;
+            padding-right: 5px;
+            padding-left: 5px;
             font-size: 1rem;
             color: black;
             height: 25px;
             border: solid 1px;
             background: rgba(255, 255, 255, 0.5);
+            transition-duration: 0.3s;
+          }
+          .buttoninfo:hover {
+            cursor: pointer;
+            border: 1px solid #081f2c;
+            background-color: #081f2c;
+            color: #ffffff;
+            opacity: 1;
+            transition-duration: 0.3s;
           }
         }
       }
@@ -228,6 +239,14 @@ body {
               border: solid 1px;
               background: rgba(255, 255, 255, 0.5);
             }
+            .buttoninfo:hover {
+              cursor: pointer;
+              border: 1px solid #081f2c;
+              background-color: #081f2c;
+              color: #ffffff;
+              opacity: 1;
+              transition-duration: 0.3s;
+            }
           }
         }
       }
@@ -239,17 +258,24 @@ body {
     .block {
       .el-carousel--horizontal {
         .el-carousel__indicators {
-          top: 650px;
+          top: 410px;
+          height: 30px;
         }
       }
       .el-carousel__container {
-        height: 850px;
+        height: 580px;
         margin-bottom: 0px;
         .imaincss {
+          .imainimg {
+            position: absolute;
+            left: -135%;
+            width: 1200px;
+            top: -40px;
+          }
           .imaininfo {
             font-size: 1.2rem;
             position: fixed;
-            top: 680px;
+            top: 420px;
             right: 0;
             left: 0;
             margin-left: auto;
@@ -257,6 +283,16 @@ body {
             width: 60%;
             .buttoninfo {
               padding: 0px 40px;
+              transition-duration: 0.3s;
+
+            }
+            .buttoninfo:hover {
+              cursor: pointer;
+              border: 1px solid #081f2c;
+              background-color: #081f2c;
+              color: #ffffff;
+              opacity: 1;
+              transition-duration: 0.3s;
             }
           }
         }
