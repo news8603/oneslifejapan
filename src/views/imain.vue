@@ -6,18 +6,17 @@
         <div class="block">
           <span class="demonstration"></span>
           <el-carousel>
-            <!-- 以下通过for循环遍历data中imain1和i18n中的对应json文件，把文字内容和banner的广告图映射到首页的轮播广告中 -->
+            <!-- 以下通过for循环遍历data中imain1和i18n中的对应json文件中的imaininfo，把文字内容和banner的广告图映射到首页的轮播广告中 -->
             <el-carousel-item v-for="(item,s) in imaininfo" :key="s">
               <!-- 通过点击不同的图片，push进路由中不同的路径 -->
-              <span @click="towhere(s)">
+              <span @click="towhere(s)" class="bottonhover">
                 <div class="grid-content bg-purple-dark">
                   <div class="imaincss">
                     <!-- 这里调用的是data中的imaininfo1中对应的图片信息 -->
                     <img :src="imaininfo1[s].infoimg" alt class="imainimg" />
                     <div class="imaininfo">
                       <!-- 这里的item.info和item.info1，是调用的json文件中的文字信息 -->
-                      <p>{{ item.info }}</p>
-                      <p>{{ item.info1 }}</p>
+                      <div v-html="item.info.replace(/\n/g,'<br\>')" class="infoP"></div>
                       <p class="buttoninfo" @click="towhere(s)">{{ item.bottoninfo }}</p>
                     </div>
                   </div>
@@ -165,6 +164,9 @@ body {
 .imain {
   .block {
     // height: 650px;
+    .bottonhover:hover {
+      cursor: pointer;
+    }
     .el-carousel__container {
       height: 650px;
       .imaincss {
@@ -187,9 +189,15 @@ body {
           position: fixed;
           top: 180px;
           left: 20vw;
+          .infoP{
+            width: 100%;
+            text-align: left;
+            line-height: 2rem;
+          }
           .buttoninfo {
             line-height: 25px;
             padding-right: 5px;
+            width: 200px;
             padding-left: 5px;
             font-size: 1rem;
             color: black;
@@ -234,6 +242,7 @@ body {
             .buttoninfo {
               line-height: 32px;
               font-size: 1rem;
+              width: 200px;
               color: black;
               height: 32px;
               border: solid 1px;
@@ -253,7 +262,7 @@ body {
     }
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .imain {
     .block {
       .el-carousel--horizontal {
@@ -281,10 +290,13 @@ body {
             margin-left: auto;
             margin-right: auto;
             width: 60%;
+            .infoP{
+              text-align: center;
+            }
             .buttoninfo {
-              padding: 0px 40px;
+              width: 90%;
+              // padding: 0px 40px;
               transition-duration: 0.3s;
-
             }
             .buttoninfo:hover {
               cursor: pointer;

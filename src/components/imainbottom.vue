@@ -75,9 +75,10 @@
    </el-col>
 </el-row>
 <el-row type="flex" justify="center" style="width:80%">
-   <el-col ><div class="bottomhover"><img src="../logo-1.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.yuisu')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="bottomhover"><img src="../logo-2.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.ones')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
-   <el-col ><div class="bottomhover"><img src="../logo-3.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.fuji')}}</p><p class="buttoninfo3">詳細はこちらから</p></div></el-col>
+  <!-- 通过不同的文件名，通过goWhichBrand方法，push到对应的品牌页面 -->
+   <el-col ><div class="bottomhover" @click="goWhichBrand('yuisu')"><img src="../logo-1.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.yuisu')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="bottomhover" @click="goWhichBrand('ones')"><img src="../logo-2.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.ones')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><div class="bottomhover" @click="goWhichBrand('fuji')"><img src="../logo-3.jpg" alt="" style="width:98%"  class="imainbottomimg"><p>{{this.$t('companyTitle.fuji')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
 </el-row>
 </div>
 <el-row type="flex" justify="center" :span="24">
@@ -108,18 +109,18 @@
      </el-col>
 </el-row>
 <div class=" bastwidth-color">
-<div class="bastwidth">
   <!-- 以下部分是进入about one's life的标签跳转 ，图片地址没有写在data中，在HTML部分替换图片就好-->
+<div class="bastwidth">
 <el-row type="flex" justify="center" style="width:90%" class="">
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info1')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info2')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info3')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
 </el-row>
-<el-row type="flex" justify="center" style="width:90%" class="">
+<!-- <el-row type="flex" justify="center" style="width:90%" class="">
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info4')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info5')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info6')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
-</el-row>
+</el-row> -->
 </div>
 <el-row :span="24">
 <el-col> 
@@ -128,9 +129,9 @@
   <div class="bastwidth">
   <div class="imainbottoming-app-info bottomhover">
     <!-- 以下是APP的画面内容部分 -->
-  <p>{{this.$t('app.info')}}</p>
-  <p >{{this.$t('app.info2')}}</p>
-  <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
+  <div v-html="this.$t('app.info').replace(/\n/g,'<br\>')"></div>
+  <!-- app做好后，把按钮释放，做APP的内页 -->
+  <!-- <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p> -->
   </div>
   </div>
 </div>
@@ -213,6 +214,9 @@ export default {
     methods:{
       goWhere:function(jan){
           this.$router.push({name:'commodityinfo',params:{id:jan}});
+      },
+      goWhichBrand:function(brand){
+        this.$router.push({name:'brandproduct',params:{id:brand}});
       }
     },
     computed: {
@@ -227,10 +231,8 @@ return this.$refs.mySwiper.$swiper
       }
     },
     mounted() {
-      console.log("imainbottom加载了")
-      console.log('Current Swiper instance object', this.swiper);
-      this.swiper.slideTo(3, 1000, false);
-
+      console.log('Current Swiper instance object', this.mySwiper)
+      this.mySwiper.slideTo(3, 1000, false)
     },
 }
 </script>
@@ -445,15 +447,20 @@ body{
             width: 850px;
           }
     .imainbottoming-app-info{
+      font-size: 1.2rem;
+        text-align: right;
       position: absolute;
       right:calc(50% - 420px);
       width: 400px;
-      top:28%;
+      top:55%;
     }
   }
 }
 
 @media  screen and (max-width: 900px){  
+  .imainbottom{
+    height: 6150px;
+  }
 .el-col-sm-6{
   width:75% !important;
 }
@@ -494,12 +501,12 @@ body{
      width:100%;
    }
  .bastwidth{
-
   .imainbottoming-app-info{
     position: absolute;
-    width: 80%;
-    right: 0;
-    top:65px;
+    text-align: right;
+    width: 70%;
+    right: 20px;
+    top: 65px;
     .buttoninfo3{
       width: 50%;
       float: right;
