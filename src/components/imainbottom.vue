@@ -40,14 +40,17 @@
 </el-row>
   <el-row>
     <!-- 以下内容是主页中的胶原蛋白粉的画面和文字信息，取自i18n的json文件中的hp.collagen -->
-  <el-col :span="24" ><div class="imainbottomimg-1">
-    <div class="imb-1-info bottomhover">
+  <router-link tag="span" to="/collagen" class="bottomhover">
+  <el-col :span="24" >
+    <div class="imainbottomimg-1">
+    <div class="imb-1-info">
       <p 
       >{{this.$t('hp.collagen')}}</p>
       <p class="buttoninfo2">{{this.$t('hp.bottom')}}</p>
       </div>
   </div>
   </el-col>
+  </router-link>
 </el-row>
 <el-row>
    <el-col>
@@ -83,20 +86,20 @@
 </div>
 <el-row type="flex" justify="center" :span="24">
    <el-col> 
-     <div class="imainbottomimg-2 bottomhover">
+     <router-link tag="div" class="imainbottomimg-2 bottomhover" to="/eyes">
          <img src="../02.jpg" alt="" class="mainbottoming-inn">
        <div class="imaininfo-3">
          <!-- 12GF眼霜的广告词 -->
      <p>{{this.$t('hp.12GF')}}</p>
      <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
      </div>
-     </div>
+     </router-link>
      </el-col>
 </el-row>
 
 <el-row type="flex" justify="center" :span="24">
    <el-col> 
-     <div class="imainbottoming-out bottomhover">
+     <router-link to="/gold" tag="div" class="imainbottoming-out bottomhover">
        <div class="imainbottoming-in">
          <img src="../11-5.png" alt="" class="mainbottoming-inn">
         </div>
@@ -105,16 +108,16 @@
      <p>{{this.$t('hp.gold')}}</p>
      <p class="buttoninfo3">{{this.$t('hp.bottom')}}</p>
      </div>
-     </div>
+     </router-link>
      </el-col>
 </el-row>
 <div class=" bastwidth-color">
   <!-- 以下部分是进入about one's life的标签跳转 ，图片地址没有写在data中，在HTML部分替换图片就好-->
 <div class="bastwidth">
 <el-row type="flex" justify="center" style="width:90%" class="">
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info1')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info2')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
-   <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info3')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>
+   <el-col ><router-link tag="div" to="/about#history" class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info1')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></router-link></el-col>
+   <el-col ><router-link tag="div" to="/about#profile" class="imainbottoming-w bottomhover"><img src="../03-1.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info2')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></router-link></el-col>
+   <el-col ><router-link tag="div" to="/about#about" class="imainbottoming-w bottomhover"><img src="../03-2.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info3')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></router-link></el-col>
 </el-row>
 <!-- <el-row type="flex" justify="center" style="width:90%" class="">
    <el-col ><div class="imainbottoming-w bottomhover"><img src="../03.jpg" alt=""   class="imainbottomimg-ww"><p>{{this.$t('companyInfoTitle.info4')}}</p><p class="buttoninfo3">{{this.$t('hp.bottom')}}</p></div></el-col>

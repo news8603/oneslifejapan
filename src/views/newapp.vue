@@ -1,8 +1,6 @@
 <template>
-    <div class="newapp"></div>
+  <div class="newapp"></div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>

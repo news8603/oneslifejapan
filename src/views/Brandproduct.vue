@@ -1,7 +1,7 @@
 <template>
   <!-- 这一页对应的是不同品牌(YUISU\ONESLIFE\FUJI)对应的产品列表页面 -->
   <div class="brandproduct">
-    <div class="skinbanner">
+    <div class="skinbanner" :style="{'backgroundImage':'url('+brandBlack+')'}">
       <div class="bannerinfo">{{brand}}</div>
       <div class="brandinfo" v-html="brandinfo.replace(/\n/g,'<br\>')"></div>
     </div>
@@ -29,25 +29,26 @@ export default {
     return {
       brand: "",
       ifEmpty: false, //ifEmptyz这个变量记录列表中的内容是否为空，如果为空，ifEmpty为false
-      pageinfo: []
+      pageinfo: [],
+      brandBlack: ""
     };
   },
   computed: {
-      brandinfo:function(){
-          let whichBrand='';
-          if (this.$route.params.id==="yuisu"){
-          whichBrand= this.$t('hp.yuisu')
-          }else if (this.$route.params.id==="ones"){
-          whichBrand= this.$t('hp.ones')
-          }else if(this.$route.params.id==="fuji"){
-          whichBrand= this.$t('hp.fuji')
-          }
-          return whichBrand;
-      },
+    brandinfo: function() {
+      let whichBrand = "";
+      if (this.$route.params.id === "yuisu") {
+        whichBrand = this.$t("hp.yuisu");
+      } else if (this.$route.params.id === "ones") {
+        whichBrand = this.$t("hp.ones");
+      } else if (this.$route.params.id === "fuji") {
+        whichBrand = this.$t("hp.fuji");
+      }
+      return whichBrand;
+    },
     careinfo: function() {
       return this.$t("commodityinfo");
     },
-    // 因为所有的产品都存在于i18n的commodityinfo数组类中，所以在筛选类型的时候，不符合条件的类型会在页面中空出一个位置，为了防止这种情况，提前将数组类中符合条件的数据push进新数组pageinfo中，再返回给bestinfo
+    // 因为所有的产品都存在于i18n的commodityinfo类数组中，所以在筛选类型的时候，不符合条件的类型会在页面中空出一个位置，为了防止这种情况，提前将数组类中符合条件的数据push进新数组pageinfo中，再返回给bestinfo
     // 用计算属性定义bestinfo是因为在语言转换时可以实时更新页面数据
     bestinfo: function() {
       this.careinfo.forEach(element => {
@@ -62,10 +63,13 @@ export default {
   mounted() {
     let this$ = this;
     if (this.$route.params.id === "yuisu") {
+      this$.brandBlack = require("../yuisu.png");
       this$.brand = "YUISU";
     } else if (this.$route.params.id === "ones") {
+      this$.brandBlack = require("../oneslife.png");
       this$.brand = `One's Life Beauty`;
     } else if (this.$route.params.id === "fuji") {
+      this$.brandBlack = require("../fuji.png");
       this$.brand = "FUJI";
     }
   }
@@ -97,12 +101,13 @@ export default {
   display: inline-block;
   line-height: 30px;
 }
+
 .brandproduct {
   .skinbanner {
     margin: 20px 0px;
     background-color: #f7f7f7;
     width: 100%;
-    background-image: url(../yuisu.png);
+    // background-image: url(../yuisu.png);
     height: 300px;
     background-repeat: no-repeat;
     background-size: contain;
@@ -114,7 +119,7 @@ export default {
       left: 20%;
       font-size: 3em;
     }
-    .brandinfo{
+    .brandinfo {
       position: absolute;
       top: 60%;
       left: 20%;

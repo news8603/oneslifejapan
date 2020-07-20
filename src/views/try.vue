@@ -12,8 +12,8 @@ export default {
     this.plus$ = new Subject();
     return {
       count: this.plus$.pipe(
-          interval(1000),
-        map(() =>1),
+        interval(1000),
+        map(() => 1),
         startWith(10),
         scan((total, change) => {
           console.log("total:", total, "change:", change);

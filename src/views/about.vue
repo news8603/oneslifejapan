@@ -1,10 +1,11 @@
 <template>
-<!-- 这个文件写的是about one's life页面的内容 -->
+  <!-- 这个文件写的是about one's life页面的内容 -->
   <div class="about">
     <div class="aboutimg1 aboutB">
       <div class="aboutinfo2 title1">{{this.$t('about.abouttitle2')}}</div>
       <div class="aboutinfo1 title">{{this.$t('about.abouttitle1')}}</div>
     </div>
+
     <div class="aboutimg2 aboutB aboutP">
       <div class="yLine aboutB aboutP"></div>
       <div class="yMF aboutB aboutP"></div>
@@ -14,15 +15,18 @@
       <div class="aboutinfo3" v-html="this.$t('about.aboutinfo1').replace(/\n/g,'<br\>')"></div>
       <div class="aboutinfo4 title">{{this.$t('about.abouttitle3')}}</div>
     </div>
-    <div class="aboutimg3 aboutB aboutP"></div>
+
+    <div class="aboutimg3 aboutB aboutP" id="history"></div>
     <div class="aboutimg4 aboutB aboutP">
       <div class="aboutimg5 aboutB"></div>
     </div>
+
     <div class="aboutimg6 aboutP">
       <div class="aboutimg6-top" :style="aboutimg1">
         <img src="../about/ABOUT200618_0015_1996April.png" alt class="aboutimg-inimg" />
         <div class="aboutimg6-title"></div>
       </div>
+
       <div class="aboutimg6-bottom" :style="aboutimg1">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
@@ -37,7 +41,7 @@
       <div class="aboutimg6-bottom" :style="aboutimg2">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-1.jpg" alt />
         </div>
       </div>
 
@@ -48,7 +52,7 @@
       <div class="aboutimg6-bottom" :style="aboutimg3">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-3.jpg" alt />
         </div>
       </div>
 
@@ -59,7 +63,7 @@
       <div class="aboutimg6-bottom" :style="aboutimg4">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-4.jpg" alt />
         </div>
       </div>
 
@@ -70,7 +74,7 @@
       <div class="aboutimg6-bottom" :style="aboutimg5">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-5.jpg" alt />
         </div>
       </div>
 
@@ -81,7 +85,7 @@
       <div class="aboutimg6-bottom" :style="aboutimg6">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-6.jpg" alt />
         </div>
       </div>
 
@@ -92,14 +96,14 @@
       <div class="aboutimg6-bottom" :style="aboutimg7">
         <div class="aboutYline aboutB"></div>
         <div class="aboutI">
-          <img src="../about/comm-1.jpg" alt />
+          <img src="../about/comm-1-7.jpg" alt />
         </div>
       </div>
       <div class="aboutimg7 aboutB aboutP"></div>
       <div class="aboutimg8 aboutB aboutP"></div>
       <div class="aboutimg9 aboutB aboutP"></div>
       <div class="aboutimg10 aboutP">
-        <div class="aboutimg10-info1">
+        <div class="aboutimg10-info1" id="profile">
           <div v-html="this.$t('about.aboutinfo4').replace(/\n/g,'<br\>')"></div>
           <div v-html="this.$t('about.aboutinfo5').replace(/\n/g,'<br\>')"></div>
         </div>
@@ -122,31 +126,31 @@
       </div>
       <div class="aboutimg23 aboutB aboutP" :style="aboutimg9"></div>
       <div class="aboutimg20 aboutP">
-        <img src="../about/comm-1.jpg" alt />
+        <img src="../about/comm-1-8.jpg" alt />
         <div class="aboutimg20-info" v-html="this.$t('about.aboutinfo8').replace(/\n/g,'<br\>')"></div>
       </div>
-      <div class="aboutimg21 aboutB aboutP"></div>
-      <div class="aboutimg22 aboutB aboutP">
-        <div>{{this.$t('about.abouttitle12')}}</div>
-        <div>{{this.$t('about.aboutinfo9')}}</div>
-        <div>{{this.$t('about.abouttitle13')}}</div>
-        <div>{{this.$t('about.aboutinfo10')}}</div>
-        <div>{{this.$t('about.abouttitle14')}}</div>
-        <div>{{this.$t('about.aboutinfo11')}}</div>
-        <div>{{this.$t('about.abouttitle15')}}</div>
-        <div>{{this.$t('about.aboutinfo12')}}</div>
-        <div>{{this.$t('about.abouttitle16')}}</div>
-        <div>{{this.$t('about.aboutinfo13')}}</div>
-        <div>{{this.$t('about.abouttitle17')}}</div>
-        <div>{{this.$t('about.aboutinfo14')}}</div>
-        <div>{{this.$t('about.abouttitle18')}}</div>
-        <div>{{this.$t('about.aboutinfo15')}}</div>
-        <div>{{this.$t('about.abouttitle19')}}</div>
-        <div>{{this.$t('about.aboutinfo16')}}</div>
-        <div>{{this.$t('about.abouttitle20')}}</div>
-        <div>{{this.$t('about.aboutinfo17')}}</div>
-        <div>{{this.$t('about.abouttitle21')}}</div>
-        <div>{{this.$t('about.aboutinfo18')}}</div>
+      <div class="aboutimg21 aboutB aboutP" id="about"></div>
+      <div class="aboutimg22 aboutB aboutP" :style="aboutimg10">
+        <div :style="aboutimg10" class="aboutimgend-1">{{this.$t('about.abouttitle12')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-1">{{this.$t('about.aboutinfo9')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-2">{{this.$t('about.abouttitle13')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-2">{{this.$t('about.aboutinfo10')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-3">{{this.$t('about.abouttitle14')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-3">{{this.$t('about.aboutinfo11')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-4">{{this.$t('about.abouttitle15')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-4">{{this.$t('about.aboutinfo12')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-5">{{this.$t('about.abouttitle16')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-5">{{this.$t('about.aboutinfo13')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-6">{{this.$t('about.abouttitle17')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-6">{{this.$t('about.aboutinfo14')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-7">{{this.$t('about.abouttitle18')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-7">{{this.$t('about.aboutinfo15')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-8">{{this.$t('about.abouttitle19')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-8">{{this.$t('about.aboutinfo16')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.abouttitle20')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.aboutinfo17')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-10">{{this.$t('about.abouttitle21')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-10">{{this.$t('about.aboutinfo18')}}</div>
       </div>
       <div class="aboutimg24 aboutB aboutP" :style="aboutimg10"></div>
     </div>
@@ -371,6 +375,7 @@ export default {
         .aboutI {
           display: inline-block;
           img {
+            border-radius: 15px;
             margin: 60px;
             width: 800px;
             height: 400px;
@@ -530,10 +535,11 @@ export default {
         }
       }
       .aboutimg21 {
-        background-image: url(../about/comm-2.jpg);
-        height: 1200px;
-        width: 900px;
-        top: 7200px;
+        background-image: url(../about/company.png);
+        height: 600px;
+        left: 100px;
+        width: 300px;
+        top: 7400px;
         z-index: -1;
       }
       .aboutimg22 {
@@ -542,6 +548,36 @@ export default {
         width: 850px;
         right: 0px;
         grid-template-columns: 250px 600px;
+        .aboutimgend-1 {
+          transition: all 0.6s ease-out 0.4s;
+        }
+        .aboutimgend-2 {
+          transition: all 0.6s ease-out 0.8s;
+        }
+        .aboutimgend-3 {
+          transition: all 0.6s ease-out 1.2s;
+        }
+        .aboutimgend-4 {
+          transition: all 0.6s ease-out 1.6s;
+        }
+        .aboutimgend-5 {
+          transition: all 0.6s ease-out 2s;
+        }
+        .aboutimgend-6 {
+          transition: all 0.6s ease-out 2.4s;
+        }
+        .aboutimgend-7 {
+          transition: all 0.6s ease-out 2.8s;
+        }
+        .aboutimgend-8 {
+          transition: all 0.6s ease-out 3.2s;
+        }
+        .aboutimgend-9 {
+          transition: all 0.6s ease-out 3.6s;
+        }
+        .aboutimgend-10 {
+          transition: all 0.6s ease-out 4s;
+        }
         div {
           padding-top: 35px;
           text-align: left;
@@ -574,7 +610,7 @@ export default {
   .about {
     max-width: 420px;
     width: 420px;
-    height:5200px;
+    height: 5200px;
     overflow: hidden;
     margin: auto;
     font-size: 0.8rem;
@@ -698,6 +734,7 @@ export default {
         .aboutI {
           display: inline-block;
           img {
+             border-radius: 12px;
             margin: 8px;
             width: 300px;
             height: 200px;
@@ -728,7 +765,7 @@ export default {
       }
       .aboutimg10 {
         width: 420px;
-        top: 1850px;
+        top: 1870px;
         margin: auto;
         vertical-align: baseline;
         .aboutimg10-info1 {
@@ -755,7 +792,7 @@ export default {
         }
         .aboutimg11-info1 {
           display: inline-block;
-            margin-left: 150px;
+          margin-left: 150px;
           div {
             writing-mode: vertical-rl;
             height: 260px;
@@ -795,7 +832,7 @@ export default {
         top: 2480px;
         width: 400px;
         right: 0;
-        height:600px;
+        height: 600px;
         background-image: url(../about/ABOUT200618_0034_map.png);
         z-index: -1;
       }
@@ -856,20 +893,21 @@ export default {
         }
       }
       .aboutimg21 {
-        background-image: url(../about/comm-2.jpg);
-        height: 600px;
-        width: 300px;
-        top: 3500px;
+        background-image: url(../about/company.png);
+        height: 250px;
+        width: 120px;
+        left: 30px;
+        top: 3580px;
         z-index: -1;
       }
       .aboutimg22 {
         display: grid;
         top: 3600px;
-        width: 250px;
+        width: 280px;
         right: 0px;
         grid-template-columns: 80px 150px;
         div {
-          padding-top:15px;
+          padding-top: 15px;
           text-align: left;
           padding-bottom: 8px;
           border-bottom: 2px solid #dcdcdc;

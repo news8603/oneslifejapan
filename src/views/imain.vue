@@ -189,7 +189,7 @@ body {
           position: fixed;
           top: 180px;
           left: 20vw;
-          .infoP{
+          .infoP {
             width: 100%;
             text-align: left;
             line-height: 2rem;
@@ -290,7 +290,7 @@ body {
             margin-left: auto;
             margin-right: auto;
             width: 60%;
-            .infoP{
+            .infoP {
               text-align: center;
             }
             .buttoninfo {
