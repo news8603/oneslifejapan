@@ -97,7 +97,9 @@
 
       <div class="buttonfind">
         <!-- 这里是检索的按钮 -->
-        <el-button @click="isJanY()"><router-link :to="{path:'/commodityinfo/'+this.janProduct.jan}"> {{this.$t('hp.janbottom')}}</router-link></el-button>
+        <el-button  @click="isJanY()">
+         {{this.$t('hp.janbottom')}}
+    </el-button>
       </div>
       <div class="buttonfind">
         <!-- 这里是取消的按钮 -->
@@ -109,7 +111,9 @@
       <div class="allJan" v-if="janIsShow" ref="Jan" @click="janClose($event)">
         <div class="janFind">
           {{this.janProduct.jan}}
-          <router-view name="commodityinfo" ></router-view>
+          
+            <router-view name="commodityinfo"></router-view>
+         
         </div>
       </div>
     </transition>
@@ -174,7 +178,8 @@ export default {
       product.forEach(element => {
         if (element.jan == this.input) {
           bestProduct = element;
-          this.janShow=true;
+
+          this.janShow = true;
         }
       });
       if (bestProduct == "") {
@@ -259,12 +264,17 @@ export default {
     janClose(e) {
       //判断是否关闭JAN码搜寻结果弹出框
       if (e.target === this.$refs.Jan) {
+        // 如果点击的是浮出框外面的区域，让findId恢复为undefind，以免扰乱后来的值传递
+        this.$store.state.findId = "undefined";
         this.janIsShow = false;
       }
     },
     findInput() {
       //按照JAN码输入框中的JAN码寻找
+      // 如果JAN码对应上，把值传递给vuex中的findId，用来调取commodityinfo组件中的信息
       this.janIsShow = true;
+      this.$store.state.findId = this.input;
+      
     },
     cancelInput() {
       this.isJan = !this.isJan;
@@ -298,7 +308,8 @@ export default {
   z-index: 10000;
   .janFind {
     position: fixed;
-    z-index: 10001;
+    padding: 10px;
+    z-index: 10010;
     top: 10%;
     left: 10%;
     right: 10%;

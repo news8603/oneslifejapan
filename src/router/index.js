@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import imainbottom from "../components/imainbottom.vue"
 import store from "../store/index"
-import commodityinfo from "../views/commodityinfo.vue"
+// import commodityinfo from "../views/commodityinfo.vue"
 
 
 // import imain from "../views/imain.vue"
@@ -13,7 +13,8 @@ const routes = [{
         name: 'home',
         components: {
             default: imainbottom,
-            commodityinfo: commodityinfo
+            commodityinfo: () =>
+            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
         }
     },
 
@@ -51,7 +52,7 @@ const routes = [{
         path: "/about",
         name: "about",
         component: () =>
-            import ( /* webpackChunkName: "About" */ "../views/About.vue")
+            import ( /* webpackChunkName: "about" */ "../views/About.vue")
     },
     {
         path: "/beauty",

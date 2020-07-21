@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import App from './App.vue'
 import './registerServiceWorker'
+
 import router from './router'
-import store from './store'
+import store from "./store/index"
 import 'element-ui/lib/theme-chalk/index.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
@@ -17,6 +18,7 @@ import ElementUI from 'element-ui'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
+
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
 Vue.use(VueScrollmagic)

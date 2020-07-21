@@ -3,7 +3,7 @@
   <div class="commodityinfo">
     <!-- 这里遍历i18n的json文件中的commodityinfo数组类，这个数组类中记录着此网站中所有的产品信息，通过jan码调取映射 -->
     <div v-for="(item,index) in commodityinfo" :key="index">
-      <div v-if="item.jan===id">
+      <div v-if="item.jan===id||item.jan===findId">
         <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.type}}</div>
 
         <el-row class="maxwidth">
@@ -109,6 +109,7 @@ export default {
   data() {
     return {
       activeName: "1",
+      //id是用来调取此页面所有信息的JAN码，取自params中的ID值
       id: this.$route.params.id,
       swiperOption: {
         pagination: {
@@ -129,6 +130,11 @@ export default {
     };
   },
   computed: {
+      findId:function(){
+          return this.$store.state.findId
+        
+},//取自搜索框中的JAN码
+    
     commodityinfo: function() {
       let info = this.$t("commodityinfo");
       return info;
@@ -171,7 +177,7 @@ export default {
     }
   },
   mounted() {
-    console.log("我看看他渲染不渲染",this.$route.params.id)
+console.log("我要看看她是否渲染出来了：",this.$store.state.findId)
     console.log("Current Swiper instance object", this.mySwiper);
     this.mySwiper.slideTo(1, 1000, false);
   }
