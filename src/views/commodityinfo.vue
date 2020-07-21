@@ -1,5 +1,5 @@
 <template>
-  <!-- 这个页面写的是每个产品的详细介绍，产品的详细介绍只有这一页，会通过动态路由把所有的内容映射到这一个页面中，索引数值为产品的JAN嘛 -->
+  <!-- 这个页面写的是每个产品的详细介绍，产品的详细介绍只有这一页，会通过动态路由把所有的内容映射到这一个页面中，索引数值为产品的JAN码-->
   <div class="commodityinfo">
     <!-- 这里遍历i18n的json文件中的commodityinfo数组类，这个数组类中记录着此网站中所有的产品信息，通过jan码调取映射 -->
     <div v-for="(item,index) in commodityinfo" :key="index">
@@ -171,6 +171,7 @@ export default {
     }
   },
   mounted() {
+    console.log("我看看他渲染不渲染",this.$route.params.id)
     console.log("Current Swiper instance object", this.mySwiper);
     this.mySwiper.slideTo(1, 1000, false);
   }

@@ -1,5 +1,5 @@
 <template>
-<!-- 这个页面写的是空气口罩的产品内页 -->
+  <!-- 这个页面写的是空气口罩的产品内页 -->
   <div class="airmask">
     <div class="airmaskbackR airP"></div>
     <div class="airmaskimg1 airP" :style="airmask1">
@@ -433,7 +433,7 @@ export default {
     .airmaskimg8 {
       top: 2550px;
       background-image: url(../200624_0009.png);
-      width:230px;
+      width: 230px;
       height: 800px;
       left: 5px;
       z-index: -2;
@@ -447,7 +447,7 @@ export default {
       transition: all 0.6s ease-out 0.4s;
     }
     .airtext2 {
-      right:10px;
+      right: 10px;
       line-height: 1.5rem;
       top: 2600px;
       width: 45%;
@@ -462,7 +462,7 @@ export default {
       top: 2950px;
       right: -150px;
       width: 300px;
-      height:400px;
+      height: 400px;
     }
     .airmaskbackR3 {
       width: 800px;
@@ -478,7 +478,7 @@ export default {
       left: 10px;
       transition: 0.6s;
       .airinfo {
-          line-height: 1.2rem;
+        line-height: 1.2rem;
         color: white;
         width: 250px;
       }

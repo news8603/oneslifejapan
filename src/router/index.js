@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import imainbottom from "../components/imainbottom.vue"
 import store from "../store/index"
+import commodityinfo from "../views/commodityinfo.vue"
+
 
 // import imain from "../views/imain.vue"
 Vue.use(VueRouter)
@@ -9,8 +11,12 @@ Vue.use(VueRouter)
 const routes = [{
         path: '',
         name: 'home',
-        component: imainbottom,
+        components: {
+            default: imainbottom,
+            commodityinfo: commodityinfo
+        }
     },
+
     {
         path: '/onesnew',
         name: 'inews',
@@ -60,7 +66,7 @@ const routes = [{
             import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue")
     },
     {
-        path: "/ommodityinfo/:id",
+        path: "/commodityinfo/:id",
         name: "commodityinfo",
         component: () =>
             import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
