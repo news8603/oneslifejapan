@@ -14,7 +14,7 @@ const routes = [{
         components: {
             default: imainbottom,
             commodityinfo: () =>
-            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
         }
     },
 
@@ -24,107 +24,176 @@ const routes = [{
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component:
-            () =>
-            import ( /* webpackChunkName: "inews" */ '../views/news.vue'),
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "inews" */ '../views/news.vue'),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+
+        }
 
 
     },
     {
         path: "/skincare",
         name: "skincare",
-        component: () =>
-            import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+
+        }
     },
     {
         path: "/health",
         name: "health",
-        component: () =>
-            import ( /* webpackChunkName: "health" */ "../views/health.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "health" */ "../views/health.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/find",
         name: "find",
-        component: () =>
-            import ( /* webpackChunkName: "find" */ "../views/find.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "find" */ "../views/find.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/about",
         name: "about",
-        component: () =>
-            import ( /* webpackChunkName: "about" */ "../views/About.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "about" */ "../views/About.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/beauty",
         name: "beauty",
-        component: () =>
-            import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/newapp",
         name: "newapp",
-        component: () =>
-            import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/commodityinfo/:id",
         name: "commodityinfo",
-        component: () =>
-            import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/product-details0",
         name: "product-details0",
-        component: () =>
-            import ( /* webpackChunkName: "product-details0" */ "../views/product-details0.vue"),
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "product-details0" */ "../views/product-details0.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/product-details1",
         name: "product-details1",
-        component: () =>
-            import ( /* webpackChunkName: "product-details1" */ "../views/product-details1.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "product-details1" */ "../views/product-details1.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/product-details2",
         name: "product-details2",
-        component: () =>
-            import ( /* webpackChunkName: "product-details2" */ "../views/product-details2.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "product-details2" */ "../views/product-details2.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/product-details3",
         name: "airmask",
-        component: () =>
-            import ( /* webpackChunkName: "airmask" */ "../views/Airmask.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "airmask" */ "../views/Airmask.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/collagen",
         name: "collagen",
-        component: () =>
-            import ( /* webpackChunkName: "collagen" */ "../views/collagen.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "collagen" */ "../views/collagen.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/gold",
         name: "gold",
-        component: () =>
-            import ( /* webpackChunkName: "gold" */ "../views/Gold.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "gold" */ "../views/Gold.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/eyes",
         name: "eyes12gf",
-        component: () =>
-            import ( /* webpackChunkName: "Eyes12gf" */ "../views/Eyes12fg.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "Eyes12gf" */ "../views/Eyes12fg.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/try",
         name: "try",
-        component: () =>
-            import ( /* webpackChunkName: "try" */ "../views/try.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "try" */ "../views/try.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     },
     {
         path: "/brandproduct/:id",
         name: "brandproduct",
-        component: () =>
-            import ( /* webpackChunkName: "brandproduct" */ "../views/Brandproduct.vue")
+        components: {
+            default: () =>
+                import ( /* webpackChunkName: "brandproduct" */ "../views/Brandproduct.vue"),
+            commodityinfo: () =>
+                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+        }
     }
 ]
 

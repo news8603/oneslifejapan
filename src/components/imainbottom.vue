@@ -130,7 +130,7 @@
 <div class="imainbottoming-app">
   <img src="../11-7.png" alt="" class="imainbottoming-app-img">
   <div class="bastwidth">
-  <div class="imainbottoming-app-info bottomhover">
+  <div class="imainbottoming-app-info">
     <!-- 以下是APP的画面内容部分 -->
   <div v-html="this.$t('app.info').replace(/\n/g,'<br\>')"></div>
   <!-- app做好后，把按钮释放，做APP的内页 -->
@@ -463,6 +463,7 @@ body{
 @media  screen and (max-width: 900px){  
   .imainbottom{
     height: 6150px;
+    overflow: hidden;
   }
 .el-col-sm-6{
   width:75% !important;
@@ -497,7 +498,7 @@ body{
     margin-bottom: 30px;
   }
    .bastwidth-color .imainbottoming-app{
-    height: 200px;
+    height: 220px;
     background-size: cover;
 
        .imainbottoming-app-img{
@@ -507,7 +508,8 @@ body{
   .imainbottoming-app-info{
     position: absolute;
     text-align: right;
-    width: 70%;
+    width: 60%;
+    font-size: 1rem;
     right: 20px;
     top: 65px;
     .buttoninfo3{

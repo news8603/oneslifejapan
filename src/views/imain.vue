@@ -58,7 +58,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">{{this.$t('inquiry.cancel')}}</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">{{this.$t('inquiry.send')}}</el-button>
+        <el-button type="primary" @click="formSend">{{this.$t('inquiry.send')}}</el-button>
       </div>
     </el-dialog>
     <div class="imainset">
@@ -108,16 +108,17 @@ export default {
     };
   },
   methods: {
-    trya: function() {
+    formSend: function() {
       axios
-        .get("https://open.duyiedu.com/api/meituan/list/goodsList.json", {
-          params: {
-            appkey: "wlh0604_1588907673004"
-          }
+        .post("http://192.168.1.6:8887/api/send_emails", {
+          name: this.form.name,
+          email: this.form.mail,
+          text: this.form.info
         })
         .then(res => {
           console.log(res);
         });
+      console.log(this.form.name, this.form.mail, this.form.info);
     },
     towhere: function(t) {
       this.$router.push("/product-details" + t);
@@ -134,10 +135,6 @@ export default {
 .el-message-box {
   width: 800px !important;
   height: 500px !important;
-}
-
-.el-carousel__arrow {
-  background-color: red;
 }
 body {
   font-family: "Noto Serif SC", serif;

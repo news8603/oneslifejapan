@@ -102,8 +102,8 @@
       <div class="aboutimg7 aboutB aboutP"></div>
       <div class="aboutimg8 aboutB aboutP"></div>
       <div class="aboutimg9 aboutB aboutP"></div>
-      <div class="aboutimg10 aboutP">
-        <div class="aboutimg10-info1" id="profile">
+      <div class="aboutimg10 aboutP" id="profile" >
+        <div class="aboutimg10-info1" >
           <div v-html="this.$t('about.aboutinfo4').replace(/\n/g,'<br\>')"></div>
           <div v-html="this.$t('about.aboutinfo5').replace(/\n/g,'<br\>')"></div>
         </div>

@@ -2,9 +2,11 @@
   <!-- 健康用品的产品列表页面 -->
   <div class="health">
     <div class="skinbanner">
-      <div class="bannerinfo">健康用品</div>
+      <div class="bannerinfo">{{this.$t("hp.health")}}</div>
     </div>
-    <div class="allinfo">
+    <!-- 打注释的代码段表示可以按类型搜索，但是现在所有产品只有20个，就不搜索了，搜索出来结果贼尴尬，待产品丰富后将此功能追加上 -->
+
+    <!-- <div class="allinfo">
       <div class="selectall">
         <div class="selectinfo">
           <div>ご使用の時間帯</div>
@@ -33,7 +35,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="allinfo-p">
       <!-- 以下遍历i18n中的json文件中commodityinfo的内容，把产品列表遍历到页面中 -->
       <div class="infogrid" v-for="item in bestinfo" :key="item.jan">
@@ -56,7 +58,7 @@ export default {
 
   data() {
     return {
-      optionstime: [
+      optionstime: [//按类型搜索的
         {
           value: "option1",
           label: "日中"

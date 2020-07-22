@@ -60,9 +60,9 @@
         <el-col :span="24">
           <div class="menuclass" @click="menugo(6)">{{this.$t('menutitlephone.inquiry')}}</div>
         </el-col>
-        <el-col :span="24">
+        <!-- <el-col :span="24">
           <div class="menuclass" @click="menugo(7)">{{this.$t('menutitlephone.onesapp')}}</div>
-        </el-col>
+        </el-col>-->
       </el-row>
       <div></div>
     </el-drawer>
@@ -97,9 +97,7 @@
 
       <div class="buttonfind">
         <!-- 这里是检索的按钮 -->
-        <el-button  @click="isJanY()">
-         {{this.$t('hp.janbottom')}}
-    </el-button>
+        <el-button @click="isJanY()">{{this.$t('hp.janbottom')}}</el-button>
       </div>
       <div class="buttonfind">
         <!-- 这里是取消的按钮 -->
@@ -110,10 +108,8 @@
     <transition name="showFind">
       <div class="allJan" v-if="janIsShow" ref="Jan" @click="janClose($event)">
         <div class="janFind">
-          {{this.janProduct.jan}}
-          
-            <router-view name="commodityinfo"></router-view>
-         
+          <div>{{this.janProduct}}</div>
+          <router-view name="commodityinfo" v-if="showVue"></router-view>
         </div>
       </div>
     </transition>
@@ -139,14 +135,15 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "topmenu",
   data() {
     return {
-      janIsShow: false,
-      janShow: false,
+      janIsShow: false, //用janIsShow控制是否显示搜索弹出的页面
+      showVue: false, //控制是否显示商品搜索弹出页面内的组件
       i18nchoose: "日本語",
-      isJan: false,
+      isJan: false, //如果输入的不是数字，用isJan控制显示出现的错误提示
       dialogFormVisible: false,
       form: {
         name: "",
@@ -175,15 +172,14 @@ export default {
     janProduct: function() {
       let product = this.$t("commodityinfo");
       let bestProduct = "";
+      //按照JAN码输入框中的JAN码寻找,如果找到，把值返回给janProduct，如果找不到，返回i18n的json文件中的hp.findresult
       product.forEach(element => {
         if (element.jan == this.input) {
-          bestProduct = element;
-
-          this.janShow = true;
+          bestProduct = element.jan;
         }
       });
       if (bestProduct == "") {
-        bestProduct = "対応する製品はありません";
+        bestProduct = this.$t("hp.findresult");
       }
       return bestProduct;
     }
@@ -200,11 +196,13 @@ export default {
       (this.i18nchoose = "日本語"), (this.$i18n.locale = "jp"); //i18n国际化转换
     },
     isJanY() {
+      //判断是否为数字，如果不是数字，则出现提示信息
       let isJ = /^[0-9]*[1-9][0-9]*$/;
       if (!isJ.test(this.input)) {
         this.isJan = true;
       } else {
         this.isJan = false;
+        // 如果是数字，则去findInput方法
         this.findInput();
       }
     },
@@ -265,16 +263,21 @@ export default {
       //判断是否关闭JAN码搜寻结果弹出框
       if (e.target === this.$refs.Jan) {
         // 如果点击的是浮出框外面的区域，让findId恢复为undefind，以免扰乱后来的值传递
-        this.$store.state.findId = "undefined";
+        this.$store.state.findId =undefined;
         this.janIsShow = false;
       }
     },
     findInput() {
-      //按照JAN码输入框中的JAN码寻找
-      // 如果JAN码对应上，把值传递给vuex中的findId，用来调取commodityinfo组件中的信息
+      let isJ = /^[0-9]*[1-9][0-9]*$/;
+      // 进到这里表示输入的是纯数字，在这里首先判断，输入的数字是否是有效的jan码
+      if (!isJ.test(this.janProduct)) {
+        // 用正则判断是否是数字，如果不是数字，表示janProduct中赋上了表示搜索不到的文字信息，则表示不是有效的JAN码
+        this.showVue = false; //如果不是有效的JAN码，则用showVue控制是否显示弹出页面内的组件
+      }
+      // 如果JAN码对应上，把值传递给vuex中的findId，用来调取commodityinfo组件中的信息，同时showVue为真
       this.janIsShow = true;
+      this.showVue = true;
       this.$store.state.findId = this.input;
-      
     },
     cancelInput() {
       this.isJan = !this.isJan;
@@ -307,15 +310,27 @@ export default {
   background: rgba(0, 0, 0, 0.3);
   z-index: 10000;
   .janFind {
+    border: 8px solid white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 15px 3px #2c3e5040;
     position: fixed;
     padding: 10px;
     z-index: 10010;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
+    top: 15%;
+    left: 15%;
+    right: 15%;
+    bottom: 15%;
     overflow: auto;
     background-color: white;
+  }
+  .janFind::-webkit-scrollbar {
+    width: 3px;
+  }
+  .janFind::-webkit-scrollbar-track {
+    background-color: rgba(#2c3e50, 0.1);
+  }
+  .janFind::-webkit-scrollbar-thumb {
+    background-color: #2c3e50;
   }
 }
 
