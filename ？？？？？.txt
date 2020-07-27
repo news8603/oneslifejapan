@@ -1,0 +1,3 @@
+Please enter the JAN code and search
+
+Enter JAN code

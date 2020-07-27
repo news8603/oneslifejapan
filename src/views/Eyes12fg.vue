@@ -67,6 +67,12 @@ export default {
         }else if (whereScoll>2600){
           this$.eyeimg4 = { opacity: 1 };
         }
+      }else{
+          this$.eyeimg1 = { opacity: 1 };
+          this$.eyeimg2 = { opacity: 1 };
+          this$.eyeimg3 = { opacity: 1 };
+          this$.eyeimg4 = { opacity: 1 };
+
       }
     });
   }
