@@ -269,7 +269,7 @@ body {
         }
       }
       .el-carousel__container {
-        height: 580px;
+        height: 600px;
         margin-bottom: 0px;
         .imaincss {
           .imainimg {

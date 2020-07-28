@@ -15,7 +15,8 @@
         "findresult": "対応する製品はありません",
         "health": "健康用品",
         "skincare": "スキンケア",
-        "beauty": "美容品"
+        "beauty": "美容品",
+        "shop": "店舗検索"
     },
     "inquiry": {
         "title": "問い合わせ",

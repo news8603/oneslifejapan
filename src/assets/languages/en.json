@@ -14,7 +14,9 @@
         "findresult": "No corresponding product found",
         "health": "Health Care",
         "skincare": "Skin Care",
-        "beauty": "Beauty Care"
+        "beauty": "Beauty Care",
+        "shop": "SHOP"
+
     },
     "inquiry": {
         "title": "Contact us",
@@ -859,6 +861,10 @@
         "aboutinfo13": "Makoto Onuki",
         "abouttitle17": "Establishment",
         "aboutinfo14": "April 26, 1996",
+        "abouttitle14": "TEL",
+        "aboutinfo11": "03-6264-4400",
+        "abouttitle15": "FAX",
+        "aboutinfo12": "03-6264-4452",
         "abouttitle18": "Capital",
         "aboutinfo15": "10,000,000yen",
         "abouttitle19": "Annual sales",

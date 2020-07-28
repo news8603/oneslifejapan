@@ -22,15 +22,21 @@
               ></i>
             </span>
             <el-dropdown-menu slot="dropdown">
+              <span @click="zh">
               <el-dropdown-item>
-                <span @click="zh">简体中文</span>
+                简体中文
               </el-dropdown-item>
+              </span>
+              <span @click="en">
               <el-dropdown-item>
-                <span @click="en">ENGLISH</span>
+                ENGLISH
               </el-dropdown-item>
+              </span>
+              <span @click="jp">
               <el-dropdown-item>
-                <span @click="jp">日本語</span>
+                日本語
               </el-dropdown-item>
+              </span>
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
@@ -187,12 +193,20 @@ export default {
 
   methods: {
     zh() {
+      this.$store.state.en=false;
+      console.log(this.$store.state.en);
+
       (this.i18nchoose = "简体中文"), (this.$i18n.locale = "zh"); //i18n国际化转换
     },
     en() {
+      this.$store.state.en=true;
+      console.log(this.$store.state.en);
       (this.i18nchoose = "ENGLISH"), (this.$i18n.locale = "en"); //i18n国际化转换
     },
     jp() {
+      this.$store.state.en=false;
+      console.log(this.$store.state.en);
+
       (this.i18nchoose = "日本語"), (this.$i18n.locale = "jp"); //i18n国际化转换
     },
     isJanY() {
@@ -206,8 +220,8 @@ export default {
         this.findInput();
       }
     },
-    menugo(e) {
-      switch (e) {
+    menugo(w) {
+      switch (w) {
         case 1:
           this.$router.push("/skincare");
           this.menutable = false;

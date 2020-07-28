@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         isShow: 'true',
-        findId: undefined
+        findId: undefined,
+        en: false
     },
     mutations: {},
     actions: {},

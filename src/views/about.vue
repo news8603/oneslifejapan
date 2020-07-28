@@ -102,8 +102,9 @@
       <div class="aboutimg7 aboutB aboutP"></div>
       <div class="aboutimg8 aboutB aboutP"></div>
       <div class="aboutimg9 aboutB aboutP"></div>
-      <div class="aboutimg10 aboutP" id="profile" >
-        <div class="aboutimg10-info1" >
+      <div class="aboutimg10 aboutP" id="profile" :style="ifEnPhone">
+        <!-- ifEnPhone是一个对象，记录着随语言切换时的居顶距离 -->
+        <div class="aboutimg10-info1">
           <div v-html="this.$t('about.aboutinfo4').replace(/\n/g,'<br\>')"></div>
           <div v-html="this.$t('about.aboutinfo5').replace(/\n/g,'<br\>')"></div>
         </div>
@@ -114,7 +115,7 @@
       </div>
       <div class="aboutimg12 aboutB aboutP"></div>
       <div class="aboutimg13 aboutB aboutP"></div>
-      <div class="aboutimg14 aboutB aboutP">
+      <div class="aboutimg14 aboutB aboutP" :style="ifEnPhone1">
         <div v-html="this.$t('about.aboutinfo6').replace(/\n/g,'<br\>')"></div>
       </div>
       <div class="aboutimg15 aboutB aboutP"></div>
@@ -163,6 +164,8 @@ export default {
   name: "about",
   data() {
     return {
+      ifEnPhone: { top: "" },
+      ifEnPhone1:{top:""},
       aboutimg1: { opacity: 0 },
       aboutimg2: { opacity: 0 },
       aboutimg3: { opacity: 0 },
@@ -172,8 +175,36 @@ export default {
       aboutimg7: { opacity: 0 },
       aboutimg8: { opacity: 0 },
       aboutimg9: { opacity: 0 },
-      aboutimg10: { opacity: 0 }
+      aboutimg10: { opacity: 0 },
     };
+  },
+  computed: {
+    ifEn: function () {
+      return this.$store.state.en;
+    },
+    sWidth: function () {
+      //sWidth记录着屏幕状态
+      let s = false;
+      if (document.body.clientWidth > 500) {
+        s = false;
+      } else {
+        s = true;
+      }
+      return s;
+    },
+  },
+  watch: {
+    ifEn: function () {
+      if (this.$store.state.en && this.sWidth) {
+        //如果选择了英语语言,且处于手机端，则改变居顶为止
+        this.ifEnPhone.top = 1950 + "px";
+        this.ifEnPhone1.top = 2720 + "px";
+      } else {
+        this.ifEnPhone.top = "";
+        this.ifEnPhone1.top = "";
+
+      }
+    },
   },
   subscriptions() {
     this.scroll$ = fromEvent(document, "scroll").pipe(
@@ -183,10 +214,10 @@ export default {
   mounted() {
     let this$ = this;
     let isPhone = document.body.clientWidth;
-
     this.scroll$.subscribe(function downD(x) {
       console.log(x);
       if (isPhone > 500) {
+        this.sWidth = false;
         if (x > 1800 && x < 2400) {
           this$.aboutimg1 = { opacity: 1 };
         } else if (x > 2400 && x < 3100) {
@@ -209,6 +240,7 @@ export default {
           this$.aboutimg10 = { opacity: 1 };
         }
       } else {
+        this.sWidth = true;
         this$.aboutimg1 = { opacity: 1 };
         this$.aboutimg2 = { opacity: 1 };
         this$.aboutimg3 = { opacity: 1 };
@@ -221,7 +253,7 @@ export default {
         this$.aboutimg10 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -283,7 +315,7 @@ export default {
       background-position-x: right;
       background-image: url(../about/ABOUT200618_0019_bg.png);
       text-align: right;
-      letter-spacing: 0.5rem;
+      // letter-spacing: 0.5rem;
       line-height: 3.5rem;
       .yLine {
         top: 220px;
@@ -319,7 +351,7 @@ export default {
         display: inline-block;
         height: 800px;
         text-align: start;
-        padding-right: 140px;
+        padding-right: 340px;
         writing-mode: vertical-rl;
         vertical-align: top;
         .aboutinfo5-in {
@@ -405,7 +437,7 @@ export default {
         z-index: -1;
       }
       .aboutimg10 {
-        width: 1280px;
+        width: 1200px;
         height: 1000px;
         top: 4400px;
         margin: auto;
@@ -419,7 +451,7 @@ export default {
             text-align: start;
             float: right;
             line-height: 2.5rem;
-            letter-spacing: 0.5rem;
+            // letter-spacing: 0.5rem;
             margin-top: 30px;
             margin-right: 50px;
           }
@@ -435,11 +467,11 @@ export default {
           display: inline-block;
           div {
             writing-mode: vertical-rl;
-            height: 600px;
+            // height: 600px;
             text-align: start;
             float: right;
             line-height: 2.5rem;
-            letter-spacing: 0.5rem;
+            // letter-spacing: 0.5rem;
             margin: auto;
             margin-top: 30px;
             margin-bottom: 120px;
@@ -464,7 +496,7 @@ export default {
         z-index: -1;
       }
       .aboutimg14 {
-        top: 5300px;
+        top: 5350px;
         width: 450px;
         padding-left: 250px;
         text-align: left;
@@ -507,8 +539,8 @@ export default {
         right: 50px;
         width: 500px;
         text-align: right;
-        line-height: 2rem;
-        letter-spacing: 0.5rem;
+        line-height: 3rem;
+        // letter-spacing: 0.5rem;
       }
       .aboutimg23 {
         background-image: url(../about/ABOUT200618_0025_bg.png);
@@ -529,8 +561,8 @@ export default {
           margin: auto;
           margin-top: 35px;
           width: 90%;
-          line-height: 2rem;
-          letter-spacing: 0.5rem;
+          line-height: 2.5rem;
+          // letter-spacing: 0.5rem;
           text-align: left;
         }
       }
@@ -644,10 +676,10 @@ export default {
       background-position-x: right;
       background-image: url(../about/ABOUT200618_0019_bg.png);
       text-align: right;
-      letter-spacing: 0.5rem;
+      // letter-spacing: 0.5rem;
       line-height: 1rem;
       .yLine {
-        top: 70px;
+        top: 80px;
         background-image: url(../about/ABOUT200618_0001_line.png);
         width: 150px;
         height: 5px;
@@ -665,6 +697,8 @@ export default {
         vertical-align: top;
         padding-right: 40px;
         text-align: start;
+        line-height: 1.2rem;
+
         writing-mode: vertical-rl;
       }
       .aboutinfo4 {
@@ -679,7 +713,8 @@ export default {
         display: inline-block;
         height: 400px;
         text-align: start;
-        padding-right: 60px;
+        line-height: 1.2rem;
+        padding-right: 90px;
         writing-mode: vertical-rl;
         vertical-align: top;
         .aboutinfo5-in {
@@ -734,7 +769,7 @@ export default {
         .aboutI {
           display: inline-block;
           img {
-             border-radius: 12px;
+            border-radius: 12px;
             margin: 8px;
             width: 300px;
             height: 200px;
@@ -770,36 +805,41 @@ export default {
         vertical-align: baseline;
         .aboutimg10-info1 {
           display: inline-block;
-          width: 280px;
+          width: 400px;
+
           div {
             writing-mode: vertical-rl;
-            height: 170px;
+            display: inline-block;
+            height: 200px;
             text-align: start;
-            float: right;
-            line-height: 1.2rem;
-            letter-spacing: 0.5rem;
+            // float: right;
+            // line-height: 2rem;
+            // letter-spacing: 0.5rem;
             margin-top: 30px;
-            margin-right: 10px;
+            margin-right: 30px;
           }
         }
         .aboutimg10-info2 {
-          display: inline-block;
+          // display: inline-block;
+
           font-size: 3rem;
-          writing-mode: vertical-rl;
+          // writing-mode: vertical-rl;
           vertical-align: top;
-          margin-top: 40px;
+          margin-top: 10px;
           margin-right: 15px;
         }
         .aboutimg11-info1 {
-          display: inline-block;
-          margin-left: 150px;
+          // display: inline-block;
+          // margin-left: 50px;
+          margin: auto;
+          width: 380px;
           div {
-            writing-mode: vertical-rl;
-            height: 260px;
+            // writing-mode: vertical-rl;
+            // height: 260px;
             text-align: start;
             float: right;
-            line-height: 1.5rem;
-            letter-spacing: 0.5rem;
+            // line-height: 1.5rem;
+            // letter-spacing: 0.5rem;
             margin-top: 30px;
             margin-bottom: 50px;
           }
@@ -815,21 +855,21 @@ export default {
       }
       .aboutimg13 {
         background-image: url(../about/ABOUT200618_0018_bg.png);
-        top: 2400px;
+        top: 2200px;
         width: 600px;
         height: 600px;
         right: 10px;
         z-index: -1;
       }
       .aboutimg14 {
-        top: 2580px;
-        width: 360px;
+        top: 2350px;
+        width: 380px;
         padding-left: 20px;
         text-align: left;
-        line-height: 2rem;
+        // line-height: 2rem;
       }
       .aboutimg15 {
-        top: 2480px;
+        top: 2450px;
         width: 400px;
         right: 0;
         height: 600px;
@@ -838,7 +878,7 @@ export default {
       }
       .aboutimg16 {
         background-image: url(../about/ABOUT200618_0031_osaka.png);
-        top: 2800px;
+        top: 2820px;
         width: 70px;
         height: 70px;
         right: 220px;
@@ -846,7 +886,7 @@ export default {
       }
       .aboutimg18 {
         background-image: url(/img/ABOUT200618_0031_osaka.b24301a2.png);
-        top: 2810px;
+        top: 2780px;
         width: 50px;
         height: 50px;
         right: 160px;
@@ -854,19 +894,19 @@ export default {
       }
       .aboutimg17 {
         background-image: url(../about/ABOUT200618_0031_osaka.png);
-        top: 2760px;
+        top: 2720px;
         width: 80px;
         height: 80px;
         right: 80px;
         transition: all 0.6s ease-out 0.4s;
       }
       .aboutimg19 {
-        top: 2890px;
-        right: 50px;
-        width: 260px;
-        text-align: right;
-        line-height: 1.2rem;
-        letter-spacing: 0.3rem;
+        top: 2950px;
+        left: 20px;
+        width: 360px;
+        text-align: left;
+        // line-height: 1.2rem;
+        // letter-spacing: 0.3rem;
       }
       .aboutimg23 {
         background-image: url(../about/ABOUT200618_0025_bg.png);
@@ -887,8 +927,8 @@ export default {
           margin: auto;
           margin-top: 35px;
           width: 90%;
-          line-height: 1.2rem;
-          letter-spacing: 0.3rem;
+          // line-height: 1.2rem;
+          // letter-spacing: 0.3rem;
           text-align: left;
         }
       }
@@ -896,21 +936,21 @@ export default {
         background-image: url(../about/company.png);
         height: 250px;
         width: 120px;
-        left: 30px;
-        top: 3580px;
+        left: 10px;
+        top: 3540px;
         z-index: -1;
       }
       .aboutimg22 {
         display: grid;
         top: 3600px;
-        width: 280px;
+        width: 300px;
         right: 0px;
-        grid-template-columns: 80px 150px;
+        grid-template-columns: 120px 150px;
         div {
           padding-top: 15px;
           text-align: left;
           padding-bottom: 8px;
-          border-bottom: 2px solid #dcdcdc;
+          border-bottom: 1px solid #dcdcdc;
         }
       }
       .aboutimg24 {
