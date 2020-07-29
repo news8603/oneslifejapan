@@ -6,7 +6,7 @@
 <el-row  type="flex" justify="center" >
   <el-col><img src="../news.jpg" alt="" class="titleimg"></el-col>
 </el-row>
-<!-- 这里遍历compued中的news，显示的是新着情报部分的内容 -->
+<!-- 这里遍历compued中的news，news取自i18n中的json中的news类数组。显示的是新着情报部分的内容 -->
 <span v-for="(item,s) in news" :key="s">
 <el-row  type="flex" justify="center" align="middle" >
 <el-col :xs="20" :sm="6">
