@@ -2,7 +2,7 @@
     "hp": {
         "menu": "Menu",
         "collagen": "Moisturizing, whitening beauty, reducing wrinkles, reducing menopause symptoms",
-        "bottom": "click here for more detail",
+        "bottom": "click here for more",
         "12GF": "Contains 12 kinds of skin conditioning ingredients and hyaluronic acid",
         "gold": "24K plated water proof facial massager",
         "empty": "under construction, coming soon",
@@ -15,8 +15,12 @@
         "health": "Health Care",
         "skincare": "Skin Care",
         "beauty": "Beauty Care",
-        "shop": "SHOP"
-
+        "shop": "SHOP",
+        "emailSend": "Please enter your Email",
+        "nameSend": "Please enter your name",
+        "infoSend": "Please enter what you want to consult",
+        "infoTips": "Send success",
+        "emailRight": "Please enter the correct email address"
     },
     "inquiry": {
         "title": "Contact us",
@@ -48,25 +52,25 @@
     "imaininfo": [{
             "index": "1",
             "info": "「Bijinnomaru」beauty supplement \n contains various ingredients",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "2",
             "info": " 「Impression」and「excitement」\nRegulates the healthy movement of skin",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "3",
             "info": "Care for moisturized skin",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "4",
             "info": "Air improvement declaration",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         }
     ],
@@ -74,14 +78,14 @@
             "index": "1",
             "info": "12GF facial cream",
             "jan": "4580303902295",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "2",
             "info": "facial mask",
             "jan": "4589780050413",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         }
     ],
@@ -89,35 +93,35 @@
             "index": "1",
             "info": "12GF facial cream",
             "jan": "4580303902295",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "2",
             "info": "12GF lotion",
             "jan": "4580303902271",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "3",
             "info": "12GF Essence",
             "jan": "4580303902288",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "4",
             "info": "facial mask",
             "jan": "4589780050413",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         },
         {
             "index": "5",
             "info": "Hokkaido horse oil cream",
             "jan": "4580303902165",
-            "bottoninfo": "click here for more detail"
+            "bottoninfo": "click here for more"
 
         }
     ],

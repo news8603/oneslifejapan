@@ -6,19 +6,19 @@
 <el-row  type="flex" justify="center" >
   <el-col><img src="../news.jpg" alt="" class="titleimg"></el-col>
 </el-row>
-<!-- 这里遍历data中的news，显示的是新着情报部分的内容 -->
-<span v-for="item in news" :key="item.index">
+<!-- 这里遍历compued中的news，显示的是新着情报部分的内容 -->
+<span v-for="(item,s) in news" :key="s">
 <el-row  type="flex" justify="center" align="middle" >
 <el-col :xs="20" :sm="6">
 <el-card >
- <img :src="item.img" class="image">
+ <img :src="newsimg[s].img" class="image">
 </el-card>
 </el-col>
 <el-col :xs="20" :sm="15" >
 <div class="titleinfo">
-<p align="left">{{ item.time }}</p>
+<p align="left">{{ item.data }}</p>
 <p align="left">{{ item.info }}</p>
-<router-link tag="p" to="/onesnew" align="right" class="moretext">more</router-link>
+<!-- <router-link tag="p" to="/onesnew" align="right" class="moretext">more</router-link> -->
 </div>
 </el-col>
 </el-row>
@@ -198,18 +198,12 @@ export default {
       prevEl: '.swiper-button-prev',
     },
         },
-    news:[
+    newsimg:[
       {
-        index:1,
         img:require("../news-img-1.jpg"),
-        time:"2020-06-01",
-        info:"・お食事について　コロナウイルスの影響により、バイキングでの提供に衛生上の懸念があるため、一時的にバイキングの提供を見合わせていただいております。セットメニューでの対応になります。ご迷惑をおかけします。"
       },
       {
-        index:2,
         img:require("../news-img-1.jpg"),
-        time:"2020-06-02",
-        info:"・お食事について　コロナウイルスの影響により、バイキングでの提供に衛生上の懸念があるため、一時的にバイキングの提供を見合わせていただいております。セットメニューでの対応になります。ご迷惑をおかけします。"
       },
     ]
       };
@@ -223,6 +217,9 @@ export default {
       }
     },
     computed: {
+      news:function(){
+        return this.$t('news');
+      },
       swiper() {
 return this.$refs.mySwiper.$swiper
       },

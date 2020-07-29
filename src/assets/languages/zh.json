@@ -15,7 +15,12 @@
         "health": "健康用品",
         "skincare": "护肤品",
         "beauty": "美容品",
-        "shop": "店铺搜索"
+        "shop": "店铺搜索",
+        "emailSend": "请输入邮箱地址",
+        "nameSend": "请输入姓名",
+        "infoSend": "请输入您想咨询的内容",
+        "infoTips": "咨询内容已经发送成功",
+        "emailRight": "请填写正确的电子邮件地址"
     },
     "inquiry": {
         "title": "咨询",

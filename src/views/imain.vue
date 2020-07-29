@@ -44,21 +44,32 @@
     </el-row>
 
     <!-- 以下为电脑端問い合わせ弹出框内容 -->
-    <el-dialog :title="this.$t('inquiry.title')" :visible.sync="dialogFormVisible">
+    <el-dialog
+      :title="this.$t('inquiry.title')"
+      :visible.sync="dialogFormVisible"
+      :before-close="handleClose"
+    >
       <el-form :model="form">
         <el-form-item :label="this.$t('inquiry.name')" :label-width="formLabelWidth">
           <el-input v-model="form.name" autocomplete="off"></el-input>
+          <!-- ifName控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifName" style="text-align: left;color: red">{{this.$t('hp.nameSend')}}</div>
         </el-form-item>
         <el-form-item :label="this.$t('inquiry.mail')" :label-width="formLabelWidth">
           <el-input v-model="form.mail" autocomplete="off"></el-input>
+          <!-- ifEmail控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifEmail" style="text-align: left;color: red">{{this.$t('hp.emailSend')}}</div>
+          <div v-if="ifRightEmail" style="text-align: left;color: red">{{this.$t('hp.emailRight')}}</div>
         </el-form-item>
         <el-form-item :label="this.$t('inquiry.info')" :label-width="formLabelWidth">
           <el-input type="textarea" v-model="form.info" autocomplete="off" :rows="5"></el-input>
+          <!-- ifInfo控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifInfo" style="text-align: left;color: red">{{this.$t('hp.infoSend')}}</div>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">{{this.$t('inquiry.cancel')}}</el-button>
-        <el-button type="primary" @click="formSend">{{this.$t('inquiry.send')}}</el-button>
+        <el-button type="primary" @click="checkUp">{{this.$t('inquiry.send')}}</el-button>
       </div>
     </el-dialog>
     <div class="imainset">
@@ -76,57 +87,121 @@ import axios from "axios";
 export default {
   name: "imain",
   computed: {
-    imaininfo: function() {
+    imaininfo: function () {
       return this.$t("imaininfo");
-    }
+    },
+    infoTips: function () {
+      //取得发送邮件成功后的提示信息
+      return this.$t("hp.infoTips");
+    },
   },
   data() {
     return {
       towhich: "",
+      ifInfo: false,//用来控制是否显示输入信息不能为空的提示
+      ifName: false,//用来控制是否显示输入姓名不能为空的提示
+      ifEmail: false,//用来控制是否显示输入邮箱不能为空的提示
+      ifRightEmail: false,//用来控制是否显示邮箱格式不合法的提示
       imaininfo1: [
         {
-          infoimg: require("../Banner1.jpg")
+          infoimg: require("../Banner1.jpg"),
         },
         {
-          infoimg: require("../banner2.jpg")
+          infoimg: require("../banner2.jpg"),
         },
         {
-          infoimg: require("../Banner200625.jpg")
+          infoimg: require("../Banner200625.jpg"),
         },
         {
-          infoimg: require("../Banner200623.jpg")
-        }
+          infoimg: require("../Banner200623.jpg"),
+        },
       ],
 
       dialogFormVisible: false,
       form: {
         name: "",
         mail: "",
-        info: ""
+        info: "",
       },
-      formLabelWidth: "120px"
+      formLabelWidth: "120px",
     };
   },
+
   methods: {
-    formSend: function() {
+    handleClose(done) {
+      //关闭問い合わせ弹出框时触发,把不法输入的提示信息隐藏
+      this.ifInfo = false;
+      this.ifName = false;
+      this.ifEmail = false;
+      this.ifRightEmail=false;
+      done();
+    },
+    checkUp: function () {
+      //用checkUP方法检查是否有不法输入项
+      let checkname = this.form.name.replace(/\s+/g, "");//去掉姓名输入框中的空格
+      let checkmail = this.form.mail.replace(/\s+/g, "");//去掉邮箱输入框中的空格
+      let checkinfo = this.form.info.replace(/\s+/g, "");//去掉内容框中的空格
+      this.ifEmail = false;
+      this.ifName = false;
+      this.ifInfo = false;
+      let checkN = true;//假设姓名框输入内容不为空
+      let checkE = true;//假设邮箱输入框不为空
+      let checkI = true;//假设内容输入框不为空
+      let checkYemail=true;//假设输入的邮箱内容格式是正确的
+      let reg =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//用来验证邮箱的正则表达式
+      if (checkmail == undefined || checkmail == "") {
+        checkE = false;//邮箱输入框内容为空则chenkE为假
+        this.ifEmail = true;//ifEmail为真，则页面显示“没有输入内容”的提示信息
+        this.form.mail = "";
+      } else if (!reg.test(this.form.mail)) {
+        checkYemail=false;//邮箱格式不对，则checkYemail为假
+        this.ifRightEmail = true;//ifRightEmail这个变量为真，显示输入邮箱输入框内容为空的提示信息
+      }
+      if (checkname == undefined || checkname == "") {
+        checkN = false;//姓名输入框内容为空则chenkN为假
+        this.ifName = true;//ifName为真，则页面显示“没有输入内容”的提示信息
+        this.form.name = "";
+      }
+      if (checkinfo == undefined || checkinfo == "") {
+        checkI = false;//输入框内容不合法则chenkI为假
+        this.ifInfo = true;//ifInfo为真，则页面显示“没有输入内容”的提示信息
+        this.form.info = "";
+      }
+      if (checkI && checkE && checkN && checkYemail ) this.formSend(); //符合条件，发送请求
+    },
+    sendTips: function () {
+      //发送成功后，弹出的成功提示
+      this.$message({
+        message: this.infoTips,
+        type: "success",
+      });
+    },
+    formSend: function () {
       axios
         .post("http://192.168.1.6:8887/api/send_emails", {
           name: this.form.name,
           email: this.form.mail,
-          text: this.form.info
+          text: this.form.info,
         })
-        .then(res => {
+        .then((res) => {
           console.log(res);
+          this.form.name = "";
+          this.form.mail = "";
+          this.form.info = "";
+          this.ifEmail = false;
+          this.ifName = false;
+          this.ifInfo = false;
+          this.sendTips(); //弹出发送成功提示框
+          this.dialogFormVisible = false; //关闭問い合わせ内容提示框
         });
-      console.log(this.form.name, this.form.mail, this.form.info);
     },
-    towhere: function(t) {
+    towhere: function (t) {
       this.$router.push("/product-details" + t);
-    }
+    },
   },
   mounted() {
     console.log("main加载了");
-  }
+  },
 };
 </script>
 
