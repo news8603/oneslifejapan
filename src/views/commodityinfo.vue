@@ -21,7 +21,7 @@
             <p class="in-info">{{item.infoname}}</p>
             <p class="in-info">{{ item.origin }}:{{ item.origininfo }}</p>
             <p class="in-info">{{ item.description }}:{{ item.descriptioninfo }}</p>
-            <p class="in-info">JAN:{{ item.jan }}</p>
+            <p class="in-info">JAN CODE:{{ item.jan }}</p>
             <p class="in-info">{{aboutProduct.price}}：{{ item.price}}</p>
           </el-col>
         </el-row>
