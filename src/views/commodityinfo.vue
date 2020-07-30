@@ -4,7 +4,7 @@
     <!-- 这里遍历i18n的json文件中的commodityinfo数组类，这个数组类中记录着此网站中所有的产品信息，通过jan码调取映射 -->
     <div v-for="(item,index) in commodityinfo" :key="index">
       <div v-if="item.jan===id">
-        <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.type}}</div>
+        <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.typesee}}</div>
         <el-row class="maxwidth">
           <el-col :xs="24" :sm="24" :md="10">
             <div v-swiper:mySwiper="swiperOption">

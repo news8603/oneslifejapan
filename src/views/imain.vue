@@ -148,7 +148,7 @@ export default {
       let checkE = true;//假设邮箱输入框不为空
       let checkI = true;//假设内容输入框不为空
       let checkYemail=true;//假设输入的邮箱内容格式是正确的
-      let reg =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//用来验证邮箱的正则表达式
+      let reg =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//验证邮箱
       if (checkmail == undefined || checkmail == "") {
         checkE = false;//邮箱输入框内容为空则chenkE为假
         this.ifEmail = true;//ifEmail为真，则页面显示“没有输入内容”的提示信息
@@ -156,6 +156,8 @@ export default {
       } else if (!reg.test(this.form.mail)) {
         checkYemail=false;//邮箱格式不对，则checkYemail为假
         this.ifRightEmail = true;//ifRightEmail这个变量为真，显示输入邮箱输入框内容为空的提示信息
+      }else{
+        this.ifRightEmail = false;
       }
       if (checkname == undefined || checkname == "") {
         checkN = false;//姓名输入框内容为空则chenkN为假

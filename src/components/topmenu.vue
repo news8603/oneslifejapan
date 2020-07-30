@@ -23,19 +23,13 @@
             </span>
             <el-dropdown-menu slot="dropdown">
               <span @click="zh">
-              <el-dropdown-item>
-                简体中文
-              </el-dropdown-item>
+                <el-dropdown-item>简体中文</el-dropdown-item>
               </span>
               <span @click="en">
-              <el-dropdown-item>
-                ENGLISH
-              </el-dropdown-item>
+                <el-dropdown-item>ENGLISH</el-dropdown-item>
               </span>
               <span @click="jp">
-              <el-dropdown-item>
-                日本語
-              </el-dropdown-item>
+                <el-dropdown-item>日本語</el-dropdown-item>
               </span>
             </el-dropdown-menu>
           </el-dropdown>
@@ -126,14 +120,21 @@
         <el-form :model="form" size="mini">
           <p style="text-align: left;">{{this.$t('inquiry.name')}}</p>
           <el-input v-model="form.name" autocomplete="off"></el-input>
+          <!-- ifName控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifName" style="text-align: left;color: red">{{this.$t('hp.nameSend')}}</div>
           <p style="text-align: left;">{{this.$t('inquiry.mail')}}</p>
           <el-input v-model="form.mail" autocomplete="off"></el-input>
+          <!-- ifEmail控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifEmail" style="text-align: left;color: red">{{this.$t('hp.emailSend')}}</div>
+          <div v-if="ifRightEmail" style="text-align: left;color: red">{{this.$t('hp.emailRight')}}</div>
           <p style="text-align: left;">{{this.$t('inquiry.info')}}</p>
           <el-input type="textarea" v-model="form.info" autocomplete="off" :rows="5"></el-input>
+          <!-- ifInfo控制是否显示提示信息，如果输入内容为空，显示提示信息 -->
+          <div v-if="ifInfo" style="text-align: left;color: red">{{this.$t('hp.infoSend')}}</div>
         </el-form>
         <div slot="footer" class="dialog-footer">
           <el-button @click="dialogFormVisible = false">{{this.$t('inquiry.cancel')}}</el-button>
-          <el-button type="primary" @click="dialogFormVisible = false">{{this.$t('inquiry.send')}}</el-button>
+          <el-button type="primary" @click="checkUp">{{this.$t('inquiry.send')}}</el-button>
         </div>
       </el-dialog>
     </div>
@@ -150,11 +151,15 @@ export default {
       showVue: false, //控制是否显示商品搜索弹出页面内的组件
       i18nchoose: "日本語",
       isJan: false, //如果输入的不是数字，用isJan控制显示出现的错误提示
+      ifInfo: false, //用来控制是否显示输入信息不能为空的提示
+      ifName: false, //用来控制是否显示输入姓名不能为空的提示
+      ifEmail: false, //用来控制是否显示输入邮箱不能为空的提示
+      ifRightEmail: false, //用来控制是否显示邮箱格式不合法的提示
       dialogFormVisible: false,
       form: {
         name: "",
         mail: "",
-        info: ""
+        info: "",
       },
       formLabelWidth: "120px",
       a: true,
@@ -166,20 +171,20 @@ export default {
       input: "", //jan码输入框，双向绑定
       loginform: {
         mail: "",
-        password: ""
-      }
+        password: "",
+      },
     };
   },
   computed: {
-    find: function() {
+    find: function () {
       return this.$t("hp.find");
     },
     //janProduct这个是把所有的产品类别获取到，然后进行筛选，最后返回给janProduct
-    janProduct: function() {
+    janProduct: function () {
       let product = this.$t("commodityinfo");
       let bestProduct = "";
       //按照JAN码输入框中的JAN码寻找,如果找到，把值返回给janProduct，如果找不到，返回i18n的json文件中的hp.findresult
-      product.forEach(element => {
+      product.forEach((element) => {
         if (element.jan == this.input) {
           bestProduct = element.jan;
         }
@@ -188,23 +193,96 @@ export default {
         bestProduct = this.$t("hp.findresult");
       }
       return bestProduct;
-    }
+    },
+    infoTips: function () {
+      //取得发送邮件成功后的提示信息
+      return this.$t("hp.infoTips");
+    },
   },
 
   methods: {
+    handleClose(done) {
+      //关闭問い合わせ弹出框时触发,把不法输入的提示信息隐藏
+      this.ifInfo = false;
+      this.ifName = false;
+      this.ifEmail = false;
+      this.ifRightEmail = false;
+      done();
+    },
+    checkUp: function () {
+      //用checkUP方法检查是否有不法输入项
+      let checkname = this.form.name.replace(/\s+/g, ""); //去掉姓名输入框中的空格
+      let checkmail = this.form.mail.replace(/\s+/g, ""); //去掉邮箱输入框中的空格
+      let checkinfo = this.form.info.replace(/\s+/g, ""); //去掉内容框中的空格
+      this.ifEmail = false;
+      this.ifName = false;
+      this.ifInfo = false;
+      let checkN = true; //假设姓名框输入内容不为空
+      let checkE = true; //假设邮箱输入框不为空
+      let checkI = true; //假设内容输入框不为空
+      let checkYemail = true; //假设输入的邮箱内容格式是正确的
+      let reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; //验证邮箱
+      if (checkmail == undefined || checkmail == "") {
+        checkE = false; //邮箱输入框内容为空则chenkE为假
+        this.ifEmail = true; //ifEmail为真，则页面显示“没有输入内容”的提示信息
+        this.form.mail = "";
+      } else if (!reg.test(this.form.mail)) {
+        checkYemail = false; //邮箱格式不对，则checkYemail为假
+        this.ifRightEmail = true; //ifRightEmail这个变量为真，显示输入邮箱输入框内容为空的提示信息
+      } else {
+        this.ifRightEmail = false;
+      }
+      if (checkname == undefined || checkname == "") {
+        checkN = false; //姓名输入框内容为空则chenkN为假
+        this.ifName = true; //ifName为真，则页面显示“没有输入内容”的提示信息
+        this.form.name = "";
+      }
+      if (checkinfo == undefined || checkinfo == "") {
+        checkI = false; //输入框内容不合法则chenkI为假
+        this.ifInfo = true; //ifInfo为真，则页面显示“没有输入内容”的提示信息
+        this.form.info = "";
+      }
+      if (checkI && checkE && checkN && checkYemail) this.formSend(); //符合条件，发送请求
+    },
+    sendTips: function () {
+      //发送成功后，弹出的成功提示
+      this.$message({
+        message: this.infoTips,
+        type: "success",
+      });
+    },
+    formSend: function () {
+      axios
+        .post("http://192.168.1.6:8887/api/send_emails", {
+          name: this.form.name,
+          email: this.form.mail,
+          text: this.form.info,
+        })
+        .then((res) => {
+          console.log(res);
+          this.form.name = "";
+          this.form.mail = "";
+          this.form.info = "";
+          this.ifEmail = false;
+          this.ifName = false;
+          this.ifInfo = false;
+          this.sendTips(); //弹出发送成功提示框
+          this.dialogFormVisible = false; //关闭問い合わせ内容提示框
+        });
+    },
     zh() {
-      this.$store.state.en=false;
+      this.$store.state.en = false;
       console.log(this.$store.state.en);
 
       (this.i18nchoose = "简体中文"), (this.$i18n.locale = "zh"); //i18n国际化转换
     },
     en() {
-      this.$store.state.en=true;
+      this.$store.state.en = true;
       console.log(this.$store.state.en);
       (this.i18nchoose = "ENGLISH"), (this.$i18n.locale = "en"); //i18n国际化转换
     },
     jp() {
-      this.$store.state.en=false;
+      this.$store.state.en = false;
       console.log(this.$store.state.en);
 
       (this.i18nchoose = "日本語"), (this.$i18n.locale = "jp"); //i18n国际化转换
@@ -277,7 +355,7 @@ export default {
       //判断是否关闭JAN码搜寻结果弹出框
       if (e.target === this.$refs.Jan) {
         // 如果点击的是浮出框外面的区域，让findId恢复为undefind，以免扰乱后来的值传递
-        this.$store.state.findId =undefined;
+        this.$store.state.findId = undefined;
         this.janIsShow = false;
       }
     },
@@ -296,11 +374,11 @@ export default {
     cancelInput() {
       this.isJan = !this.isJan;
       this.input = "";
-    }
+    },
   },
-  mounted: function() {
+  mounted: function () {
     window.addEventListener("scroll", this.handleScroll, false);
-  }
+  },
 };
 </script>
 

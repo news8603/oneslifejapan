@@ -42,7 +42,7 @@
     <!-- 以下内容是主页中的胶原蛋白粉的画面和文字信息，取自i18n的json文件中的hp.collagen -->
   <router-link tag="span" to="/collagen" class="bottomhover">
   <el-col :span="24" >
-    <div class="imainbottomimg-1">
+    <div class="imainbottomimg-1"> 
     <div class="imb-1-info">
       <p 
       >{{this.$t('hp.collagen')}}</p>
@@ -200,7 +200,7 @@ export default {
         },
     newsimg:[
       {
-        img:require("../news-img-1.jpg"),
+        img:require("../news-img-2.jpg"),
       },
       {
         img:require("../news-img-1.jpg"),
@@ -459,7 +459,7 @@ body{
 
 @media  screen and (max-width: 900px){  
   .imainbottom{
-    height: 6150px;
+    // height: 6150px;
     overflow: hidden;
   }
 .el-col-sm-6{
