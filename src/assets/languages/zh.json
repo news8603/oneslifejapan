@@ -56,8 +56,8 @@
         "skin": "护肤品",
         "health": "健康用品",
         "beauty": "美容品",
-        "about": "ワンズライフジャパンのストーリー",
-        "search": "查找店铺",
+        "about": "一生美故事",
+        "search": "店铺",
         "inquiry": "咨询",
         "onesapp": "iOS版app"
     },
@@ -263,7 +263,7 @@
             "type": "スキンケア",
             "typesee": "护肤品",
             "brand": "One's Life Beauty",
-            "infoname": "12GFフェイスクリーム",
+            "infoname": "12GF干细胞乳液",
             "listimg": "/static/list/12gflotion.jpg",
             "infoimg": [
                 "/static/12gflotion-1.jpg",
@@ -288,7 +288,7 @@
             "type": "スキンケア",
             "typesee": "护肤品",
             "brand": "One's Life Beauty",
-            "infoname": "12GFエッセンス",
+            "infoname": "12GF干细胞精华",
             "listimg": "/static/list/12gfessence.jpg",
             "infoimg": [
                 "/static/12gfease-1.jpg",
@@ -389,7 +389,7 @@
             "type": "スキンケア",
             "typesee": "护肤品",
             "brand": "One's Life Beauty",
-            "infoname": "12GF眼霜",
+            "infoname": "12GF干细胞眼霜",
             "listimg": "/static/list/12gfeyes.jpg",
             "infoimg": [
                 "/static/12gfeyes-1.jpg",
@@ -467,7 +467,7 @@
             "type": "美容製品",
             "typesee": "美容制品",
             "brand": "One's Life Beauty",
-            "infoname": "24K黄金棒美容仪（滚轮型）",
+            "infoname": "24K美容金箍棒",
             "listimg": "/static/list/igold.jpg",
             "infoimg": [
                 "/static/12gfIgold-1.jpg",

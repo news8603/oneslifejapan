@@ -401,7 +401,7 @@
             "type": "スキンケア",
             "typesee": "Skin Care",
             "brand": "One's Life Beauty",
-            "infoname": "12GF アイクリーム",
+            "infoname": "12GF Eye cream",
             "listimg": "/static/list/12gfeyes.jpg",
             "infoimg": [
                 "/static/12gfeyes-1.jpg",
@@ -427,7 +427,7 @@
             "type": "スキンケア",
             "typesee": "Skin Care",
             "brand": "One's Life Beauty",
-            "infoname": "ラ フルール/バスト美容",
+            "infoname": "La Fleur/Breast enhancement cream",
             "listimg": "/static/list/enhancement.jpg",
             "infoimg": [
                 "/static/12gfenhancement-1.jpg",
@@ -479,7 +479,7 @@
             "type": "美容製品",
             "typesee": "Beauty Care",
             "brand": "One's Life Beauty",
-            "infoname": "24K beauty magic (skin roller type) facial massager",
+            "infoname": "24K beauty magic facial massager",
             "listimg": "/static/list/igold.jpg",
             "infoimg": [
                 "/static/12gfIgold-1.jpg",

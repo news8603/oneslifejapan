@@ -89,7 +89,7 @@
     <el-drawer :visible.sync="bottable" direction="btt" :size="setsize()">
       <h2>{{this.$t('hp.janbottom')}}</h2>
       <!-- 用jsJanY方法检验输入的是否为纯数字 -->
-      <el-input v-model="input" :placeholder="find" @keyup.enter.native="isJanY"></el-input>
+      <el-input v-model="input" :placeholder="find" @keyup.enter.native="findStart"></el-input>
       <!-- 如果不是数字，下方出现提示,用isJan这个变量控制是否显示 -->
       <transition name="redJanT">
         <div class="redJan" v-show="isJan">{{this.$t('hp.isJan')}}</div>
@@ -97,7 +97,7 @@
 
       <div class="buttonfind">
         <!-- 这里是检索的按钮 -->
-        <el-button @click="isJanY()">{{this.$t('hp.janbottom')}}</el-button>
+        <el-button @click="findStart()">{{this.$t('hp.janbottom')}}</el-button>
       </div>
       <div class="buttonfind">
         <!-- 这里是取消的按钮 -->
@@ -108,8 +108,8 @@
     <transition name="showFind">
       <div class="allJan" v-if="janIsShow" ref="Jan" @click="janClose($event)">
         <div class="janFind">
-          <div>{{this.janProduct}}</div>
-          <router-view name="commodityinfo" v-if="showVue"></router-view>
+          <!-- <div>{{this.janProduct}}</div> -->
+          <router-view name="searchlist" v-if="showVue"></router-view>
         </div>
       </div>
     </transition>
@@ -179,28 +179,38 @@ export default {
     find: function () {
       return this.$t("hp.find");
     },
-    //janProduct这个是把所有的产品类别获取到，然后进行筛选，最后返回给janProduct
-    janProduct: function () {
-      let product = this.$t("commodityinfo");
-      let bestProduct = "";
-      //按照JAN码输入框中的JAN码寻找,如果找到，把值返回给janProduct，如果找不到，返回i18n的json文件中的hp.findresult
-      product.forEach((element) => {
-        if (element.jan == this.input) {
-          bestProduct = element.jan;
-        }
-      });
-      if (bestProduct == "") {
-        bestProduct = this.$t("hp.findresult");
-      }
-      return bestProduct;
-    },
+
+
     infoTips: function () {
       //取得发送邮件成功后的提示信息
       return this.$t("hp.infoTips");
     },
+    findinfo: function () {
+      //findinfo是获取到所有产品数据，以便进行搜索
+      return this.$t("commodityinfo");
+    },
   },
 
   methods: {
+    findStart() {
+      //从搜索框获取到用户填入的内容，并开始搜索
+      let bestinfo = [];
+      this.findinfo.forEach((element) => {
+        if (
+          this._.includes(element.infoname.toUpperCase(), this.input.toUpperCase()) ||
+          this._.includes(element.typesee.toUpperCase(), this.input.toUpperCase()) ||
+          this._.includes(element.brand.toUpperCase(), this.input.toUpperCase()) ||
+          this.input === element.jan
+        ) {
+          bestinfo.push(element.jan);
+        }
+      });
+      this.showVue = true;
+
+      this.janIsShow=true;
+      this.$store.state.findId = bestinfo;
+      console.log(this.$store.state.findId);
+    },
     handleClose(done) {
       //关闭問い合わせ弹出框时触发,把不法输入的提示信息隐藏
       this.ifInfo = false;
@@ -356,6 +366,7 @@ export default {
       if (e.target === this.$refs.Jan) {
         // 如果点击的是浮出框外面的区域，让findId恢复为undefind，以免扰乱后来的值传递
         this.$store.state.findId = undefined;
+        
         this.janIsShow = false;
       }
     },
@@ -402,6 +413,8 @@ export default {
   background: rgba(0, 0, 0, 0.3);
   z-index: 10000;
   .janFind {
+    margin: auto;
+    max-width: 1220px;
     border: 8px solid white;
     border-radius: 4px;
     box-shadow: 0px 0px 15px 3px #2c3e5040;

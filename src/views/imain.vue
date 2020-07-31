@@ -98,10 +98,10 @@ export default {
   data() {
     return {
       towhich: "",
-      ifInfo: false,//用来控制是否显示输入信息不能为空的提示
-      ifName: false,//用来控制是否显示输入姓名不能为空的提示
-      ifEmail: false,//用来控制是否显示输入邮箱不能为空的提示
-      ifRightEmail: false,//用来控制是否显示邮箱格式不合法的提示
+      ifInfo: false, //用来控制是否显示输入信息不能为空的提示
+      ifName: false, //用来控制是否显示输入姓名不能为空的提示
+      ifEmail: false, //用来控制是否显示输入邮箱不能为空的提示
+      ifRightEmail: false, //用来控制是否显示邮箱格式不合法的提示
       imaininfo1: [
         {
           infoimg: require("../Banner1.jpg"),
@@ -133,43 +133,43 @@ export default {
       this.ifInfo = false;
       this.ifName = false;
       this.ifEmail = false;
-      this.ifRightEmail=false;
+      this.ifRightEmail = false;
       done();
     },
     checkUp: function () {
       //用checkUP方法检查是否有不法输入项
-      let checkname = this.form.name.replace(/\s+/g, "");//去掉姓名输入框中的空格
-      let checkmail = this.form.mail.replace(/\s+/g, "");//去掉邮箱输入框中的空格
-      let checkinfo = this.form.info.replace(/\s+/g, "");//去掉内容框中的空格
+      let checkname = this.form.name.replace(/\s+/g, ""); //去掉姓名输入框中的空格
+      let checkmail = this.form.mail.replace(/\s+/g, ""); //去掉邮箱输入框中的空格
+      let checkinfo = this.form.info.replace(/\s+/g, ""); //去掉内容框中的空格
       this.ifEmail = false;
       this.ifName = false;
       this.ifInfo = false;
-      let checkN = true;//假设姓名框输入内容不为空
-      let checkE = true;//假设邮箱输入框不为空
-      let checkI = true;//假设内容输入框不为空
-      let checkYemail=true;//假设输入的邮箱内容格式是正确的
-      let reg =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//验证邮箱
+      let checkN = true; //假设姓名框输入内容不为空
+      let checkE = true; //假设邮箱输入框不为空
+      let checkI = true; //假设内容输入框不为空
+      let checkYemail = true; //假设输入的邮箱内容格式是正确的
+      let reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; //验证邮箱
       if (checkmail == undefined || checkmail == "") {
-        checkE = false;//邮箱输入框内容为空则chenkE为假
-        this.ifEmail = true;//ifEmail为真，则页面显示“没有输入内容”的提示信息
+        checkE = false; //邮箱输入框内容为空则chenkE为假
+        this.ifEmail = true; //ifEmail为真，则页面显示“没有输入内容”的提示信息
         this.form.mail = "";
       } else if (!reg.test(this.form.mail)) {
-        checkYemail=false;//邮箱格式不对，则checkYemail为假
-        this.ifRightEmail = true;//ifRightEmail这个变量为真，显示输入邮箱输入框内容为空的提示信息
-      }else{
+        checkYemail = false; //邮箱格式不对，则checkYemail为假
+        this.ifRightEmail = true; //ifRightEmail这个变量为真，显示输入邮箱输入框内容为空的提示信息
+      } else {
         this.ifRightEmail = false;
       }
       if (checkname == undefined || checkname == "") {
-        checkN = false;//姓名输入框内容为空则chenkN为假
-        this.ifName = true;//ifName为真，则页面显示“没有输入内容”的提示信息
+        checkN = false; //姓名输入框内容为空则chenkN为假
+        this.ifName = true; //ifName为真，则页面显示“没有输入内容”的提示信息
         this.form.name = "";
       }
       if (checkinfo == undefined || checkinfo == "") {
-        checkI = false;//输入框内容不合法则chenkI为假
-        this.ifInfo = true;//ifInfo为真，则页面显示“没有输入内容”的提示信息
+        checkI = false; //输入框内容不合法则chenkI为假
+        this.ifInfo = true; //ifInfo为真，则页面显示“没有输入内容”的提示信息
         this.form.info = "";
       }
-      if (checkI && checkE && checkN && checkYemail ) this.formSend(); //符合条件，发送请求
+      if (checkI && checkE && checkN && checkYemail) this.formSend(); //符合条件，发送请求
     },
     sendTips: function () {
       //发送成功后，弹出的成功提示
@@ -202,6 +202,7 @@ export default {
     },
   },
   mounted() {
+
     console.log("main加载了");
   },
 };

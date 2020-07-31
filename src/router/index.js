@@ -13,8 +13,8 @@ const routes = [{
         name: 'home',
         components: {
             default: imainbottom,
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
 
@@ -27,8 +27,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "inews" */ '../views/news.vue'),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
 
         }
 
@@ -40,8 +40,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "skincare" */ "../views/skincare.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
 
         }
     },
@@ -51,8 +51,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "health" */ "../views/health.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -61,8 +61,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "find" */ "../views/find.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -71,8 +71,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "about" */ "../views/About.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -81,8 +81,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "beauty" */ "../views/beauty.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -91,8 +91,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "newapp" */ "../views/newapp.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -101,8 +101,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -111,8 +111,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "product-details0" */ "../views/product-details0.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -121,8 +121,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "product-details1" */ "../views/product-details1.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -131,8 +131,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "product-details2" */ "../views/product-details2.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -141,8 +141,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "airmask" */ "../views/Airmask.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -151,8 +151,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "collagen" */ "../views/collagen.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -161,8 +161,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "gold" */ "../views/Gold.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -171,8 +171,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "Eyes12gf" */ "../views/Eyes12fg.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -181,8 +181,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "try" */ "../views/try.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     },
     {
@@ -191,8 +191,8 @@ const routes = [{
         components: {
             default: () =>
                 import ( /* webpackChunkName: "brandproduct" */ "../views/Brandproduct.vue"),
-            commodityinfo: () =>
-                import ( /* webpackChunkName: "commodityinfo" */ "../views/commodityinfo.vue")
+            searchlist: () =>
+                import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
     }
 ]

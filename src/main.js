@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import App from './App.vue'
 import './registerServiceWorker'
-
 import router from './router'
 import store from "./store/index"
 import 'element-ui/lib/theme-chalk/index.css'
@@ -13,12 +12,14 @@ import VueScrollmagic from 'vue-scrollmagic'
 import VueRx from 'vue-rx'
 import Rx from 'rxjs/Rx'
 import ElementUI from 'element-ui'
+import _ from "lodash"
+
 // import locale from '/node_modules/element-ui/lib/locale/lang/en'
 
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
-
+Vue.prototype._ = _
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */ )
 Vue.use(VueScrollmagic)
@@ -30,7 +31,6 @@ Vue.use(VueRx, Rx)
 const i18n = new VueI18n({
     locale: 'jp',
     // 定义默认语言为日语
-
     messages: {
         'zh': require('@/assets/languages/zh.json'),
         'en': require('@/assets/languages/en.json'),
@@ -42,6 +42,7 @@ const i18n = new VueI18n({
 
 
 new Vue({
+
     i18n,
     router,
     store,

@@ -7,6 +7,7 @@ export default new Vuex.Store({
     state: {
         isShow: 'true',
         findId: undefined,
+        isClick: true,
         en: false
     },
     mutations: {},

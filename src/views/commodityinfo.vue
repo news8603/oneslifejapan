@@ -129,10 +129,10 @@ export default {
     };
   },
   computed: {
-    findId: function() {
-      //findId中的值，取自vuex的findId，是搜索框中填入的JAN码传递过来的
-      return this.$store.state.findId;
-    }, //取自搜索框中的JAN码
+    // findId: function() {
+    //   //findId中的值，取自vuex的findId，是搜索框中填入的JAN码传递过来的
+    //   return this.$store.state.findId;
+    // }, //取自搜索框中的JAN码
 
     commodityinfo: function() {
       let info = this.$t("commodityinfo");
@@ -176,15 +176,15 @@ export default {
     }
   },
   mounted() {
-    //这里为了分别调用，给Id赋上不同的值，以便不同的地方分别调用
-    if (this.$store.state.findId == undefined) {
-      this.id = this.$route.params.id;
-    } else if (this.$store.state.findId != this.id) {
-      this.id = this.$store.state.findId;
-    } else {
-      this.id = this.$route.params.id;
-    }
-    console.log("Current Swiper instance object", this.mySwiper);
+    // //这里为了分别调用，给Id赋上不同的值，以便不同的地方分别调用
+    // if (this.$store.state.findId == undefined) {
+    //   this.id = this.$route.params.id;
+    // } else if (this.$store.state.findId != this.id) {
+    //   this.id = this.$store.state.findId;
+    // } else {
+    //   this.id = this.$route.params.id;
+    // }
+    // console.log("Current Swiper instance object", this.mySwiper);
     this.mySwiper.slideTo(1, 1000, false);
   }
 };
