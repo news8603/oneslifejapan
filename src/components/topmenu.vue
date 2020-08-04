@@ -86,11 +86,16 @@
       <p>マイアカウントを作成する</p>
     </el-drawer>
     <!-- 这里是搜索页面 -->
-    <el-drawer :visible.sync="bottable" direction="btt" :size="setsize()">
+    <el-drawer :visible.sync="bottable" direction="btt" :size="setsizeFind">
       <h2>{{this.$t('hp.janbottom')}}</h2>
-      <!-- 用jsJanY方法检验输入的是否为纯数字 -->
-      <el-input v-model="input" :placeholder="find" @keyup.enter.native="findStart"></el-input>
-      <!-- 如果不是数字，下方出现提示,用isJan这个变量控制是否显示 -->
+      <el-input
+        v-model="input"
+        :placeholder="find"
+        @keyup.enter.native="findStart"
+        style="width:80%;max-width:1000px"
+      ></el-input>
+      <br />
+      <!-- 这里判断输入的信息是否为空，如果为空，显示提示信息 -->
       <transition name="redJanT">
         <div class="redJan" v-show="isJan">{{this.$t('hp.isJan')}}</div>
       </transition>
@@ -101,14 +106,16 @@
       </div>
       <div class="buttonfind">
         <!-- 这里是取消的按钮 -->
-        <el-button @click="cancelInput()">{{this.$t('inquiry.cancel')}}</el-button>
+        <el-button @click="bottable = false">{{this.$t('inquiry.cancel')}}</el-button>
       </div>
     </el-drawer>
     <!-- 这里是检索内容的弹出页面 -->
     <transition name="showFind">
       <div class="allJan" v-if="janIsShow" ref="Jan" @click="janClose($event)">
         <div class="janFind">
-          <!-- <div>{{this.janProduct}}</div> -->
+          <div
+            class="resultCSS"
+          >{{this.$t("hp.findresult1")}}: {{this.$store.state.findId.length}} {{this.$t("hp.findresult2")}}</div>
           <router-view name="searchlist" v-if="showVue"></router-view>
         </div>
       </div>
@@ -150,7 +157,7 @@ export default {
       janIsShow: false, //用janIsShow控制是否显示搜索弹出的页面
       showVue: false, //控制是否显示商品搜索弹出页面内的组件
       i18nchoose: "日本語",
-      isJan: false, //如果输入的不是数字，用isJan控制显示出现的错误提示
+      isJan: false, //控制按关键字搜索时，如果输入框为空，提示的信息
       ifInfo: false, //用来控制是否显示输入信息不能为空的提示
       ifName: false, //用来控制是否显示输入姓名不能为空的提示
       ifEmail: false, //用来控制是否显示输入邮箱不能为空的提示
@@ -173,13 +180,13 @@ export default {
         mail: "",
         password: "",
       },
+      setsizeFind: "60%",
     };
   },
   computed: {
     find: function () {
       return this.$t("hp.find");
     },
-
 
     infoTips: function () {
       //取得发送邮件成功后的提示信息
@@ -189,27 +196,63 @@ export default {
       //findinfo是获取到所有产品数据，以便进行搜索
       return this.$t("commodityinfo");
     },
+    searchClose: function () {
+      //监听vuex中的isClick，如果变为假，表示已经点击搜索结果中的某一个产品，则关闭搜索弹出画面
+      return this.$store.state.isClick;
+    },
+    searchInput: function () {
+      return this.input;
+    },
   },
-
+  watch: {
+    searchInput: function () {
+      //监听，如果输入框不为空时，jsJan为假，去除提示文字
+      if (this.input != "") {
+        this.isJan = false;
+      }
+    },
+    //侦听searchClose，如果变为假，关闭两个搜索弹出画面
+    searchClose: function () {
+      if (this.$store.state.isClick === false) {
+        this.janIsShow = false;
+        this.bottable = false;
+      }
+    },
+  },
   methods: {
     findStart() {
       //从搜索框获取到用户填入的内容，并开始搜索
+      this.$store.state.isClick = true;
       let bestinfo = [];
-      this.findinfo.forEach((element) => {
-        if (
-          this._.includes(element.infoname.toUpperCase(), this.input.toUpperCase()) ||
-          this._.includes(element.typesee.toUpperCase(), this.input.toUpperCase()) ||
-          this._.includes(element.brand.toUpperCase(), this.input.toUpperCase()) ||
-          this.input === element.jan
-        ) {
-          bestinfo.push(element.jan);
-        }
-      });
-      this.showVue = true;
-
-      this.janIsShow=true;
-      this.$store.state.findId = bestinfo;
-      console.log(this.$store.state.findId);
+      if (this._.trim(this.input) == "") {
+        this.isJan = true;
+        this.input = "";
+      } else {
+        this.input = this._.trim(this.input);
+        this.findinfo.forEach((element) => {
+          if (
+            this._.includes(
+              element.infoname.toUpperCase(),
+              this.input.toUpperCase()
+            ) ||
+            this._.includes(
+              element.typesee.toUpperCase(),
+              this.input.toUpperCase()
+            ) ||
+            this._.includes(
+              element.brand.toUpperCase(),
+              this.input.toUpperCase()
+            ) ||
+            this.input === element.jan
+          ) {
+            bestinfo.push(element.jan);
+          }
+        });
+        this.showVue = true;
+        this.janIsShow = true;
+        this.$store.state.findId = bestinfo;
+        console.log(this.$store.state.findId);
+      }
     },
     handleClose(done) {
       //关闭問い合わせ弹出框时触发,把不法输入的提示信息隐藏
@@ -297,17 +340,6 @@ export default {
 
       (this.i18nchoose = "日本語"), (this.$i18n.locale = "jp"); //i18n国际化转换
     },
-    isJanY() {
-      //判断是否为数字，如果不是数字，则出现提示信息
-      let isJ = /^[0-9]*[1-9][0-9]*$/;
-      if (!isJ.test(this.input)) {
-        this.isJan = true;
-      } else {
-        this.isJan = false;
-        // 如果是数字，则去findInput方法
-        this.findInput();
-      }
-    },
     menugo(w) {
       switch (w) {
         case 1:
@@ -343,7 +375,7 @@ export default {
     },
     setsize() {
       if (document.body.clientWidth <= 500) {
-        return "100%";
+        return "80%";
       } else {
         return "60%";
       }
@@ -366,25 +398,8 @@ export default {
       if (e.target === this.$refs.Jan) {
         // 如果点击的是浮出框外面的区域，让findId恢复为undefind，以免扰乱后来的值传递
         this.$store.state.findId = undefined;
-        
         this.janIsShow = false;
       }
-    },
-    findInput() {
-      let isJ = /^[0-9]*[1-9][0-9]*$/;
-      // 进到这里表示输入的是纯数字，在这里首先判断，输入的数字是否是有效的jan码
-      if (!isJ.test(this.janProduct)) {
-        // 用正则判断是否是数字，如果不是数字，表示janProduct中赋上了表示搜索不到的文字信息，则表示不是有效的JAN码
-        this.showVue = false; //如果不是有效的JAN码，则用showVue控制是否显示弹出页面内的组件
-      }
-      // 如果JAN码对应上，把值传递给vuex中的findId，用来调取commodityinfo组件中的信息，同时showVue为真
-      this.janIsShow = true;
-      this.showVue = true;
-      this.$store.state.findId = this.input;
-    },
-    cancelInput() {
-      this.isJan = !this.isJan;
-      this.input = "";
     },
   },
   mounted: function () {
@@ -427,6 +442,14 @@ export default {
     bottom: 15%;
     overflow: auto;
     background-color: white;
+    .resultCSS {
+      font-size: 1.2rem;
+      text-align: left;
+      padding-left: 5px;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
   }
   .janFind::-webkit-scrollbar {
     width: 3px;
@@ -448,10 +471,9 @@ export default {
   opacity: 0;
 }
 .redJan {
-  padding-left: 15%;
   color: red;
   transition: 0.6s;
-  text-align: left;
+  text-align: center;
 }
 .i18n:hover {
   cursor: pointer;
@@ -528,7 +550,6 @@ export default {
     }
   }
   .el-input__inner {
-    width: 80%;
     margin-bottom: 15px;
   }
   .el-button {

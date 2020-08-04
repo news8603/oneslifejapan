@@ -1,19 +1,20 @@
 <template>
   <!-- 这一页对应的是搜索框的搜索结果 -->
   <div class="searchlist">
-    <div class="allinfo-p" >
+    <div class="allinfo-p">
       <!-- 以下遍历i18n中的json文件中commodityinfo的内容，把产品列表遍历到页面中 -->
       <div class="infogrid" v-for="item in bestinfo" :key="item.jan">
-        <!-- isClick这里是把vuex中的isClick变假，关闭搜索后的弹框和搜索画面 -->
-        <router-link :to="{name:'commodityinfo',params:{id:item.jan}}" tag="div" class="button" @click="this.$stort.state.isClick=false">
-          <img :src="item.listimg" class="image" />
-          <div style="padding: 14px;">
-            <p>{{ item.infoname }}</p>
-            <div class="infoline"></div>
-            <p style="text-align: left;">JAN CODE:{{ item.jan }}</p>
-            <p style="text-align: right;">{{ item.price }}</p>
+        <span @click="isClick(item.jan)">
+          <div class="button">
+            <img :src="item.listimg" class="image" />
+            <div style="padding: 14px;">
+              <p>{{ item.infoname }}</p>
+              <div class="infoline"></div>
+              <p style="text-align: left;">JAN CODE:{{ item.jan }}</p>
+              <p style="text-align: right;">{{ item.price }}</p>
+            </div>
           </div>
-        </router-link>
+        </span>
       </div>
     </div>
     <div class="empty" v-if="pageinfo.length==0">{{this.$t('hp.findresult')}}</div>
@@ -24,6 +25,7 @@ export default {
   name: "searchlist",
   data() {
     return {
+      findSearch: "",
       brand: "",
       ifEmpty: false, //ifEmptyz这个变量记录列表中的内容是否为空，如果为空，ifEmpty为false
       pageinfo: [],
@@ -48,7 +50,7 @@ export default {
     // 因为所有的产品都存在于i18n的commodityinfo类数组中，所以在筛选类型的时候，不符合条件的类型会在页面中空出一个位置，为了防止这种情况，提前将数组类中符合条件的数据push进新数组pageinfo中，再返回给bestinfo
     // 用计算属性定义bestinfo是因为在语言转换时可以实时更新页面数据
     bestinfo: function () {
-       for (let s = 0; s <= this.$store.state.findId.length; s++) {
+      for (let s = 0; s <= this.$store.state.findId.length; s++) {
         this.careinfo.forEach((element) => {
           if (element.jan === this.$store.state.findId[s]) {
             this.pageinfo.push(element);
@@ -58,7 +60,15 @@ export default {
       return this.pageinfo;
     },
   },
-  mounted() {},
+  methods: {
+    isClick(jan) {
+      this.$store.state.isClick = false;
+      this.$store.state.findId = jan;
+      this.$router.push({ name: "commodityinfo", params: { id: jan } });
+
+      console.log(this.$store.state.isClick, "和JAN是:", jan);
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -90,6 +100,7 @@ export default {
 
 .searchlist {
   .allinfo-p {
+    width: 95%;
     display: inline-grid;
     max-width: 1220px;
     grid-template-columns: repeat(3, 33.3%);
@@ -122,8 +133,6 @@ ul li {
     }
   }
 }
-
-
 
 @media screen and(max-width: 900px) {
   .searchlist {

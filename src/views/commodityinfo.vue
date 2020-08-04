@@ -4,7 +4,9 @@
     <!-- 这里遍历i18n的json文件中的commodityinfo数组类，这个数组类中记录着此网站中所有的产品信息，通过jan码调取映射 -->
     <div v-for="(item,index) in commodityinfo" :key="index">
       <div v-if="item.jan===id">
-        <div style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em">{{item.typesee}}</div>
+        <div
+          style="margin-top: 50px;margin-left:10%;text-align:left;font-size:1.2em"
+        >{{item.typesee}}</div>
         <el-row class="maxwidth">
           <el-col :xs="24" :sm="24" :md="10">
             <div v-swiper:mySwiper="swiperOption">
@@ -110,41 +112,42 @@ export default {
       activeName: "1",
       //id是用来调取此页面所有信息的JAN码，取自params中的ID值
       id: this.$route.params.id,
+
       swiperOption: {
         pagination: {
           el: ".swiper-pagination",
-          clickable: true
+          clickable: true,
         },
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          prevEl: ".swiper-button-prev",
+        },
       },
       show: 1,
       show1: 0,
       show2: 0,
       cssshow: 1,
       cssshow1: 0,
-      cssshow2: 0
+      cssshow2: 0,
     };
   },
   computed: {
-    // findId: function() {
-    //   //findId中的值，取自vuex的findId，是搜索框中填入的JAN码传递过来的
-    //   return this.$store.state.findId;
-    // }, //取自搜索框中的JAN码
+    findId: function () {
+      //findId中的值，取自vuex的findId，是搜索框中填入的JAN码传递过来的
+      return this.$store.state.findId;
+    }, //取自搜索框中的JAN码
 
-    commodityinfo: function() {
+    commodityinfo: function () {
       let info = this.$t("commodityinfo");
       return info;
     },
-    aboutProduct: function() {
+    aboutProduct: function () {
       let aboutProduct = this.$t("infotitle");
       return aboutProduct;
     },
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    }
+    },
   },
   methods: {
     isshow(w) {
@@ -173,20 +176,26 @@ export default {
           this.cssshow1 = 0;
           this.cssshow2 = 1;
       }
-    }
+    },
+  },
+  watch: {
+    findId: function () {//为了避免冲突，判断给ID赋上哪些值
+      if (typeof this.$store.state.findId === "object") {
+        this.id = this.$route.params.id;
+      } else {
+        if (this.$store.state.findId == undefined) {
+          this.id = this.$route.params.id;
+        } else if (this.$store.state.findId != this.id) {
+          this.id = this.$store.state.findId;
+        } else {
+          this.id = this.$route.params.id;
+        }
+      }
+    },
   },
   mounted() {
-    // //这里为了分别调用，给Id赋上不同的值，以便不同的地方分别调用
-    // if (this.$store.state.findId == undefined) {
-    //   this.id = this.$route.params.id;
-    // } else if (this.$store.state.findId != this.id) {
-    //   this.id = this.$store.state.findId;
-    // } else {
-    //   this.id = this.$route.params.id;
-    // }
-    // console.log("Current Swiper instance object", this.mySwiper);
     this.mySwiper.slideTo(1, 1000, false);
-  }
+  },
 };
 </script>
 <style lang="less">

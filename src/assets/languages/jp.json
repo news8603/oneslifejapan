@@ -9,9 +9,9 @@
         "yuisu": "",
         "ones": "「一生の美しさと輝きを」\n自然な成分にこだわり、内側から本来の輝きをとりもどし、美容と健康を推進する商品を展開",
         "fuji": "「生活の質を高める]\n日常にちょっとしたアクセントを加えて心にゆとりをもたらすをコンセプトに、生活に役立つ商品を展開。",
-        "find": "JANコードを入力し検索してください",
+        "find": "キーワードを入力し検索してください",
         "janbottom": "検 索",
-        "isJan": "JANコードを入力してください",
+        "isJan": "キーワードを入力してください",
         "findresult": "対応する製品はありません",
         "health": "健康用品",
         "skincare": "スキンケア",
@@ -21,7 +21,10 @@
         "nameSend": "名前が入力されていません",
         "infoSend": "内容が入力されていません",
         "infoTips": "こちらは既に発送しました。",
-        "emailRight": "正しいメールアドレスの書式ではありません"
+        "emailRight": "正しいメールアドレスの書式ではありません",
+        "findresult1": "検索結果",
+        "findresult2": "件"
+
     },
     "news": [{
             "index": "1",
@@ -261,7 +264,7 @@
             "type": "スキンケア",
             "typesee": "スキンケア",
             "brand": "One's Life Beauty",
-            "infoname": "12GFフェイスクリーム",
+            "infoname": "12GFローション",
             "listimg": "/static/list/12gflotion.jpg",
             "infoimg": [
                 "/static/12gflotion-1.jpg",
@@ -465,7 +468,7 @@
             "type": "美容製品",
             "typesee": "美容製品",
             "brand": "One's Life Beauty",
-            "infoname": "24Ｋ美容如意棒",
+            "infoname": "24k美容如意棒",
             "listimg": "/static/list/igold.jpg",
             "infoimg": [
                 "/static/12gfIgold-1.jpg",

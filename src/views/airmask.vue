@@ -382,6 +382,7 @@ export default {
       }
     }
     .airtext1 {
+      
       top: 1250px;
       text-align: center;
       transition: 0.6s;

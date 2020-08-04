@@ -8,9 +8,9 @@
         "empty": "under construction, coming soon",
         "ones": "「lifetime beauty and shine」develop products that focus on natural ingredients, regaining the original shininess from inside and promote natural beauty and health",
         "fuji": "「Improve quality of life] develop products useful for daily life with the concept of adding a little accent to everyday life that bring comfort to your heart.",
-        "find": "Please enter JAN code to search",
+        "find": "Please enter keyword to search",
         "janbottom": "Search",
-        "isJan": "Please enter JAN code",
+        "isJan": "Please enter keyword",
         "findresult": "No corresponding product found",
         "health": "Health Care",
         "skincare": "Skin Care",
@@ -21,7 +21,9 @@
         "nameSend": "Please enter your name",
         "infoSend": "Please enter what you want to consult",
         "infoTips": "Send success",
-        "emailRight": "Please enter the correct email address"
+        "emailRight": "Please enter the correct email address",
+        "findresult1": "Search Results",
+        "findresult2": "Pieces"
     },
     "news": [{
             "index": "1",
@@ -110,14 +112,14 @@
         },
         {
             "index": "2",
-            "info": "12GF lotion",
+            "info": "12GF facical lotion",
             "jan": "4580303902271",
             "bottoninfo": "click here for more"
 
         },
         {
             "index": "3",
-            "info": "12GF Essence",
+            "info": "12GF facical Essence",
             "jan": "4580303902288",
             "bottoninfo": "click here for more"
 
@@ -300,7 +302,7 @@
             "type": "スキンケア",
             "typesee": "Skin Care",
             "brand": "One's Life Beauty",
-            "infoname": "12GF essence",
+            "infoname": "12GF facical Essence",
             "listimg": "/static/list/12gfessence.jpg",
             "infoimg": [
                 "/static/12gfease-1.jpg",
@@ -311,7 +313,7 @@
             "description": "Internal capacity",
             "descriptioninfo": "20ML",
             "price": "10,500yen（excl. tax）",
-            "details": "一生の美 ワンズライフビューティーの12ＧＦスキンケア",
+            "details": "One's Life Beauty 12GF Skin Care",
             "detailsinfo": "A product created by many years of research by the Japanese Regenerative Cell Research Team Bring out the original power, and fully moisturize aged skin",
             "instructions": "how to use",
             "instructionsinfo": "Use in the morning and evening, after washing your face, do the following in order: lotion → essence → cream",
@@ -416,7 +418,7 @@
             "details": "Eye cream with 12 types of skin conditioning ingredients and hyaluronic acid",
             "detailsinfo": "Isshonobi One’s Life Beauty　12GF series\nContains 12 kinds of skin conditioning ingredients and hyaluronic acid\nPlump, firm and youthful eyes\nThe skin around the eyes is delicate!\nThat is why a good product is needed\nA strong moisturizer contains Hyaluronic acid and skin care ingredients that work on stratum corneum prepare environment for skin.\nDelivers you lively eyes with sharp tension and moisture!\nFeatures of 12GF series\n12GF・・・Twelve growth factors that promote the production of skin cells promote turnover of the skin and lead to youthful and healthy skin.\n12 ingredients\nOligopeptide-34\nHuman recombinant oligopeptide-1\nOligopeptide-20\nOligopeptide-24\nHuman recombinant polypeptide-11\nHuman recombinant polypeptide-9\nHexapeptide-33\nTripeptide-1 copper\nAcetyldecapeptide-3\nHexapeptide-21\nHexacarboxymethyl dipeptide-12\nHuman recombinant oligopeptide-3",
             "instructions": "how to use",
-            "instructionsinfo": "・洗顔後の清潔なお肌に使用してください。\n・適量を容器から出し、目元にやさしくなじませてください。目の中に入らないように注意してください。",
+            "instructionsinfo": "・Use on clean skin after washing the face. \n ・Please take an appropriate amount out of the container and gently blend it around your eyes. Be careful not to get it in your eyes.",
             "instructions1": "Precautions",
             "instructionsinfo1": "Do not use if you have an abnormality on your skin such as a wound, swelling, eczema or rash.\nPlease use carefully while checking that there are no abnormalities on your skin.\nStop using if you observe any abnormalities such as redness, swelling, itchiness, irritation, colour loss (white spots etc.) and darkening during or after use, or after direct sunlight on your skin. It is recommended to consult a dermatologist. If you continue to use cosmetics, it may worsen.\nTake care not to get this in your eyes. If it does get in your eyes, immediately rinse with cold or warm water. Please use as soon as possible after opening.\nBe careful not to touch the mouth of the container with your hands.\nBe sure to close the cap after use.\nPlease keep away from high temperature and humidity and direct sunlight.\nKeep out of the reach from children.",
             "ingredient": "Oligopeptide-34, human genetically engineered with 4 fingertips, gently spread. 4. After use, put back the lock and put a cap on it to give oligopeptide-1, oligopeptide-20. Oligopeptide-24, human genetically modified polypeptide-11, human genetically modified polypeptide-9, hexapeptide-33, trok, lipipeptide-1 copper, acetyldecapeptide-3, hexapeptide-21, hexacarboxymethyldipeptide -12, human recombinant oligopeptide-3"
