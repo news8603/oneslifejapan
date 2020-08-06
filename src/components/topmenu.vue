@@ -91,7 +91,7 @@
       <el-input
         v-model="input"
         :placeholder="find"
-        @keyup.enter.native="findStart"
+       @keyup.enter.native="findStart()"
         style="width:80%;max-width:1000px"
       ></el-input>
       <br />
@@ -223,6 +223,7 @@ export default {
     findStart() {
       //从搜索框获取到用户填入的内容，并开始搜索
       this.$store.state.isClick = true;
+this.$store.state.findId=undefined;
       let bestinfo = [];
       if (this._.trim(this.input) == "") {
         this.isJan = true;
@@ -583,6 +584,7 @@ export default {
   .menulogo {
     width: 85px;
     background-image: url(../logo.png);
+    background-size: cover;
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
@@ -611,6 +613,7 @@ export default {
   .menulogo {
     background-image: url(../logo.png);
     height: 45px;
+    // background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
     transition-property: height;

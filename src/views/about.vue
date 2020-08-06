@@ -141,7 +141,10 @@
         <div :style="aboutimg10" class="aboutimgend-4">{{this.$t('about.abouttitle15')}}</div>
         <div :style="aboutimg10" class="aboutimgend-4">{{this.$t('about.aboutinfo12')}}</div>
         <div :style="aboutimg10" class="aboutimgend-5">{{this.$t('about.abouttitle16')}}</div>
-        <div :style="aboutimg10" class="aboutimgend-5">{{this.$t('about.aboutinfo13')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-5">
+          {{this.$t('about.aboutinfo13')}}
+          <div class="infoadd">{{this.$t('about.aboutinfoadd1')}}</div>
+        </div>
         <div :style="aboutimg10" class="aboutimgend-6">{{this.$t('about.abouttitle17')}}</div>
         <div :style="aboutimg10" class="aboutimgend-6">{{this.$t('about.aboutinfo14')}}</div>
         <div :style="aboutimg10" class="aboutimgend-7">{{this.$t('about.abouttitle18')}}</div>
@@ -165,7 +168,7 @@ export default {
   data() {
     return {
       ifEnPhone: { top: "" },
-      ifEnPhone1:{top:""},
+      ifEnPhone1: { top: "" },
       aboutimg1: { opacity: 0 },
       aboutimg2: { opacity: 0 },
       aboutimg3: { opacity: 0 },
@@ -202,7 +205,6 @@ export default {
       } else {
         this.ifEnPhone.top = "";
         this.ifEnPhone1.top = "";
-
       }
     },
   },
@@ -594,6 +596,10 @@ export default {
         }
         .aboutimgend-5 {
           transition: all 0.6s ease-out 2s;
+          .infoadd {
+            padding-left: 25px;
+            display: inline;
+          }
         }
         .aboutimgend-6 {
           transition: all 0.6s ease-out 2.4s;
@@ -946,6 +952,10 @@ export default {
         width: 300px;
         right: 0px;
         grid-template-columns: 120px 150px;
+        .infoadd {
+          padding-left: 10px;
+          display: inline;
+        }
         div {
           padding-top: 15px;
           text-align: left;

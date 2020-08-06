@@ -10,7 +10,7 @@
   :title="item.shopname" :name="shopid"
   :key="item.shopid">
     <div class="shopinfo">{{ item.shopinfo }}</div>
-    <div class="shopinfo">{{ item.shoptel }}</div>
+    <div class="shopinfo" v-html="item.shoptel.replace(/\n/g,'<br\>')"></div>
     <div class="shopinfo">{{ item.shopimg }}</div>
     <div class="shopinfo">{{ item.shopgo }}</div>
        <el-card shadow="hover" class="shopimg">

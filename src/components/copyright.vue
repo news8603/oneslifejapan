@@ -9,7 +9,7 @@
         <div class="addresstext">{{this.$t('shopinfo[0].shopname')}}</div>
         <p></p>
         <div class="addresstext">{{this.$t('shopinfo[0].shopinfo')}}</div>
-        <div class="addresstext">{{this.$t('shopinfo[0].shoptel')}}</div>
+        <div class="addresstext"  v-html="this.$t('shopinfo[0].shoptel').replace(/\n/g,'<br\>')">{{}}</div>
       </div>
     </div>
     <div class="bottomcopyright">

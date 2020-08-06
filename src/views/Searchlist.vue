@@ -3,7 +3,7 @@
   <div class="searchlist">
     <div class="allinfo-p">
       <!-- 以下遍历i18n中的json文件中commodityinfo的内容，把产品列表遍历到页面中 -->
-      <div class="infogrid" v-for="item in bestinfo" :key="item.jan">
+      <div class="infogrid" v-for="item in pageinfo" :key="item.jan">
         <span @click="isClick(item.jan)">
           <div class="button">
             <img :src="item.listimg" class="image" />
@@ -30,7 +30,17 @@ export default {
       ifEmpty: false, //ifEmptyz这个变量记录列表中的内容是否为空，如果为空，ifEmpty为false
       pageinfo: [],
       brandBlack: "",
+      searchNumber: this.$store.state.findId.length,
     };
+  },
+  mounted() {
+         for (let s = 0; s <= this.$store.state.findId.length; s++) {
+        this.careinfo.forEach((element) => {
+          if (element.jan === this.$store.state.findId[s]) {
+            this.pageinfo.push(element);
+          }
+        });
+      }
   },
   computed: {
     brandinfo: function () {
@@ -49,15 +59,11 @@ export default {
     },
     // 因为所有的产品都存在于i18n的commodityinfo类数组中，所以在筛选类型的时候，不符合条件的类型会在页面中空出一个位置，为了防止这种情况，提前将数组类中符合条件的数据push进新数组pageinfo中，再返回给bestinfo
     // 用计算属性定义bestinfo是因为在语言转换时可以实时更新页面数据
-    bestinfo: function () {
-      for (let s = 0; s <= this.$store.state.findId.length; s++) {
-        this.careinfo.forEach((element) => {
-          if (element.jan === this.$store.state.findId[s]) {
-            this.pageinfo.push(element);
-          }
-        });
-      }
-      return this.pageinfo;
+
+  },
+  watch: {
+    bestinfo() {
+      console.log("看看什么情况", this.pageinfo);
     },
   },
   methods: {

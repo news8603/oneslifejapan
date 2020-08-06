@@ -146,7 +146,7 @@
             "shopinfo": "東京中央区銀座１−２７−１２キャビネットビル５階,〒104-0061",
             "shopgo": "",
             "shoptime": "",
-            "shoptel": "03-6264-4400/03-6264-4452"
+            "shoptel": "03-6264-4400\n03-6264-4452"
         },
         {
             "shopid": "1",
@@ -154,7 +154,7 @@
             "shopinfo": "東京都台東区西浅草2-1-12 豚八ビル 別館1F,〒104-0061",
             "shopgo": "",
             "shoptime": "",
-            "shoptel": "03-5811-1612/03-5811-1611"
+            "shoptel": "03-5811-1612\n03-5811-1611"
         },
         {
             "shopid": "2",
@@ -884,7 +884,8 @@
         "abouttitle15": "FAX",
         "aboutinfo12": "03-6264-4452",
         "abouttitle16": "代表",
-        "aboutinfo13": "大貫 誠",
+        "aboutinfo13": "大貫",
+        "aboutinfoadd1": "誠",
         "abouttitle17": "設立",
         "aboutinfo14": "1996年4月26日",
         "abouttitle18": "資本金",
