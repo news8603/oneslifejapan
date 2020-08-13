@@ -5,25 +5,158 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
-    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+
     <link rel="shortcut icon" type="image/x-icon" href="./logo.ico">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&subset=chinese-simplified" rel="stylesheet">
     <title>
-        <%= htmlWebpackPlugin.options.title %>
+        ONE'S LIFE JAPAN
     </title>
 </head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #loadingWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        background: black;
+    }
+    
+    #appLoading span {
+        display: inline-block;
+        vertical-align: middle;
+        width: .6rem;
+        height: .6rem;
+        margin: .5rem;
+        letter-spacing: 9rem;
+        font: 1rem verdana;
+        /* box-shadow: 0 0 4px 0px #ffe92f; */
+        background: white;
+        border-radius: 10rem;
+        animation: appLoading 1s infinite alternate;
+    }
+    
+    #appLoading h2 {
+        color: white;
+        letter-spacing: 0.5rem;
+        margin: 0;
+        font: 2rem verdana;
+        padding-bottom: 1rem;
+    }
+    
+    #appLoading h3 {
+        color: white;
+        letter-spacing: 0.5rem;
+        margin: 0;
+        font: 1rem verdana;
+        padding-bottom: 1rem;
+    }
+    
+    #appLoading span:nth-of-type(2) {
+        background: #333333;
+        animation-delay: 1.2s;
+    }
+    
+    #appLoading span:nth-of-type(3) {
+        background: #555;
+        animation-delay: 0.4s;
+    }
+    
+    #appLoading span:nth-of-type(4) {
+        background: #6666;
+        animation-delay: 1.6s;
+    }
+    
+    #appLoading span:nth-of-type(5) {
+        background: #8888;
+        animation-delay: 0.8s;
+    }
+    
+    #appLoading span:nth-of-type(6) {
+        background: #1111;
+        animation-delay: 1.0s;
+    }
+    
+    #appLoading span:nth-of-type(7) {
+        background: #9999;
+        animation-delay: 0.2s;
+    }
+    
+    #appLoading span:nth-of-type(8) {
+        background: #0000;
+        animation-delay: 1.8s;
+    }
+    
+    #appLoading span:nth-of-type(9) {
+        background: #666;
+        animation-delay: 1.4s;
+    }
+    
+    #appLoading span:nth-of-type(10) {
+        background: #1111;
+        animation-delay: 0.5s;
+    }
+    
+    #appLoading span:nth-of-type(11) {
+        background: #000;
+        animation-delay: 0.8s;
+    }
+    
+    #appLoading span:nth-of-type(12) {
+        background: #7777;
+        animation-delay: 1.0s;
+    }
+    
+    #appLoading span:nth-of-type(13) {
+        background: #233;
+        animation-delay: 0.9s;
+    }
+    
+    @keyframes appLoading {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
 
 <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <div id="app">
+        <div id="loadingWrap">
+            <div id="appLoading">
+                <h2>ONE'S LIFE JAPAN</h2>
+                <h3>loading...</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <app></app>
+    </div>
 
 </body>
-<style>
-    /* @import url(https://fonts.googleapis.com/css?family=Noto+Serif+SC&subset=chinese-simplified); */
-</style>
 
 </html>

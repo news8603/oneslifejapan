@@ -154,7 +154,7 @@
         <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.abouttitle20')}}</div>
         <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.aboutinfo17')}}</div>
         <div :style="aboutimg10" class="aboutimgend-10">{{this.$t('about.abouttitle21')}}</div>
-        <div :style="aboutimg10" class="aboutimgend-10">{{this.$t('about.aboutinfo18')}}</div>
+        <div :style="aboutimg10" class="aboutimgend-10" v-html="this.$t('about.aboutinfo18').replace(/\n/g,'<br\>')"></div>
       </div>
       <div class="aboutimg24 aboutB aboutP" :style="aboutimg10"></div>
     </div>
@@ -282,7 +282,7 @@ export default {
   .about {
     max-width: 1280px;
     min-width: 1280px;
-    height: 10800px;
+    height: 11300px;
     margin: auto;
     font-size: 1.2rem;
     overflow: hidden;
@@ -648,7 +648,7 @@ export default {
   .about {
     max-width: 420px;
     width: 420px;
-    height: 5200px;
+    height: 6150px;
     overflow: hidden;
     margin: auto;
     font-size: 0.8rem;

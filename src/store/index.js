@@ -8,7 +8,8 @@ export default new Vuex.Store({
         isShow: 'true',
         findId: undefined,
         isClick: true,
-        en: false
+        en: false,
+        isFirst: true,
     },
     mutations: {},
     actions: {},

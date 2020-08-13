@@ -213,8 +213,11 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.path == "/") {
         store.state.isShow = true;
+        store.state.isFirst = true;
+
     } else {
         store.state.isShow = false;
+        store.state.isFirst = false;
     }
     next();
 })

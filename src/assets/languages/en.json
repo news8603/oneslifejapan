@@ -159,7 +159,7 @@
             "shopinfo": "5F, Cabinet Building 1-27-12 Ginza, Chuo-ku, Tokyo,104-0061",
             "shopgo": "",
             "shoptime": "",
-            "shoptel": "03-6264-4400/03-6264-4452"
+            "shoptel": "TEL : 03-6264-4400\nFAX : 03-6264-4452"
         },
         {
             "shopid": "1",
@@ -167,14 +167,14 @@
             "shopinfo": "Annex 1F, Butahachi Building, 2-1-12 Nishi-Asakusa, Taito-ku, Tokyo, 104-0061",
             "shopgo": "",
             "shoptime": "",
-            "shoptel": "03-5811-1612/03-5811-1611"
+            "shoptel": "TEL : 03-5811-1612\nTEL : 03-5811-1611\nFAX : 03-5811-1610"
         },
         {
             "shopid": "2",
             "shopname": "One's Drug Osaka Rinku Store",
             "shopinfo": "Rinku Port North 5-6, Tajiri-cho, Sennan-gun, Osaka",
             "shoptime": "",
-            "shoptel": "072-479-4400",
+            "shoptel": "TEL : 072-479-4400",
             "shopgo": ""
         },
         {
@@ -182,7 +182,7 @@
             "shopname": "Osaka Central Drug",
             "shopinfo": "Ashiike Building 2F No.20,3-6-5 Minamisenba, Chuo-ku, Osaka City, Osaka, 06-4704-8068",
             "shoptime": "",
-            "shoptel": "06-4704-8068",
+            "shoptel": "TEL : 06-4704-8068",
             "shopgo": ""
         },
         {
@@ -190,7 +190,7 @@
             "shopname": "Omaezaki Grand Hotel",
             "shopinfo": "1412-1 Omaezaki, Omaezaki, Shizuoka,437-1621",
             "shoptime": "",
-            "shoptel": "0548-63-3333",
+            "shoptel": "TEL : 0548-63-3333",
             "shopgo": ""
         }
     ],
@@ -902,9 +902,9 @@
         "abouttitle17": "Establishment",
         "aboutinfo14": "April 26, 1996",
         "abouttitle14": "TEL",
-        "aboutinfo11": "03-6264-4400",
+        "aboutinfo11": "03-6264-4400(TEL)",
         "abouttitle15": "FAX",
-        "aboutinfo12": "03-6264-4452",
+        "aboutinfo12": "03-6264-4452(FAX)",
         "abouttitle18": "Capital",
         "aboutinfo15": "10,000,000yen",
         "abouttitle19": "Annual sales",
@@ -912,7 +912,6 @@
         "abouttitle20": "Bank",
         "aboutinfo17": "Bank of Mitsubishi UFJ",
         "abouttitle21": "Business content",
-        "aboutinfo18": "cosmetics, health foods, nutritional supplements, manufacture, import/export, sales"
-
+        "aboutinfo18": "Pharmaceuticals, cosmetics, health foods, dietary supplements Food manufacturing,exporting,importing,sales\n Publishing\n Trading, exporting,importing and consignment sales of antiques\n Management, operation and outsourcing of hotels and accommodations, food and beverage facilities And technical guidance\n Planning, planning and contracting for international and domestic conferences\n Non-life insurance agency business and life insurance solicitation business\n Electrical appliances, precious metal jewelry, sports goods, natural foods, alcohol, beverages, furniture , Crafts, cigarettes, engineering equipment, office supplies, daily necessities, mail-order sales and import,export, and agency business \n Business related to book sales and travel information provision\n Checkups, medical examinations, and inspections Business related to mediation, etc.\n System development, mail order, management consultant business\n Worker dispatch business\n Investment business\n Travel goods sales and agency business"
     }
 }

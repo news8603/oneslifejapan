@@ -1,6 +1,10 @@
 <template>
-  <div id="app">
-    <el-container>
+  <div id="app" style="display: none">
+    <div class="swiper-slide-video" :style="videoEnd" id="appVideo" style="display: block">
+      <video id="player" src="./down.mp4" autoplay muted playsinline poster="./indextp.jpg"></video>
+    </div>
+
+    <el-container style="opacity: 0" id="appback">
       <el-header>
         <topmenu></topmenu>
       </el-header>
@@ -11,7 +15,7 @@
         <copyright></copyright>
       </el-footer>
     </el-container>
-    <el-backtop background-color: #f2f5f6;></el-backtop>
+    <el-backtop></el-backtop>
   </div>
 </template>
 
@@ -46,6 +50,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .swiper-slide-video {
+    position: fixed;
+    background: black;
+    z-index: 100;
+    transition: 1s;
+    #player {
+      height: -webkit-fill-available;
+      width: 100vw;
+      margin: auto;
+    }
+  }
+  #appback {
+    transition: 1s;
+  }
   .el-header {
     padding: 0 15px;
   }
@@ -59,11 +78,9 @@ body {
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }
@@ -74,12 +91,49 @@ body {
 import topmenu from "./components/topmenu";
 import copyright from "./components/copyright";
 import imain from "./views/imain";
+import { timer } from "rxjs";
 
 export default {
   components: {
     imain,
     topmenu,
-    copyright
-  }
+    copyright,
+  },
+  data() {
+    return {
+      loading: true,
+      videoEnd: { opacity: 1 },
+    };
+  },
+  methods: {},
+  mounted() {
+    var ua = navigator.userAgent.toLowerCase();
+    var isWeixin = ua.indexOf("micromessenger") != -1;
+    if (isWeixin) {
+      document.getElementById("appVideo").style.display = "none";
+      document.getElementById("app").style.display = "block";
+      document.getElementById("appback").style.opacity = "1";
+    } else {
+      let this$ = this;
+      if (this.$store.state.isFirst) {
+        document
+          .getElementById("player")
+          .addEventListener("canplaythrough", function () {
+            setTimeout(() => {
+              this$.videoEnd = { opacity: 0 };
+              setTimeout(() => {
+                document.getElementById("appback").style.opacity = "1";
+                document.getElementById("appVideo").style.display = "none";
+              }, 1000);
+            }, 12000);
+          });
+        document.getElementById("app").style.display = "block";
+      } else {
+        document.getElementById("appVideo").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        document.getElementById("appback").style.opacity = "1";
+      }
+    }
+  },
 };
 </script>
