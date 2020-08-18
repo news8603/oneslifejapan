@@ -23,7 +23,9 @@
         "infoTips": "Send success",
         "emailRight": "Please enter the correct email address",
         "findresult1": "Search Results",
-        "findresult2": "Pieces"
+        "findresult2": "Pieces",
+        "buy": " "
+
     },
     "news": [{
             "index": "1",
@@ -208,6 +210,7 @@
                 "/static/6-gf.png",
                 "/static/6-gf-2.png"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0006.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -233,6 +236,7 @@
                 "/static/mask-1.jpg",
                 "/static/mask-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0007.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -258,6 +262,7 @@
                 "/static/12gfcream-1.jpg",
                 "/static/12gfcream-2.jpg"
             ],
+
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -333,6 +338,7 @@
                 "/static/12gfhorseOil-1.jpg",
                 "/static/12gfhorseOil-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0016.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -358,6 +364,7 @@
                 "/static/12gfhorseMask-1.jpg",
                 "/static/12gfhorseMask-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0017.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -384,6 +391,7 @@
                 "/static/12gfhorsecollagen-2.jpg",
                 "/static/12gfhorsecollagen-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0004.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -410,6 +418,7 @@
                 "/static/12gfeyes-2.jpg",
                 "/static/12gfeyes-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0001.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -435,6 +444,7 @@
                 "/static/12gfenhancement-1.jpg",
                 "/static/12gfenhancement-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0005.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -462,6 +472,7 @@
                 "/static/12gfTgold-3.jpg",
                 "/static/12gfTgold-4.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0003.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "accessories",
@@ -487,6 +498,7 @@
                 "/static/12gfIgold-1.jpg",
                 "/static/12gfIgold-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0020.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "accessories",
@@ -513,6 +525,7 @@
                 "/static/12gfMax-2.jpg",
                 "/static/12gfMax-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0011.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -539,6 +552,7 @@
                 "/static/12gfFoot-2.jpg",
                 "/static/12gfFoot-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0013.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -564,6 +578,7 @@
                 "/static/onesBlack-1.jpg",
                 "/static/onesBlack-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0009.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -589,6 +604,7 @@
                 "/static/onesBrown-1.jpg",
                 "/static/onesBrown-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0010.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -615,6 +631,7 @@
                 "/static/onesAir-2.jpg",
                 "/static/onesAir-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0008.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "accessories",
@@ -641,6 +658,7 @@
                 "/static/onesClear-2.jpg",
                 "/static/onesClear-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0012.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -668,6 +686,7 @@
                 "/static/onesRise-3.jpg",
                 "/static/onesRise-4.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0014.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -694,6 +713,7 @@
                 "/static/onesLemo-2.jpg",
                 "/static/onesLemo-3.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj0015.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",
@@ -719,6 +739,7 @@
                 "/static/onesWater-1.jpg",
                 "/static/onesWater-2.jpg"
             ],
+            "url": "https://store.shopping.yahoo.co.jp/oneslifejapan/olj00118.html",
             "origin": "Origin",
             "origininfo": "Japan",
             "description": "Internal capacity",

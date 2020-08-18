@@ -91,7 +91,7 @@
       <el-input
         v-model="input"
         :placeholder="find"
-       @keyup.enter.native="findStart()"
+        @keyup.enter.native="findStart()"
         style="width:80%;max-width:1000px"
       ></el-input>
       <br />
@@ -223,7 +223,7 @@ export default {
     findStart() {
       //从搜索框获取到用户填入的内容，并开始搜索
       this.$store.state.isClick = true;
-this.$store.state.findId=undefined;
+      this.$store.state.findId = undefined;
       let bestinfo = [];
       if (this._.trim(this.input) == "") {
         this.isJan = true;
@@ -326,19 +326,20 @@ this.$store.state.findId=undefined;
     },
     zh() {
       this.$store.state.en = false;
-      console.log(this.$store.state.en);
-
+      this.$store.state.jp = false;
+      this.$store.state.zh = true;
       (this.i18nchoose = "简体中文"), (this.$i18n.locale = "zh"); //i18n国际化转换
     },
     en() {
       this.$store.state.en = true;
-      console.log(this.$store.state.en);
+      this.$store.state.jp = false;
+      this.$store.state.zh = false;
       (this.i18nchoose = "ENGLISH"), (this.$i18n.locale = "en"); //i18n国际化转换
     },
     jp() {
       this.$store.state.en = false;
-      console.log(this.$store.state.en);
-
+      this.$store.state.jp = true;
+      this.$store.state.zh = false;
       (this.i18nchoose = "日本語"), (this.$i18n.locale = "jp"); //i18n国际化转换
     },
     menugo(w) {

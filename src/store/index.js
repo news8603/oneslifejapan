@@ -10,6 +10,8 @@ export default new Vuex.Store({
         isClick: true,
         en: false,
         isFirst: true,
+        jp: true,
+        zh: false,
     },
     mutations: {},
     actions: {},

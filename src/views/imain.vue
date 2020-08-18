@@ -347,7 +347,7 @@ body {
         }
       }
       .el-carousel__container {
-        height: 600px;
+        // height: 600px;
         margin-bottom: 0px;
         .imaincss {
           .imainimg {
@@ -357,20 +357,20 @@ body {
             top: -40px;
           }
           .imaininfo {
-            font-size: 1.2rem;
+            font-size: 1rem;
             position: fixed;
-            top: 420px;
+            top: 440px;
             right: 0;
             left: 0;
             margin-left: auto;
             margin-right: auto;
-            width: 60%;
+            width: 75%;
             .infoP {
               text-align: center;
+              line-height: 1.4rem;
             }
             .buttoninfo {
               width: 90%;
-              // padding: 0px 40px;
               transition-duration: 0.3s;
             }
             .buttoninfo:hover {

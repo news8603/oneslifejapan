@@ -23,7 +23,8 @@
         "infoTips": "咨询内容已经发送成功",
         "emailRight": "请填写正确的电子邮件地址",
         "findresult1": "搜索结果",
-        "findresult2": "件"
+        "findresult2": "件",
+        "buy": "购买"
     },
     "news": [{
             "index": "1",
@@ -65,22 +66,22 @@
     },
     "imaininfo": [{
             "index": "1",
-            "info": "\"美人丸\"\n内含各种营养品成分搭配",
+            "info": "花之绚烂 美之守恒\n日本超人气明星御用逆龄美颜黑科技\n抗氧抗糖抗衰结合胶原蛋白及多种美容成分\n要你美 懒人逆生长的奥秘专利",
             "bottoninfo": "详 情"
         },
         {
             "index": "2",
-            "info": "「感动」与「心跳」\n调整皮肤健康状态。",
+            "info": "2020世界化妆品品质大会\n国际蒙特大赏\n国际认证 大奖殊荣 独家诺贝尔6种EGF科技配方\n焕新美丽肌肤 纯天然无添加 胶原高效渗透\n去皱亮白 科技养肤 激活肌龄",
             "bottoninfo": "详 情"
         },
         {
             "index": "3",
-            "info": "细致呵护，滋润肌理。",
+            "info": "打造冻龄美人10年如初\n医疗纳米 修复损伤 激活并促进细胞再生\n12种调整肌肤的成分结合透明质酸\n高效保湿 提亮肌肤",
             "bottoninfo": "详 情"
         },
         {
             "index": "4",
-            "info": "空气改善宣言",
+            "info": "智能新领域 防护黑科技\n洁净升级 呵护健康\n6大核心功能 解决污染困扰 放心呼吸",
             "bottoninfo": "详 情"
         }
     ],
@@ -196,6 +197,7 @@
                 "/static/6-gf.png",
                 "/static/6-gf-2.png"
             ],
+            "url": "/static/url/6gf.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -221,6 +223,7 @@
                 "/static/mask-1.jpg",
                 "/static/mask-2.jpg"
             ],
+            "url": "/static/url/oneslife-mask.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -246,6 +249,7 @@
                 "/static/12gfcream-1.jpg",
                 "/static/12gfcream-2.jpg"
             ],
+            "url": "/static/url/12GF-mianshuang.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -271,6 +275,7 @@
                 "/static/12gflotion-1.jpg",
                 "/static/12gflotion-2.jpg"
             ],
+            "url": "/static/url/12GF-ruye.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -296,6 +301,7 @@
                 "/static/12gfease-1.jpg",
                 "/static/12gfease-2.jpg"
             ],
+            "url": "/static/url/12GF-jinghua.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -321,6 +327,7 @@
                 "/static/12gfhorseOil-1.jpg",
                 "/static/12gfhorseOil-2.jpg"
             ],
+            "url": "/static/url/mayou-mianshuang.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -346,6 +353,7 @@
                 "/static/12gfhorseMask-1.jpg",
                 "/static/12gfhorseMask-2.jpg"
             ],
+            "url": "/static/url/mayou-mask.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -372,6 +380,7 @@
                 "/static/12gfhorsecollagen-2.jpg",
                 "/static/12gfhorsecollagen-3.jpg"
             ],
+            "url": "/static/url/jiaoyuandanb.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -398,6 +407,7 @@
                 "/static/12gfeyes-2.jpg",
                 "/static/12gfeyes-3.jpg"
             ],
+            "url": "/static/url/12GF-yanshuang.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -423,6 +433,7 @@
                 "/static/12gfenhancement-1.jpg",
                 "/static/12gfenhancement-2.jpg"
             ],
+            "url": "/static/url/fengxiong.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -450,6 +461,7 @@
                 "/static/12gfTgold-3.jpg",
                 "/static/12gfTgold-4.jpg"
             ],
+            "url": "/static/url/24kyinghua.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "配件",
@@ -475,6 +487,7 @@
                 "/static/12gfIgold-1.jpg",
                 "/static/12gfIgold-2.jpg"
             ],
+            "url": "/static/url/24Kruyi.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "配件",
@@ -501,6 +514,7 @@
                 "/static/12gfMax-2.jpg",
                 "/static/12gfMax-3.jpg"
             ],
+            "url": "/static/url/ciqitie.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -527,6 +541,7 @@
                 "/static/12gfFoot-2.jpg",
                 "/static/12gfFoot-3.jpg"
             ],
+            "url": "/static/url/zubu.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -552,6 +567,7 @@
                 "/static/onesBlack-1.jpg",
                 "/static/onesBlack-2.jpg"
             ],
+            "url": "/static/url/mayou-ranfa.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -577,6 +593,7 @@
                 "/static/onesBrown-1.jpg",
                 "/static/onesBrown-2.jpg"
             ],
+            "url": "/static/url/mayou-ranfa.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -603,6 +620,7 @@
                 "/static/onesAir-2.jpg",
                 "/static/onesAir-3.jpg"
             ],
+            "url": "/static/url/airmask.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "配件",
@@ -629,6 +647,7 @@
                 "/static/onesClear-2.jpg",
                 "/static/onesClear-3.jpg"
             ],
+            "url": "/static/url/xiyiqiu.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -656,6 +675,7 @@
                 "/static/onesRise-3.jpg",
                 "/static/onesRise-4.jpg"
             ],
+            "url": "/static/url/meiren-rose.png",
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -682,6 +702,8 @@
                 "/static/onesLemo-2.jpg",
                 "/static/onesLemo-3.jpg"
             ],
+            "url": "/static/url/meiren-rimo.png",
+
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",
@@ -707,6 +729,8 @@
                 "/static/onesWater-1.jpg",
                 "/static/onesWater-2.jpg"
             ],
+            "url": "/static/url/fushishanchaomishui.png",
+
             "origin": "原产地",
             "origininfo": "日本",
             "description": "内容量",

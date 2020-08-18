@@ -25,6 +25,16 @@
             <p class="in-info">{{ item.description }}:{{ item.descriptioninfo }}</p>
             <p class="in-info">JAN CODE:{{ item.jan }}</p>
             <p class="in-info">{{aboutProduct.price}}：{{ item.price}}</p>
+
+            <p class="in-info" v-if="$store.state.jp">
+              <a :href="item.url" target="_blank">{{buy.buy}}</a>
+            </p>
+            <div class="in-info" v-if="$store.state.zh">
+              <div>
+               请用微信扫描下方小程序码购买产品<br>（微信环境下可直接长按扫描小程序码）
+              </div>
+              <img :src="item.url" alt style="width:40%;height:40%" />
+            </div>
           </el-col>
         </el-row>
         <div class="computershow" mode="out-in">
@@ -145,6 +155,10 @@ export default {
       let aboutProduct = this.$t("infotitle");
       return aboutProduct;
     },
+    buy: function () {
+      let buy = this.$t("hp");
+      return buy;
+    },
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
@@ -179,7 +193,8 @@ export default {
     },
   },
   watch: {
-    findId: function () {//为了避免冲突，判断给ID赋上哪些值
+    findId: function () {
+      //为了避免冲突，判断给ID赋上哪些值
       if (typeof this.$store.state.findId === "object") {
         this.id = this.$route.params.id;
       } else {
@@ -202,6 +217,8 @@ export default {
 .maxwidth {
   max-width: 1290px;
   margin: auto;
+  // display: flex;
+  // align-items: center;
 }
 .commodityinfo {
   font-size: 0.9em;
@@ -213,6 +230,9 @@ export default {
     justify-content: center;
     .in-info {
       border-bottom: 1px solid #f4f4f4;
+    }
+    .in-info-1 {
+      text-align: right;
     }
   }
   .info {
