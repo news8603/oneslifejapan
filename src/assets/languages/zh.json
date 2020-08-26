@@ -743,6 +743,34 @@
             "instructions1": "注意事项",
             "instructionsinfo1": "（1）开始使用时会出现粉末。请用水冲洗2~3次后使用。\n（2）使用过程中，每月进行一次沸腾清洗，待阳光照射后干燥效果会持续。（煮沸清洗后不锈钢外壳会变热，请注意。）\n（3）建议在水中使用后放在阳光下干燥后再使用。\n（4）请勿对商品进行分解、改造等。另外，掉落等行为会造成产品破损。请保管在孩子够不到的地方。",
             "ingredient": "金属，陶瓷"
+        },
+        {
+            "注释": "oneslife，24K魔法美容棒",
+            "jan": "4560213520277",
+            "type": "美容製品",
+            "typesee": "美容制品",
+            "brand": "One's Life Beauty",
+            "infoname": "24K魔法美容棒",
+            "listimg": "/static/list/24Kgole.jpg",
+            "infoimg": [
+                "/static/24Kgole-1.jpg",
+                "/static/24Kgole-2.jpg",
+                "/static/24Kgole-3.jpg",
+                "/static/24Kgole-4.jpg"
+            ],
+            "url": "/static/url/24Kgold.png",
+            "origin": "原产地",
+            "origininfo": "日本",
+            "description": "配件",
+            "descriptioninfo": "单3锰干电池1节，使用说明书，保证书",
+            "price": "21,800日元 （不含税价格）",
+            "details": "在脸部和颈部进行每分钟9000次的微震动",
+            "detailsinfo": "一生美24K黄金棒美容仪（双头大滚轮）\n24K镀金头完全防水美颜神器\n脸部和颈部可每分钟7000次的微振动\n皮肤的健康需要细致的保养。使用24K黄金棒2-3分钟按摩，便可轻松护理面部状态。",
+            "instructions": "使用方法",
+            "instructionsinfo": "黑眼圈，双重下巴，法令纹等问题.....有这样烦恼的人请一定要尝试一下。\n每天几分钟的皮肤管理，由于完全防水，还可以在浴池等地方放松使用。",
+            "instructions1": "注意事项",
+            "instructionsinfo1": "使用后请一定用柔软的干布轻轻擦拭表面的污垢和漏出的部分。长期使用本产品时，请在每次使用后务必进行保养并合理保管。\n・请勿存放在高温、潮湿、阳光直射的地方。\n・保养时，切勿使用稀释剂、苯等挥发性有机溶剂。",
+            "ingredient": "黄铜，铝制（T型杆的头部是纯金的特殊表面处理）"
         }
     ],
     "infotitle": {
