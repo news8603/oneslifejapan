@@ -1,6 +1,12 @@
 <template>
   <div id="app" style="display: none">
-    <div class="swiper-slide-video" :style="videoEnd" id="appVideo" style="display: block">
+    <div
+      class="swiper-slide-video"
+      :style="videoEnd"
+      id="appVideo"
+      style="display: block"
+      @click="videwDown"
+    >
       <video id="player" src="./down.mp4" autoplay muted playsinline poster="./indextp.jpg"></video>
     </div>
 
@@ -105,7 +111,13 @@ export default {
       videoEnd: { opacity: 1 },
     };
   },
-  methods: {},
+  methods: {
+    videwDown: function () {
+      document.getElementById("appVideo").style.display = "none";
+      document.getElementById("app").style.display = "block";
+      document.getElementById("appback").style.opacity = "1";
+    },
+  },
   mounted() {
     var ua = navigator.userAgent.toLowerCase();
     var isWeixin = ua.indexOf("micromessenger") != -1;

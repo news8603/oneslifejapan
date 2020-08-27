@@ -67,25 +67,25 @@
     },
     "imaininfo": [{
             "index": "1",
-            "info": "「Bijinnomaru」beauty supplement \n contains various ingredients",
+            "info": "Actresses’ favourites!\nWhitening/Beauty supplement\nis based on adding beauty ingredients\n[antioxidation/anti-glycation]\nwhich is the basis of beauty/whitening.",
             "bottoninfo": "click here for more"
 
         },
         {
             "index": "2",
-            "info": " 「Impression」and「excitement」\nRegulates the healthy movement of skin",
+            "info": " Awarded in [Monde Selection 2020].\nNoble Prize winning 6GF with\nunique ingredients that rejuvenate and create smooth firm skin.",
             "bottoninfo": "click here for more"
 
         },
         {
             "index": "3",
-            "info": "Care for moisturized skin",
+            "info": "A product created through many years of research by\nthe Japanese Regenerative Cell Research Team\n12 types of peptides that moisturize aged skin\ncare is centered on moisturizing\nactivates skin stem cells, promotes skin metabolism\nsupplies moisture. Brings fresh skin!",
             "bottoninfo": "click here for more"
 
         },
         {
             "index": "4",
-            "info": "Air improvement declaration",
+            "info": "Electronic mask negative ion generator\nAir improvement declaration\nClean up PM2.5 pollen dust in the air with negative ions\nWith 6 functions prevent harmful substances from entering.",
             "bottoninfo": "click here for more"
 
         }
@@ -166,15 +166,15 @@
         {
             "shopid": "1",
             "shopname": "One's Drug Asakusa Store",
-            "shopinfo": "Annex 1F, Butahachi Building, 2-1-12 Nishi-Asakusa, Taito-ku, Tokyo, 104-0061",
+            "shopinfo": "Annex 1F, Butahachi Building, 2-1-12 Nishi-Asakusa, Taito-ku, Tokyo, 111-0035",
             "shopgo": "",
             "shoptime": "",
-            "shoptel": "TEL : 03-5811-1612\nTEL : 03-5811-1611\nFAX : 03-5811-1610"
+            "shoptel": "nTEL : 03-5811-1611\nFAX : 03-5811-1610"
         },
         {
             "shopid": "2",
             "shopname": "One's Drug Osaka Rinku Store",
-            "shopinfo": "Rinku Port North 5-6, Tajiri-cho, Sennan-gun, Osaka",
+            "shopinfo": "Rinku Port North 5-6, Tajiri-cho, Sennan-gun, Osaka,598-0093",
             "shoptime": "",
             "shoptel": "TEL : 072-479-4400",
             "shopgo": ""
@@ -182,15 +182,15 @@
         {
             "shopid": "3",
             "shopname": "Osaka Central Drug",
-            "shopinfo": "Ashiike Building 2F No.20,3-6-5 Minamisenba, Chuo-ku, Osaka City, Osaka, 06-4704-8068",
+            "shopinfo": "Ashiike Building 1-A,3-6-5 Minamisenba, Chuo-ku, Osaka City, Osaka, 542-0081",
             "shoptime": "",
             "shoptel": "TEL : 06-4704-8068",
             "shopgo": ""
         },
         {
             "shopid": "5",
-            "shopname": "Omaezaki Grand Hotel",
-            "shopinfo": "1412-1 Omaezaki, Omaezaki, Shizuoka,437-1621",
+            "shopname": "Shopping plaza turtle",
+            "shopinfo": "Omaezaki 1412-1, Omaezaki City, Shizuoka Prefecture (inside Omaezaki Hotel),437-1621",
             "shoptime": "",
             "shoptel": "TEL : 0548-63-3333",
             "shopgo": ""
@@ -833,7 +833,7 @@
     },
     "product6GF": {
         "tsgfinfotitle1": "「Impression」and「excitement」Regulates the healthy movement of skin",
-        "tsgfinfotitle2": "Carbonate power",
+        "tsgfinfotitle2": "",
         "tsgfinfotitle3": "For you too",
         "tsgfinfotitle4": "can experience the excitement",
         "tsgfinfo1": "When put it on skin, you will feel that the gel pops out and becomes warm gradually. The gentle stimulus of this fine foam slowly loosens the firm skin and leads to a firm, shine skin.\nExperience bright bare skin and enjoy treatment from beauty salon at home.",
@@ -850,7 +850,9 @@
         "tsgfinfotitle13": "that maximize carbonic acid power",
         "tsgfinfo4": "DPG, ethyl perfluoroisobutyl ether, arch choke leaf extract, soybean seed extract, glycosyl trehalose, etc. are used to maximize the effect of carbonic acid. Was successful. Fine particles penetrate into the inside of the skin, and you can expect quick attack.",
         "tsgfinfotitle14": "feel the",
-        "tsgfinfotitle15": "dramatic change."
+        "tsgfinfotitle15": "dramatic change.",
+        "tsgfinfoadd1": "6GF Carbonic acid nourishing deep cleansing mask, the self-owned brand of Isshonobi, is awarded in Monde Selection in 2020 due to outstanding qualities.",
+        "tsgfinfoadd2": "Monde Selection is a prestigious, authoritative international quality research institute founded in 1961 and headquartered in Brussels, Belgium. Products are tasted and tested by 70 independent jury experts in order to grant them a quality label awarded by the [International Quality Institute]. Monde Selection follows a very complex and demanding set of assessment standards, and thus is dubbed as the Nobel Prize for food and cosmetics."
 
     },
     "product12GF": {

@@ -243,7 +243,7 @@ body {
       cursor: pointer;
     }
     .el-carousel__container {
-      height: 650px;
+      height: 680px;
       .imaincss {
         height: 680px;
         background-repeat: no-repeat;
@@ -347,7 +347,7 @@ body {
         }
       }
       .el-carousel__container {
-        // height: 600px;
+        height: 750px;
         margin-bottom: 0px;
         .imaincss {
           .imainimg {
@@ -364,7 +364,7 @@ body {
             left: 0;
             margin-left: auto;
             margin-right: auto;
-            width: 75%;
+            width: 85%;
             .infoP {
               text-align: center;
               line-height: 1.4rem;
