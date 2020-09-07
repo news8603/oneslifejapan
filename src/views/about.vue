@@ -2,18 +2,26 @@
   <!-- 这个文件写的是about one's life页面的内容 -->
   <div class="about">
     <div class="aboutimg1 aboutB">
-      <div class="aboutinfo2 title1">{{this.$t('about.abouttitle2')}}</div>
-      <div class="aboutinfo1 title">{{this.$t('about.abouttitle1')}}</div>
+      <div class="aboutinfo2 title1" :style="isEnStyle1">{{this.$t('about.abouttitle2')}}</div>
+      <div class="aboutinfo1 title" :style="isEnStyle2">{{this.$t('about.abouttitle1')}}</div>
     </div>
 
     <div class="aboutimg2 aboutB aboutP">
       <div class="yLine aboutB aboutP"></div>
       <div class="yMF aboutB aboutP"></div>
       <div class="aboutinfo5">
-        <div class="aboutinfo5-in" v-html="this.$t('about.aboutinfo2').replace(/\n/g,'<br\>')"></div>
+        <div
+          class="aboutinfo5-in"
+          v-html="this.$t('about.aboutinfo2').replace(/\n/g,'<br\>')"
+          :style="isEnStyle3"
+        ></div>
       </div>
-      <div class="aboutinfo3" v-html="this.$t('about.aboutinfo1').replace(/\n/g,'<br\>')"></div>
-      <div class="aboutinfo4 title">{{this.$t('about.abouttitle3')}}</div>
+      <div
+        class="aboutinfo3"
+        v-html="this.$t('about.aboutinfo1').replace(/\n/g,'<br\>')"
+        :style="isEnStyle4"
+      ></div>
+      <div class="aboutinfo4 title" :style="isEnStyle5">{{this.$t('about.abouttitle3')}}</div>
     </div>
 
     <div class="aboutimg3 aboutB aboutP" id="history"></div>
@@ -105,18 +113,18 @@
       <div class="aboutimg10 aboutP" id="profile" :style="ifEnPhone">
         <!-- ifEnPhone是一个对象，记录着随语言切换时的居顶距离 -->
         <div class="aboutimg10-info1">
-          <div v-html="this.$t('about.aboutinfo4').replace(/\n/g,'<br\>')"></div>
-          <div v-html="this.$t('about.aboutinfo5').replace(/\n/g,'<br\>')"></div>
+          <div v-html="this.$t('about.aboutinfo4').replace(/\n/g,'<br\>')" :style="isEnStyle6"></div>
+          <div v-html="this.$t('about.aboutinfo5').replace(/\n/g,'<br\>')" :style="isEnStyle7"></div>
         </div>
-        <div class="aboutimg10-info2">{{this.$t('about.abouttitle11')}}</div>
+        <div class="aboutimg10-info2" :style="isEnStyle9">{{this.$t('about.abouttitle11')}}</div>
         <div class="aboutimg11-info1">
-          <div v-html="this.$t('about.aboutinfo6').replace(/\n/g,'<br\>')"></div>
+          <div v-html="this.$t('about.aboutinfo6').replace(/\n/g,'<br\>')" :style="isEnStyle8"></div>
         </div>
       </div>
       <div class="aboutimg12 aboutB aboutP"></div>
       <div class="aboutimg13 aboutB aboutP"></div>
       <div class="aboutimg14 aboutB aboutP" :style="ifEnPhone1">
-        <div v-html="this.$t('about.aboutinfo6').replace(/\n/g,'<br\>')"></div>
+        <div ></div>
       </div>
       <div class="aboutimg15 aboutB aboutP"></div>
       <div class="aboutimg16 aboutB aboutP" :style="aboutimg8"></div>
@@ -154,7 +162,11 @@
         <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.abouttitle20')}}</div>
         <div :style="aboutimg10" class="aboutimgend-9">{{this.$t('about.aboutinfo17')}}</div>
         <div :style="aboutimg10" class="aboutimgend-10">{{this.$t('about.abouttitle21')}}</div>
-        <div :style="aboutimg10" class="aboutimgend-10" v-html="this.$t('about.aboutinfo18').replace(/\n/g,'<br\>')"></div>
+        <div
+          :style="aboutimg10"
+          class="aboutimgend-10"
+          v-html="this.$t('about.aboutinfo18').replace(/\n/g,'<br\>')"
+        ></div>
       </div>
       <div class="aboutimg24 aboutB aboutP" :style="aboutimg10"></div>
     </div>
@@ -179,6 +191,15 @@ export default {
       aboutimg8: { opacity: 0 },
       aboutimg9: { opacity: 0 },
       aboutimg10: { opacity: 0 },
+      isEnStyle1: { writingMode: "vertical-rl" },
+      isEnStyle2: { writingMode: "vertical-rl" },
+      isEnStyle3: { writingMode: "vertical-rl" },
+      isEnStyle4: { writingMode: "vertical-rl" },
+      isEnStyle5: { writingMode: "vertical-rl" },
+      isEnStyle6: { writingMode: "vertical-rl" },
+      isEnStyle7: { writingMode: "vertical-rl" },
+      isEnStyle8: { writingMode: "vertical-rl" },
+      isEnStyle9: { writingMode: "vertical-rl" },
     };
   },
   computed: {
@@ -198,6 +219,7 @@ export default {
   },
   watch: {
     ifEn: function () {
+      this.changeStyle();
       if (this.$store.state.en && this.sWidth) {
         //如果选择了英语语言,且处于手机端，则改变居顶为止
         this.ifEnPhone.top = 1950 + "px";
@@ -216,6 +238,8 @@ export default {
   mounted() {
     let this$ = this;
     let isPhone = document.body.clientWidth;
+
+    this$.changeStyle();
     this.scroll$.subscribe(function downD(x) {
       console.log(x);
       if (isPhone > 500) {
@@ -256,6 +280,119 @@ export default {
       }
     });
   },
+  methods: {
+    changeStyle() {
+      if (this.$store.state.en && document.body.clientWidth < 500) {
+        console.log("选择了En");
+        this.isEnStyle1 = { writingMode: "rl", marginTop: "100px" };
+        this.isEnStyle2 = {
+          writingMode: "rl",
+          marginTop: "-600px",
+          display: "block",
+        };
+        this.isEnStyle3 = {
+          writingMode: "rl",
+          marginTop: "100px",
+          width: "60%",
+
+          display: "block",
+        };
+        this.isEnStyle4 = {
+          writingMode: "rl",
+          marginTop: "-370px",
+          display: "block",
+          width: "80%",
+          marginLeft: "30px",
+        };
+        this.isEnStyle5 = {
+          writingMode: "rl",
+          marginTop: "-360px",
+          display: "block",
+        };
+        this.isEnStyle6 = {
+          writingMode: "rl",
+          marginTop: "320px",
+          display: "block",
+        };
+        this.isEnStyle7 = {
+          writingMode: "rl",
+          marginTop: "-370px",
+          display: "block",
+        };
+        this.isEnStyle8 = {
+          writingMode: "rl",
+          width: "95%",
+          marginRight: "15px",
+          marginTop: "30px",
+          display: "block",
+        };
+        this.isEnStyle9 = {
+          writingMode: "rl",
+          marginTop: "100px",
+        };
+      } else if (this.$store.state.en) {
+        console.log("选择了手机端的En");
+        this.isEnStyle1 = { writingMode: "rl" };
+        this.isEnStyle2 = {
+          writingMode: "rl",
+          marginTop: "-600px",
+          display: "block",
+        };
+        this.isEnStyle3 = {
+          writingMode: "rl",
+          marginTop: "-470px",
+          display: "block",
+        };
+        this.isEnStyle4 = {
+          writingMode: "rl",
+          marginTop: "-470px",
+          display: "block",
+          width: "80%",
+          marginLeft: "120px",
+        };
+        this.isEnStyle5 = {
+          writingMode: "rl",
+          marginTop: "-500px",
+          display: "block",
+        };
+        this.isEnStyle6 = {
+          writingMode: "rl",
+          marginTop: "20px",
+          display: "block",
+        };
+        this.isEnStyle7 = {
+          writingMode: "rl",
+          // marginTop: "-500px",
+          display: "block",
+        };
+        this.isEnStyle8 = {
+          writingMode: "rl",
+          width: "30%",
+          marginTop: "-600px",
+          display: "block",
+        };
+        this.isEnStyle9 = {
+          writingMode: "rl",
+        };
+      } else {
+        this.isEnStyle1 = { writingMode: "vertical-rl" };
+        this.isEnStyle2 = { writingMode: "vertical-rl" };
+        this.isEnStyle3 = { writingMode: "vertical-rl" };
+        this.isEnStyle4 = { writingMode: "vertical-rl" };
+        this.isEnStyle5 = { writingMode: "vertical-rl" };
+        this.isEnStyle6 = { writingMode: "vertical-rl" };
+        this.isEnStyle7 = { writingMode: "vertical-rl" };
+        this.isEnStyle8 = { writingMode: "vertical-rl" };
+        this.isEnStyle9 = { writingMode: "vertical-rl" };
+        if(!this.$store.state.en){
+        this.isEnStyle8 = {};
+
+        this.isEnStyle9 = {};
+
+        }
+      }
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -292,6 +429,7 @@ export default {
       width: 100%;
       height: 1430px;
       background-image: url(../about/about-1.jpg);
+
       .aboutinfo1 {
         display: inline-block;
         margin: auto;
