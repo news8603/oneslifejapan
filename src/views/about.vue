@@ -386,9 +386,7 @@ export default {
         this.isEnStyle9 = { writingMode: "vertical-rl" };
         if(!this.$store.state.en){
         this.isEnStyle8 = {};
-
         this.isEnStyle9 = {};
-
         }
       }
     },
