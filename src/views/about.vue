@@ -382,7 +382,8 @@ export default {
         this.isEnStyle5 = { writingMode: "vertical-rl" };
         this.isEnStyle6 = { writingMode: "vertical-rl" };
         this.isEnStyle7 = { writingMode: "vertical-rl" };
-        this.isEnStyle8 = { writingMode: "vertical-rl" };
+          
+        this.isEnStyle8 = { writingMode: "vertical-rl"};
         this.isEnStyle9 = { writingMode: "vertical-rl" };
         if(!this.$store.state.en){
         this.isEnStyle8 = {};
@@ -602,6 +603,8 @@ export default {
           margin-top: 80px;
         }
         .aboutimg11-info1 {
+          height:700px;
+
           display: inline-block;
           div {
             writing-mode: vertical-rl;

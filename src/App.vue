@@ -7,10 +7,11 @@
       style="display: block"
       @click="videwDown"
     >
+      <div class="skip">Click To Skip Animation</div>
       <video id="player" src="./down.mp4" autoplay muted playsinline poster="./indextp.jpg"></video>
     </div>
 
-    <el-container style="opacity: 0" id="appback">
+    <el-container id="appback">
       <el-header>
         <topmenu></topmenu>
       </el-header>
@@ -56,17 +57,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
   .swiper-slide-video {
     position: fixed;
     background: black;
     z-index: 100;
-    transition: 1s;
+    // -webkit-mask: url(try.png) no-repeat;
+    .skip {
+      font-size: 1rem;
+      position: fixed;
+      color:#ffc107;
+      right: 10%;
+      left: 10%;
+      bottom: 10%;
+      letter-spacing: 0.3rem;
+    }
+
     #player {
       height: -webkit-fill-available;
       width: 100vw;
-      margin: auto;
     }
+  }
+  .swiper-slide-video:hover {
+    cursor: pointer;
+  }
+  #appVideo {
+    transition: 2s 0.1s;
+    opacity: 1;
+    -webkit-mask: -webkit-gradient(
+      radial,
+      50% 50%,
+      0,
+      50% 50%,
+      0,
+      from(#fffffd),
+      color-stop(0.5, rgba(255, 166, 0, 0)),
+      to(#000103)
+    );
   }
   #appback {
     transition: 1s;
@@ -97,7 +123,7 @@ body {
 import topmenu from "./components/topmenu";
 import copyright from "./components/copyright";
 import imain from "./views/imain";
-import { timer } from "rxjs";
+import { interval, timer } from "rxjs";
 
 export default {
   components: {
@@ -113,9 +139,25 @@ export default {
   },
   methods: {
     videwDown: function () {
-      document.getElementById("appVideo").style.display = "none";
-      document.getElementById("app").style.display = "block";
-      document.getElementById("appback").style.opacity = "1";
+      let i = 0;
+      if (this.$store.state.isFirst) {
+        this.$store.state.isFirst = false; //点击一回开场动画后isFirst为假，避免重复播放消除动画
+        var abs = setInterval(() => {
+          i = i + 15;
+
+          document.getElementById("appVideo").style.WebkitMask = //遮罩的圆心扩大的效果
+            "-webkit-gradient(radial,50% 50%," +
+            i +
+            ",50% 50%,0,from(#fffffd),color-stop(0.5, rgba(255, 166, 0, 0)),to(#000103))";
+          document.getElementById("appVideo").style.opacity = "0"; //动画全部消失
+
+          if (i > 2000) {
+            document.getElementById("appVideo").style.display = "none";
+            clearInterval(abs);
+          }
+        }, 10);
+        document.getElementById("app").style.display = "block";
+      }
     },
   },
   mounted() {
@@ -124,26 +166,28 @@ export default {
     if (isWeixin) {
       document.getElementById("appVideo").style.display = "none";
       document.getElementById("app").style.display = "block";
-      document.getElementById("appback").style.opacity = "1";
     } else {
       let this$ = this;
       if (this.$store.state.isFirst) {
         document
           .getElementById("player")
           .addEventListener("canplaythrough", function () {
+            // setTimeout(() => {
+            //   this$.videoEnd = { opacity: 0 };
+            //   setTimeout(() => {
+            //
+            //     document.getElementById("appVideo").style.display = "none";
+            //   }, 1000);
+            // }, 12000);
+
             setTimeout(() => {
-              this$.videoEnd = { opacity: 0 };
-              setTimeout(() => {
-                document.getElementById("appback").style.opacity = "1";
-                document.getElementById("appVideo").style.display = "none";
-              }, 1000);
-            }, 12000);
+              this$.videwDown(); //widewDown函数是开场动画的消失效果
+            }, 10000);
           });
         document.getElementById("app").style.display = "block";
       } else {
         document.getElementById("appVideo").style.display = "none";
         document.getElementById("app").style.display = "block";
-        document.getElementById("appback").style.opacity = "1";
       }
     }
   },
