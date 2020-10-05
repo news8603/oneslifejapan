@@ -24,7 +24,8 @@
         "emailRight": "请填写正确的电子邮件地址",
         "findresult1": "搜索结果",
         "findresult2": "件",
-        "buy": "购买"
+        "buy": "购买",
+        "netbuy": "点击此处购买"
     },
     "news": [{
             "index": "1",

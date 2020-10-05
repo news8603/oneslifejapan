@@ -24,7 +24,8 @@
         "emailRight": "正しいメールアドレスの書式ではありません",
         "findresult1": "検索結果",
         "findresult2": "件",
-        "buy": "購入"
+        "buy": "購入",
+        "netbuy": "購入こちらへ"
     },
     "news": [{
             "index": "1",

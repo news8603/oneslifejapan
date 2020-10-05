@@ -65,6 +65,9 @@
         <div class="tsgftitle-4">{{this.$t('product6GF.tsgfinfotitle15') }}</div>
       </div>
       <div class="tsgfimg13 bgP bgimg"></div>
+      <a href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0006.html" target="_blank">
+        <div class="netbuy bgP bgimg" :style="tsgfdh6">{{this.$t('hp.netbuy')}}</div>
+      </a>
     </div>
   </div>
 </template>
@@ -460,8 +463,8 @@ export default {
         width: 40%;
         margin-left: 20px;
         .gf6gai-innertext {
-width: 50%;
-    top: -40px;
+          width: 50%;
+          top: -40px;
           z-index: 2;
         }
         .gf6show {
@@ -603,6 +606,7 @@ width: 50%;
         z-index: -1;
         transition: all 0.6s ease-out 0.8s;
       }
+
       .tsgfimg13 {
         background-image: url(../6G0011.png);
         top: 3525px;
@@ -611,6 +615,20 @@ width: 50%;
         left: 630px;
         z-index: -1;
         transition: all 0.6s ease-out 0.4s;
+      }
+      .netbuy {
+        width: 20%;
+        left: 75%;
+        text-align: center;
+        padding: 5px;
+        color: white;
+        top: 3860px;
+        background-color: #184f7e;
+        border-radius: 5px;
+      }
+      .netbuy:hover{
+        transition: 0.3s;
+        background-color: #184f7ebf;
       }
     }
   }

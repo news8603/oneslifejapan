@@ -24,7 +24,8 @@
         "emailRight": "Please enter the correct email address",
         "findresult1": "Search Results",
         "findresult2": "Pieces",
-        "buy": " "
+        "buy": " ",
+        "netbuy": "Click here to buy"
 
     },
     "news": [{
