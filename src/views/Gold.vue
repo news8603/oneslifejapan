@@ -37,6 +37,14 @@
       <div class="goldT">{{this.$t('gold.goldtitle4')}}</div>
       <div v-html="this.$t('gold.goldinfo4').replace(/\n/g,'<br\>')"></div>
     </div>
+        <a
+      href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0020.html"
+      target="_blank"
+    >
+      <div class="netbuy goldP" :style="goldimg5">
+        {{ this.$t("hp.netbuy") }}
+      </div>
+    </a>
   </div>
 </template>
 <script>
@@ -226,6 +234,21 @@ export default {
         margin-bottom: 120px;
       }
     }
+            .netbuy {
+width: 35%;
+    left: 56%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    top: 4000px;
+    background-color: #945901;
+    border-radius: 5px;
+    transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
+    }
   }
 }
 @media screen and(max-width: 500px) {
@@ -363,6 +386,21 @@ export default {
       .goldT {
         margin-bottom: 50px;
       }
+    }
+                .netbuy {
+width: 35%;
+    left: 56%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    top: 2050px;
+    background-color: #945901;
+    border-radius: 5px;
+    transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }

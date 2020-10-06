@@ -1,153 +1,197 @@
 <template>
   <div class="product-details0" :style="bjBS">
     <div class="bijin-1 productP bijin-abs" :style="bj1imgStart"></div>
-    <div
-      class="bijin-title bijin-abs bijin-item-1"
-      :style="bj1imgStart1"
-    >{{ this.$t("productBijin.bijinTitle1") }}</div>
+    <div class="bijin-title bijin-abs bijin-item-1" :style="bj1imgStart1">
+      {{ this.$t("productBijin.bijinTitle1") }}
+    </div>
     <div class="bijin-item-info bijin-abs" :style="bj1imgStart2">
-      <div v-html="this.$t('productBijin.bijinText1').replace(/\n/g,'<br\>')"></div>
-      <div v-html="this.$t('productBijin.bijinPs').replace(/\n/g,'<br\>')" class="bijin-text-ps"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText1').replace(/\n/g, '<br\>')"
+      ></div>
+      <div
+        v-html="this.$t('productBijin.bijinPs').replace(/\n/g, '<br\>')"
+        class="bijin-text-ps"
+      ></div>
     </div>
 
     <div class="bijin-2 productP bijin-abs"></div>
-    <div
-      class="bijin-title bijin-abs bijin-item-2"
-      :style="bj1img1"
-    >{{ this.$t("productBijin.bijinTitle2") }}</div>
-    <div class="bijin-abs bijin-item-info-2" :style="bj1img2">
-      <div v-html="this.$t('productBijin.bijinText2').replace(/\n/g,'<br\>')"></div>
+    <div class="bijin-title bijin-abs bijin-item-2" :style="bj1img1">
+      {{ this.$t("productBijin.bijinTitle2") }}
     </div>
-    <div class="bijin-abs bijin-info">{{ this.$t("productBijin.bijinText2_1") }}</div>
-    <div class="bijin-abs bijin-info-1">{{ this.$t("productBijin.bijinText2_2") }}</div>
-    <div
-      class="bijin-abs bijin-title bijin-item-3"
-      :style="bj1img3"
-    >{{ this.$t("productBijin.bijinTitle3") }}</div>
+    <div class="bijin-abs bijin-item-info-2" :style="bj1img2">
+      <div
+        v-html="this.$t('productBijin.bijinText2').replace(/\n/g, '<br\>')"
+      ></div>
+    </div>
+    <div class="bijin-abs bijin-info">
+      {{ this.$t("productBijin.bijinText2_1") }}
+    </div>
+    <div class="bijin-abs bijin-info-1">
+      {{ this.$t("productBijin.bijinText2_2") }}
+    </div>
+    <div class="bijin-abs bijin-title bijin-item-3" :style="bj1img3">
+      {{ this.$t("productBijin.bijinTitle3") }}
+    </div>
     <div class="bijin-abs bijin-item-3-info" :style="bj1img4">
       <div
-        v-html="this.$t('productBijin.bijinTitle3_1').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle3_1').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title"
       ></div>
-      <div v-html="this.$t('productBijin.bijinText3_1').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText3_1').replace(/\n/g, '<br\>')"
+      ></div>
       <p></p>
       <div
-        v-html="this.$t('productBijin.bijinTitle3_2').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle3_2').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title"
       ></div>
-      <div v-html="this.$t('productBijin.bijinText3_2').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText3_2').replace(/\n/g, '<br\>')"
+      ></div>
       <p></p>
       <div
-        v-html="this.$t('productBijin.bijinTitle3_3').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle3_3').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title"
       ></div>
-      <div v-html="this.$t('productBijin.bijinText3_3').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText3_3').replace(/\n/g, '<br\>')"
+      ></div>
       <p></p>
       <div
-        v-html="this.$t('productBijin.bijinTitle3_4').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle3_4').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title"
       ></div>
-      <div v-html="this.$t('productBijin.bijinText3_4').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText3_4').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
 
     <div class="bijin-3 productP bijin-abs" :style="bj1img5"></div>
-    <div
-      class="bijin-abs bijin-title bijin-item-4"
-      :style="bj1img6"
-    >{{ this.$t("productBijin.bijinTitle4")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-4" :style="bj1img6">
+      {{ this.$t("productBijin.bijinTitle4") }}
+    </div>
     <div class="bijin-abs bijin-item-4-info" :style="bj1img7">
       <div
-        v-html="this.$t('productBijin.bijinTitle4_1').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle4_1').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title bijin-dh-1"
         :style="bj1img8"
       ></div>
       <div
-        v-html="this.$t('productBijin.bijinText4_1').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinText4_1').replace(/\n/g, '<br\>')"
         :style="bj1img8"
         class="bijin-dh-1"
       ></div>
 
       <div
-        v-html="this.$t('productBijin.bijinTitle4_2').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle4_2').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title bijin-dh-2"
         :style="bj1img9"
       ></div>
       <div
-        v-html="this.$t('productBijin.bijinText4_2').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinText4_2').replace(/\n/g, '<br\>')"
         :style="bj1img9"
         class="bijin-dh-2"
       ></div>
 
       <div
-        v-html="this.$t('productBijin.bijinTitle4_3').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle4_3').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title bijin-dh-3"
         :style="bj1img10"
       ></div>
       <div
-        v-html="this.$t('productBijin.bijinText4_3').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinText4_3').replace(/\n/g, '<br\>')"
         :style="bj1img10"
         class="bijin-dh-3"
       ></div>
 
       <div
-        v-html="this.$t('productBijin.bijinTitle4_4').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinTitle4_4').replace(/\n/g, '<br\>')"
         class="bijin-item-3-info-title bijin-dh-4"
         :style="bj1img11"
       ></div>
       <div
-        v-html="this.$t('productBijin.bijinText4_4').replace(/\n/g,'<br\>')"
+        v-html="this.$t('productBijin.bijinText4_4').replace(/\n/g, '<br\>')"
         :style="bj1img11"
         class="bijin-dh-4"
       ></div>
     </div>
 
     <div class="bijin-4 productP bijin-abs" :style="bj1img12"></div>
-    <div
-      class="bijin-abs bijin-title bijin-item-5"
-      :style="bj1img13"
-    >{{ this.$t("productBijin.bijinTitle5")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-5" :style="bj1img13">
+      {{ this.$t("productBijin.bijinTitle5") }}
+    </div>
     <div
       class="bijin-abs bijin-item-5-info"
-      v-html="this.$t('productBijin.bijinText5').replace(/\n/g,'<br\>')"
+      v-html="this.$t('productBijin.bijinText5').replace(/\n/g, '<br\>')"
       :style="bj1img14"
     ></div>
-    <div
-      class="bijin-abs bijin-title bijin-item-6"
-      :style="bj1img16"
-    >{{ this.$t("productBijin.bijinTitle6")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-6" :style="bj1img16">
+      {{ this.$t("productBijin.bijinTitle6") }}
+    </div>
     <div
       class="bijin-abs bijin-item-6-info"
-      v-html="this.$t('productBijin.bijinText6_1').replace(/\n/g,'<br\>')"
+      v-html="this.$t('productBijin.bijinText6_1').replace(/\n/g, '<br\>')"
       :style="bj1img15"
     ></div>
-    <div class="bijin-abs bijin-title bijin-item-7">{{ this.$t("productBijin.bijinTitle7")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-7">
+      {{ this.$t("productBijin.bijinTitle7") }}
+    </div>
     <div
       class="bijin-abs bijin-item-7-info"
-      v-html="this.$t('productBijin.bijinText7_1').replace(/\n/g,'<br\>')"
+      v-html="this.$t('productBijin.bijinText7_1').replace(/\n/g, '<br\>')"
       :style="bj1img15"
     ></div>
 
     <div class="bijin-5 productP bijin-abs"></div>
-    <div class="bijin-abs bijin-title bijin-item-8">{{ this.$t("productBijin.bijinTitle8")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-8">
+      {{ this.$t("productBijin.bijinTitle8") }}
+    </div>
     <div
       class="bijin-abs bijin-item-8-info"
-      v-html="this.$t('productBijin.bijinText8_1').replace(/\n/g,'<br\>')"
+      v-html="this.$t('productBijin.bijinText8_1').replace(/\n/g, '<br\>')"
       :style="bj1img15"
     ></div>
 
     <div class="bijin-6 productP bijin-abs"></div>
-    <div
-      class="bijin-abs bijin-title bijin-item-9"
-      :style="bj1img17"
-    >{{ this.$t("productBijin.bijinTitle9")}}</div>
+    <div class="bijin-abs bijin-title bijin-item-9" :style="bj1img17">
+      {{ this.$t("productBijin.bijinTitle9") }}
+    </div>
     <div class="bijin-abs bijin-item-9-info" :style="bj1img18">
-      <div v-html="this.$t('productBijin.bijinText9').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('productBijin.bijinText9').replace(/\n/g, '<br\>')"
+      ></div>
       <p></p>
-      <div class="bijin-item-3-info-title">{{ this.$t('productBijin.bijinTitle9_1') }}</div>
-      <div v-html="this.$t('productBijin.bijinText9_1').replace(/\n/g,'<br\>')" class="bijin-dh-1"></div>
+      <div class="bijin-item-3-info-title">
+        {{ this.$t("productBijin.bijinTitle9_1") }}
+      </div>
+      <div
+        v-html="this.$t('productBijin.bijinText9_1').replace(/\n/g, '<br\>')"
+        class="bijin-dh-1"
+      ></div>
       <p></p>
-      <div class="bijin-item-3-info-title">{{ this.$t('productBijin.bijinTitle9_2') }}</div>
-      <div v-html="this.$t('productBijin.bijinText9_2').replace(/\n/g,'<br\>')" class="bijin-dh-3"></div>
+      <div class="bijin-item-3-info-title">
+        {{ this.$t("productBijin.bijinTitle9_2") }}
+      </div>
+      <div
+        v-html="this.$t('productBijin.bijinText9_2').replace(/\n/g, '<br\>')"
+        class="bijin-dh-3"
+      ></div>
+      <a
+        href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0015.html"
+        target="_blank"
+      >
+        <div class="netbuy productP bijin-abs" :style="bj1img18">
+          {{ this.$t("hp.netbuy1") }}
+        </div>
+      </a>
+      <a
+        href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0014.html"
+        target="_blank"
+      >
+        <div class="netbuy1 productP bijin-abs" :style="bj1img18">
+          {{ this.$t("hp.netbuy2") }}
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -179,7 +223,7 @@ export default {
       bj1img16: { opacity: 0, top: "3530px" },
       bj1img17: { opacity: 0, top: "5460px" },
       bj1img18: { opacity: 0 },
-      bjBs: {}
+      bjBs: {},
     };
   },
   methods: {},
@@ -282,7 +326,7 @@ export default {
         }
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -441,9 +485,35 @@ export default {
       height: 950px;
       background-image: url(../bijin-6.png);
       z-index: -1;
-      top: 2280px;
+      top: 2320px;
       right: 0px;
       transition: 0.6s;
+    }
+    .netbuy {
+      width: 25%;
+      left: 73%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 260px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy1 {
+      width: 25%;
+      left: 43%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 260px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }
@@ -660,5 +730,32 @@ export default {
   left: 240px;
   width: 70%;
   transition: all 0.6s ease-out 0.8s;
+}
+
+.netbuy {
+  width: 25%;
+  left: 73%;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  top: 440px;
+  background-color: #945901;
+  border-radius: 5px;
+  transition: all 0.6s ease-out 0.4s;
+}
+.netbuy1 {
+  width: 25%;
+  left: 43%;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  top: 440px;
+  background-color: #945901;
+  border-radius: 5px;
+  transition: all 0.6s ease-out 0.4s;
+}
+.netbuy:hover {
+  transition: 0.3s;
+  background-color: #945901cc;
 }
 </style>

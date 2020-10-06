@@ -64,7 +64,7 @@
         <br />
         <div class="tsgftitle-4">{{this.$t('product6GF.tsgfinfotitle15') }}</div>
       </div>
-      <div class="tsgfimg13 bgP bgimg"></div>
+      <div class="tsgfimg13 bgP bgimg" ></div>
       <a href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0006.html" target="_blank">
         <div class="netbuy bgP bgimg" :style="tsgfdh6">{{this.$t('hp.netbuy')}}</div>
       </a>
@@ -378,6 +378,21 @@ export default {
         z-index: -1;
         transition: all 0.6s ease-out 0.4s;
       }
+            .netbuy {
+    width: 40%;
+    left: 55%;
+    text-align: center;
+    /* padding: 1px; */
+    color: white;
+    top: 1530px;
+    background-color: #184f7e;
+    border-radius: 5px;
+    transition: all 0.6s ease-out 0.4s;
+      }
+      .netbuy:hover{
+        transition: 0.3s;
+        background-color: #184f7ebf;
+      }
     }
   }
 }
@@ -625,6 +640,7 @@ export default {
         top: 3860px;
         background-color: #184f7e;
         border-radius: 5px;
+         transition: all 0.6s ease-out 0.4s;
       }
       .netbuy:hover{
         transition: 0.3s;

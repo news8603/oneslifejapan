@@ -38,6 +38,9 @@
       <div class="airtitle">{{this.$t('airmask.airmasktitle5')}}</div>
       <div class="airinfo" v-html="this.$t('airmask.airmaskinfo5').replace(/\n/g,'<br\>')"></div>
     </div>
+         <a href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0008.html" target="_blank">
+        <div class="netbuy airP" :style="airmask7">{{this.$t('hp.netbuy')}}</div>
+      </a>
   </div>
 </template>
 <script>
@@ -288,6 +291,18 @@ export default {
         width: 500px;
       }
     }
+    .netbuy {
+    width: 25%;
+    left: 6%;
+    text-align: center;
+    padding: 5px;
+    color: #0a8af0;
+    top: 4910px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.6s ease-out 0.4s;
+}
+
   }
 }
 
@@ -475,7 +490,7 @@ export default {
       z-index: -1;
     }
     .airtext3 {
-      top: 3130px;
+      top: 3120px;
       left: 10px;
       transition: 0.6s;
       .airinfo {
@@ -484,6 +499,17 @@ export default {
         width: 250px;
       }
     }
+        .netbuy {
+    width: 35%;
+    left: 4%;
+    text-align: center;
+    padding: 2px;
+    color: #0a8af0;
+    top: 3395px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.6s ease-out 0.4s;
+}
   }
 }
 </style>

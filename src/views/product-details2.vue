@@ -10,19 +10,25 @@
     <div class="gf12img7 gfP" :style="gfimg1"></div>
     <div class="gf12img8 gfP" :style="gfimg1"></div>
     <div class="gf12info1 gfP" :style="gfimg2">
-      <div class="gf12infotitle">{{this.$t("product12GF.gf12title1")}}</div>
+      <div class="gf12infotitle">{{ this.$t("product12GF.gf12title1") }}</div>
       <br />
       <br />
-      <div v-html="this.$t('product12GF.gf12info1').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('product12GF.gf12info1').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="gf12img9 gfP" :style="gfimg3"></div>
     <div class="gf12img10 gfP" :style="gfimg3"></div>
     <div class="gf12info2 gfP" :style="gfimg3">
-      <span class="gf12infotitle">{{this.$t('product12GF.gf12title2')}}</span>
-      <span class="gf12infotitle1">{{this.$t('product12GF.gf12title3')}}</span>
+      <span class="gf12infotitle">{{ this.$t("product12GF.gf12title2") }}</span>
+      <span class="gf12infotitle1">{{
+        this.$t("product12GF.gf12title3")
+      }}</span>
       <br />
       <br />
-      <div v-html="this.$t('product12GF.gf12info2').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('product12GF.gf12info2').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="gf12img11 gfP" :style="gfimg4"></div>
     <!-- <div class="gf12info3 gfP" :style="gfimg4">
@@ -43,43 +49,68 @@
     </div> -->
     <div class="gf12img14 gfP" :style="gfimg6"></div>
     <div class="gf12info5 gfP" :style="gfimg6">
-      <span class="gf12infotitle">{{this.$t('product12GF.gf12title8')}}</span>
+      <span class="gf12infotitle">{{ this.$t("product12GF.gf12title8") }}</span>
       <br />
       <br />
-      <div v-html="this.$t('product12GF.gf12info5').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('product12GF.gf12info5').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
-    <div class="gf12info6 gfP" :style="gfimg7">{{ this.$t('product12GF.gf12title9') }}</div>
+    <div class="gf12info6 gfP" :style="gfimg7">
+      {{ this.$t("product12GF.gf12title9") }}
+    </div>
     <div class="gf12img15 gfP" :style="gfimg7"></div>
     <div class="gf12info7 gfP" :style="gfimg7">
       <div class="gf12infotitle2">
         <div class="gf12info7-img"></div>
-        <div class="gf12finfo7-img-info">{{ this.$t('product12GF.gf12title10') }}</div>
+        <div class="gf12finfo7-img-info">
+          {{ this.$t("product12GF.gf12title10") }}
+        </div>
       </div>
       <div class="gf12infotitle2">
         <div class="gf12info7-img"></div>
-        <div class="gf12finfo7-img-info">{{ this.$t('product12GF.gf12title11') }}</div>
+        <div class="gf12finfo7-img-info">
+          {{ this.$t("product12GF.gf12title11") }}
+        </div>
       </div>
       <div class="gf12infotitle2">
         <div class="gf12info7-img"></div>
-        <div class="gf12finfo7-img-info">{{ this.$t('product12GF.gf12title12') }}</div>
+        <div class="gf12finfo7-img-info">
+          {{ this.$t("product12GF.gf12title12") }}
+        </div>
       </div>
       <div class="gf12infotitle2">
         <div class="gf12info7-img"></div>
-        <div class="gf12finfo7-img-info">{{ this.$t('product12GF.gf12title13') }}</div>
+        <div class="gf12finfo7-img-info">
+          {{ this.$t("product12GF.gf12title13") }}
+        </div>
       </div>
       <div class="gf12infotitle2">
         <div class="gf12info7-img"></div>
-        <div class="gf12finfo7-img-info">{{ this.$t('product12GF.gf12title14') }}</div>
+        <div class="gf12finfo7-img-info">
+          {{ this.$t("product12GF.gf12title14") }}
+        </div>
       </div>
     </div>
     <div class="gf12img16 gfP" :style="gfimg8"></div>
     <div class="gf12info8 gfP" :style="gfimg8">
-      <sapn class="gf12infotitle">{{ this.$t('product12GF.tsgfinfotitle14') }}</sapn>
+      <sapn class="gf12infotitle">{{
+        this.$t("product12GF.tsgfinfotitle14")
+      }}</sapn>
       <br />
       <br />
-      <div v-html="this.$t('product12GF.gf12info6').replace(/\n/g,'<br\>')" class="gf12info8-1"></div>
+      <div
+        v-html="this.$t('product12GF.gf12info6').replace(/\n/g, '<br\>')"
+        class="gf12info8-1"
+      ></div>
     </div>
     <div class="gf12img17 gfP" :style="gfimg8"></div>
+    <a
+      href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0002.html"
+      target="_blank"
+    >
+      <div class="netbuy gfP" :style="gfimg8">{{ this.$t("hp.netbuy") }}</div>
+    </a>
   </div>
 </template>
 <script>
@@ -96,7 +127,7 @@ export default {
       gfimg5: { opacity: 0 },
       gfimg6: { opacity: 0 },
       gfimg7: { opacity: 0 },
-      gfimg8: { opacity: 0 }
+      gfimg8: { opacity: 0 },
     };
   },
   mounted() {
@@ -115,7 +146,7 @@ export default {
       this$.gfimg8 = { opacity: 1 };
     }
     const scoll$ = fromEvent(document, "scroll");
-    scoll$.subscribe(function() {
+    scoll$.subscribe(function () {
       let scrollH =
         document.documentElement.scrollTop || document.body.scrollTop;
       console.log(scrollH);
@@ -135,7 +166,7 @@ export default {
         this$.gfimg8 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped >
@@ -377,7 +408,7 @@ export default {
       transition: 0.6s;
     }
     .gf12info8 {
-      top: 2850px;
+      top: 2830px;
       width: 55%;
       z-index: -2;
       left: 20px;
@@ -387,13 +418,28 @@ export default {
       transition: all 0.6s ease-out 0.6s;
     }
     .gf12img17 {
-      top: 2900px;
+      top: 2910px;
       width: 350px;
       height: 350px;
       background-image: url(../12GF200624_0025.png);
       z-index: -2;
       right: 0px;
       transition: all 0.6s ease-out 0.4s;
+    }
+        .netbuy {
+      width: 25%;
+      left: 5%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 3110px;
+      background-color:#945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }
@@ -648,6 +694,21 @@ export default {
       z-index: -2;
       right: 0px;
       transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy {
+      width: 20%;
+      left: 11%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 7150px;
+      background-color:#945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }

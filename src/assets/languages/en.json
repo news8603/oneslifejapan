@@ -25,7 +25,9 @@
         "findresult1": "Search Results",
         "findresult2": "Pieces",
         "buy": " ",
-        "netbuy": "Click here to buy"
+        "netbuy": "Click here to buy",
+        "netbuy1": "Click here to buy(lemon)",
+        "netbuy2": "Click here to buy(rose)"
 
     },
     "news": [{

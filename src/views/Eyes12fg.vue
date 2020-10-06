@@ -1,11 +1,13 @@
 <template>
-<!-- 12GF眼霜的内页 -->
+  <!-- 12GF眼霜的内页 -->
   <div class="eyes12gf">
     <div class="eyeimg1 eyeB" :style="eyeimg1">
-      <div class="eyeinfo1 eyestitle" :style="eyeimg1">{{this.$t('eyes.eyestitle1')}}</div>
+      <div class="eyeinfo1 eyestitle" :style="eyeimg1">
+        {{ this.$t("eyes.eyestitle1") }}
+      </div>
       <div
         class="eyeinfo2"
-        v-html="this.$t('eyes.eyesinfo1').replace(/\n/g,'<br\>')"
+        v-html="this.$t('eyes.eyesinfo1').replace(/\n/g, '<br\>')"
         :style="eyeimg1"
       ></div>
     </div>
@@ -14,25 +16,41 @@
     <div class="eyeimg4 eyeB eyeP" :style="eyeimg2"></div>
     <div
       class="eyeinfo3 eyestitle"
-      v-html="this.$t('eyes.eyestitle2').replace(/\n/g,'<br\>')"
+      v-html="this.$t('eyes.eyestitle2').replace(/\n/g, '<br\>')"
       :style="eyeimg2"
     ></div>
     <div
       class="eyeinfo4"
-      v-html="this.$t('eyes.eyesinfo2').replace(/\n/g,'<br\>')"
+      v-html="this.$t('eyes.eyesinfo2').replace(/\n/g, '<br\>')"
       :style="eyeimg2"
     ></div>
     <div class="eyeimg5 eyeB" :style="eyeimg3">
-      <div class="eyestitle1" :style="eyeimg3">{{this.$t('eyes.eyestitle3')}}</div>
+      <div class="eyestitle1" :style="eyeimg3">
+        {{ this.$t("eyes.eyestitle3") }}
+      </div>
       <div
         class="eyeinfo5"
-        v-html="this.$t('eyes.eyesinfo3').replace(/\n/g,'<br\>')"
+        v-html="this.$t('eyes.eyesinfo3').replace(/\n/g, '<br\>')"
         :style="eyeimg3"
       ></div>
     </div>
-    <div class="eyestitle eyestitle2" :style="eyeimg4">{{this.$t('eyes.eyestitle4')}}</div>
-    <div class="eyeinfo6" v-html="this.$t('eyes.eyesinfo4').replace(/\n/g,'<br\>')" :style="eyeimg4"></div>
+    <div class="eyestitle eyestitle2" :style="eyeimg4">
+      {{ this.$t("eyes.eyestitle4") }}
+    </div>
+    <div
+      class="eyeinfo6"
+      v-html="this.$t('eyes.eyesinfo4').replace(/\n/g, '<br\>')"
+      :style="eyeimg4"
+    ></div>
     <div class="eyeimg6 eyeB" :style="eyeimg4"></div>
+    <a
+      href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0001.html"
+      target="_blank"
+    >
+      <div class="netbuy eyeP" :style="eyeimg4">
+        {{ this.$t("hp.netbuy") }}
+      </div>
+    </a>
   </div>
 </template>
 <script>
@@ -44,7 +62,7 @@ export default {
       eyeimg1: { opacity: 0 },
       eyeimg2: { opacity: 0 },
       eyeimg3: { opacity: 0 },
-      eyeimg4: { opacity: 0 }
+      eyeimg4: { opacity: 0 },
     };
   },
   mounted() {
@@ -64,18 +82,17 @@ export default {
           this$.eyeimg2 = { opacity: 1 };
         } else if (whereScoll > 1500 && whereScoll < 2600) {
           this$.eyeimg3 = { opacity: 1 };
-        }else if (whereScoll>2600){
+        } else if (whereScoll > 2600) {
           this$.eyeimg4 = { opacity: 1 };
         }
-      }else{
-          this$.eyeimg1 = { opacity: 1 };
-          this$.eyeimg2 = { opacity: 1 };
-          this$.eyeimg3 = { opacity: 1 };
-          this$.eyeimg4 = { opacity: 1 };
-
+      } else {
+        this$.eyeimg1 = { opacity: 1 };
+        this$.eyeimg2 = { opacity: 1 };
+        this$.eyeimg3 = { opacity: 1 };
+        this$.eyeimg4 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -184,8 +201,7 @@ export default {
       width: 60%;
       margin: auto;
       padding-top: 50px;
-        transition: all 0.6s ease-out 0.4s;
-
+      transition: all 0.6s ease-out 0.4s;
     }
     .eyeimg6 {
       background-image: url(../eyes3.jpg);
@@ -193,8 +209,22 @@ export default {
       height: 400px;
       margin: auto;
       margin-top: 100px;
-        transition: all 0.6s ease-out 0.8s;
-
+      transition: all 0.6s ease-out 0.8s;
+    }
+    .netbuy {
+      width: 35%;
+      left: 30%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 3540px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }
@@ -292,6 +322,21 @@ export default {
       height: 200px;
       margin: auto;
       margin-top: 60px;
+    }
+        .netbuy {
+      width: 35%;
+      left: 30%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 1970px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }

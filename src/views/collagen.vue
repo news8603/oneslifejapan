@@ -2,10 +2,20 @@
   <!-- 这个页面写的是胶原蛋白粉的内页内容 -->
   <div class="collagen">
     <div class="collagentinfo1 bgP" :style="collshow1">
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle1') }}</span>
-      <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle2') }}</span>
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle3') }}</span>
-      <div v-html="this.$t('productCollagen.collagentinfo1').replace(/\n/g,'<br/>')"></div>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle1")
+      }}</span>
+      <span class="collagenttitle1">{{
+        this.$t("productCollagen.collagentitle2")
+      }}</span>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle3")
+      }}</span>
+      <div
+        v-html="
+          this.$t('productCollagen.collagentinfo1').replace(/\n/g, '<br/>')
+        "
+      ></div>
     </div>
     <div class="collagentimg1 bgP" :style="collshow1"></div>
     <div class="collagentimg2 bgP" :style="collshow1"></div>
@@ -13,10 +23,20 @@
     <div class="collagentimg4 bgP" :style="collshow2"></div>
     <div class="collagentimg5 bgP" :style="collshow2"></div>
     <div class="collagentinfo2 bgP" :style="collshow3">
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle4') }}</span>
-      <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle5') }}</span>
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle6') }}</span>
-      <div v-html="this.$t('productCollagen.collagentinfo2').replace(/\n/g,'<br/>')"></div>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle4")
+      }}</span>
+      <span class="collagenttitle1">{{
+        this.$t("productCollagen.collagentitle5")
+      }}</span>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle6")
+      }}</span>
+      <div
+        v-html="
+          this.$t('productCollagen.collagentinfo2').replace(/\n/g, '<br/>')
+        "
+      ></div>
     </div>
     <div class="collagentimg6 bgP">
       <img src="../000_01.jpg" alt />
@@ -28,20 +48,48 @@
       <img src="../000_07.jpg" alt />
     </div>
     <div class="collagentinfo3 bgP" :style="collshow4">
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle7') }}</span>
-      <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle8') }}</span>
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle9') }}</span>
-      <div v-html="this.$t('productCollagen.collagentinfo3').replace(/\n/g,'<br/>')"></div>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle7")
+      }}</span>
+      <span class="collagenttitle1">{{
+        this.$t("productCollagen.collagentitle8")
+      }}</span>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle9")
+      }}</span>
+      <div
+        v-html="
+          this.$t('productCollagen.collagentinfo3').replace(/\n/g, '<br/>')
+        "
+      ></div>
     </div>
     <div class="collagentimg7 bgP" :style="collshow4"></div>
     <div class="collagentimg8 bgP" :style="collshow4"></div>
     <div class="back bgP"></div>
     <div class="collagentinfo4 bgP" :style="collshow4">
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle10') }}</span>
-      <span class="collagenttitle1">{{ this.$t('productCollagen.collagentitle11') }}</span>
-      <span class="collagenttitle">{{ this.$t('productCollagen.collagentitle12') }}</span>
-      <div v-html="this.$t('productCollagen.collagentinfo4').replace(/\n/g,'<br/>')"></div>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle10")
+      }}</span>
+      <span class="collagenttitle1">{{
+        this.$t("productCollagen.collagentitle11")
+      }}</span>
+      <span class="collagenttitle">{{
+        this.$t("productCollagen.collagentitle12")
+      }}</span>
+      <div
+        v-html="
+          this.$t('productCollagen.collagentinfo4').replace(/\n/g, '<br/>')
+        "
+      ></div>
     </div>
+    <a
+      href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0004.html"
+      target="_blank"
+    >
+      <div class="netbuy bgP" :style="collshow4">
+        {{ this.$t("hp.netbuy") }}
+      </div>
+    </a>
   </div>
 </template>
 
@@ -54,7 +102,7 @@ export default {
       collshow1: { opacity: 0 },
       collshow2: { opacity: 0 },
       collshow3: { opacity: 0 },
-      collshow4: { opacity: 0 }
+      collshow4: { opacity: 0 },
     };
   },
   mounted() {
@@ -73,7 +121,7 @@ export default {
     if (scrollH < 500) {
       this$.collshow1 = { opacity: 1 };
     }
-    scoll$.subscribe(function() {
+    scoll$.subscribe(function () {
       let scrollH =
         document.documentElement.scrollTop || document.body.scrollTop;
       console.log(scrollH);
@@ -87,7 +135,7 @@ export default {
         this$.collshow4 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 
@@ -109,7 +157,7 @@ export default {
   .collagen {
     position: relative;
     width: 420px;
-    height: 3600px;
+    height: 3650px;
     margin: auto;
     clear: both;
     text-align: left;
@@ -212,6 +260,21 @@ export default {
       width: 80%;
       top: 3280px;
       transition: all 0.6s ease-out 0.8s;
+    }
+        .netbuy {
+      width: 35%;
+      left: 56%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 3590px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }
@@ -331,6 +394,21 @@ export default {
       width: 80%;
       top: 7720px;
       transition: all 0.6s ease-out 0.8s;
+    }
+    .netbuy {
+      width: 35%;
+      left: 56%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 8050px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .netbuy:hover {
+      transition: 0.3s;
+      background-color: #945901cc;
     }
   }
 }
