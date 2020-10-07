@@ -109,8 +109,19 @@
       href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0002.html"
       target="_blank"
     >
-      <div class="netbuy gfP" :style="gfimg8">{{ this.$t("hp.netbuy") }}</div>
+      <div class="netbuy gfP" :style="gfimg8" v-if="$store.state.jp">
+        {{ this.$t("hp.netbuy") }}
+      </div>
     </a>
+    <div class="urlImageCss gfP" v-if="$store.state.zh" :style="gfimg8">
+      <div class="urlImage">
+        <img src="../../public/static/url/12gf-3set.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -418,7 +429,7 @@ export default {
       transition: all 0.6s ease-out 0.6s;
     }
     .gf12img17 {
-      top: 2910px;
+      top: 2920px;
       width: 350px;
       height: 350px;
       background-image: url(../12GF200624_0025.png);
@@ -426,20 +437,38 @@ export default {
       right: 0px;
       transition: all 0.6s ease-out 0.4s;
     }
-        .netbuy {
+    .netbuy {
       width: 25%;
       left: 5%;
       text-align: center;
       padding: 5px;
       color: white;
       top: 3110px;
-      background-color:#945901;
+      background-color: #945901;
       border-radius: 5px;
       transition: all 0.6s ease-out 0.4s;
     }
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+        .urlImageCss {
+     top:3015px;
+     left:15px;
+      width: 35%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          line-height: 0.6rem;
+        }
+      }
     }
   }
 }
@@ -702,13 +731,31 @@ export default {
       padding: 5px;
       color: white;
       top: 7150px;
-      background-color:#945901;
+      background-color: #945901;
       border-radius: 5px;
       transition: all 0.6s ease-out 0.4s;
     }
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+    .urlImageCss {
+     top:6850px;
+     left:65px;
+      width: 100%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          line-height: 1rem;
+        }
+      }
     }
   }
 }

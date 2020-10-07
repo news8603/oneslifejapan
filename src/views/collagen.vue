@@ -86,10 +86,19 @@
       href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0004.html"
       target="_blank"
     >
-      <div class="netbuy bgP" :style="collshow4">
+      <div class="netbuy bgP" :style="collshow4" v-if="$store.state.jp">
         {{ this.$t("hp.netbuy") }}
       </div>
     </a>
+    <div class="urlImageCss bgP" v-if="$store.state.zh" :style="collshow4">
+      <div class="urlImage">
+        <img src="../../public/static/url/jiaoyuandanb.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -261,7 +270,7 @@ export default {
       top: 3280px;
       transition: all 0.6s ease-out 0.8s;
     }
-        .netbuy {
+    .netbuy {
       width: 35%;
       left: 56%;
       text-align: center;
@@ -275,6 +284,25 @@ export default {
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+        .urlImageCss {
+      top: 3445px;
+    
+      width:100%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 30%;
+          height: 30%;
+        }
+        p {
+          font-size: 0.5rem;
+          text-align: center;
+          line-height: 0.6rem;
+        }
+      }
     }
   }
 }
@@ -409,6 +437,24 @@ export default {
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+    .urlImageCss {
+      top: 7350px;
+      left: 15px;
+      width: 100%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          line-height: 1rem;
+        }
+      }
     }
   }
 }

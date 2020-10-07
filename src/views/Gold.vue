@@ -1,50 +1,65 @@
 <template>
-<!-- 黄金棒的内页 -->
+  <!-- 黄金棒的内页 -->
   <div class="gold">
     <div class="goldimg1 goldP" :style="goldimg1"></div>
     <div class="goldimg2 goldP" :style="goldimg1"></div>
     <div class="goldimg3 goldP" :style="goldimg1"></div>
     <div class="goldimg4 goldP" :style="goldimg1"></div>
     <div class="goldtext goldP" :style="goldimg1">
-      <div class="goldI" v-html="this.$t('gold.goldinfo1').replace(/\n/g,'<br\>')"></div>
-      <div class="goldT" v-html="this.$t('gold.goldtitle1').replace(/\n/g,'<br\>')"></div>
+      <div
+        class="goldI"
+        v-html="this.$t('gold.goldinfo1').replace(/\n/g, '<br\>')"
+      ></div>
+      <div
+        class="goldT"
+        v-html="this.$t('gold.goldtitle1').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="goldimg5 goldP"></div>
     <div
       class="goldT goldP"
-      v-html="this.$t('gold.goldtitle2').replace(/\n/g,'<br\>')"
+      v-html="this.$t('gold.goldtitle2').replace(/\n/g, '<br\>')"
       :style="goldimg2"
     ></div>
     <div class="goldinfo2 goldP" :style="goldimg3">
-      <div v-html="this.$t('gold.goldinfo2').replace(/\n/g,'<br\>')"></div>
+      <div v-html="this.$t('gold.goldinfo2').replace(/\n/g, '<br\>')"></div>
     </div>
     <div class="goldimg6 goldP"></div>
     <div
       class="goldinfo3 goldP goldT"
-      v-html="this.$t('gold.goldtitle3').replace(/\n/g,'<br\>')"
+      v-html="this.$t('gold.goldtitle3').replace(/\n/g, '<br\>')"
       :style="goldimg4"
     ></div>
     <div class="goldimg7 goldP" :style="goldimg4"></div>
     <div
       class="goldinfo4 goldP"
-      v-html="this.$t('gold.goldinfo3').replace(/\n/g,'<br\>')"
+      v-html="this.$t('gold.goldinfo3').replace(/\n/g, '<br\>')"
       :style="goldimg4"
     ></div>
     <div class="goldimg8 goldP" :style="goldimg6"></div>
     <div class="goldimg9 goldP" :style="goldimg6"></div>
     <div class="goldimg10 goldP" :style="goldimg6"></div>
     <div class="goldinfo5 goldP" :style="goldimg5">
-      <div class="goldT">{{this.$t('gold.goldtitle4')}}</div>
-      <div v-html="this.$t('gold.goldinfo4').replace(/\n/g,'<br\>')"></div>
+      <div class="goldT">{{ this.$t("gold.goldtitle4") }}</div>
+      <div v-html="this.$t('gold.goldinfo4').replace(/\n/g, '<br\>')"></div>
     </div>
-        <a
+    <a
       href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0020.html"
       target="_blank"
     >
-      <div class="netbuy goldP" :style="goldimg5">
+      <div class="netbuy goldP" :style="goldimg5" v-if="$store.state.jp">
         {{ this.$t("hp.netbuy") }}
       </div>
     </a>
+    <div class="urlImageCss goldP" :style="goldimg5" v-if="$store.state.zh">
+      <div class="urlImage">
+        <img src="../../public/static/url/24Kruyi.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -58,7 +73,7 @@ export default {
       goldimg3: { opacity: 0 },
       goldimg4: { opacity: 0 },
       goldimg5: { opacity: 0 },
-      goldimg6: { opacity: 0 }
+      goldimg6: { opacity: 0 },
     };
   },
   mounted() {
@@ -90,7 +105,7 @@ export default {
         this$.goldimg6 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -234,20 +249,36 @@ export default {
         margin-bottom: 120px;
       }
     }
-            .netbuy {
-width: 35%;
-    left: 56%;
-    text-align: center;
-    padding: 5px;
-    color: white;
-    top: 4000px;
-    background-color: #945901;
-    border-radius: 5px;
-    transition: all 0.6s ease-out 0.4s;
+    .netbuy {
+      width: 35%;
+      left: 56%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 4000px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
     }
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+    .urlImageCss {
+      top: 3850px;
+      right: 0px;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -301,7 +332,7 @@ width: 35%;
       top: 140px;
       right: 90px;
       width: 53%;
-        text-align: left;
+      text-align: left;
 
       transition: all 0.6s ease-out 1.6s;
       .goldT {
@@ -343,7 +374,7 @@ width: 35%;
     }
     .goldimg7 {
       top: 1400px;
-      left:-25px;
+      left: -25px;
       width: 420px;
       height: 200px;
       background-image: url(../24K_0007_24k.png);
@@ -357,7 +388,7 @@ width: 35%;
     }
     .goldimg8 {
       top: 1700px;
-      width:260px;
+      width: 260px;
       height: 260px;
       background-image: url(../24K_0003_ball.png);
       transition: 0.6s;
@@ -372,8 +403,8 @@ width: 35%;
     .goldimg10 {
       top: 1980px;
       left: 20px;
-      width:300px;
-      height:300px;
+      width: 300px;
+      height: 300px;
       background-image: url(../24K_0000_24k.png);
       transition: all 0.6s ease-out 0.8s;
     }
@@ -387,20 +418,37 @@ width: 35%;
         margin-bottom: 50px;
       }
     }
-                .netbuy {
-width: 35%;
-    left: 56%;
-    text-align: center;
-    padding: 5px;
-    color: white;
-    top: 2050px;
-    background-color: #945901;
-    border-radius: 5px;
-    transition: all 0.6s ease-out 0.4s;
+    .netbuy {
+      width: 35%;
+      left: 56%;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      top: 2050px;
+      background-color: #945901;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
     }
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+    .urlImageCss {
+      top: 1890px;
+      right: 0px;
+      width: 60%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+        }
+      }
     }
   }
 }

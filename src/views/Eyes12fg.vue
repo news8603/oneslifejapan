@@ -47,10 +47,19 @@
       href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0001.html"
       target="_blank"
     >
-      <div class="netbuy eyeP" :style="eyeimg4">
+      <div class="netbuy eyeP" :style="eyeimg4" v-if="$store.state.jp">
         {{ this.$t("hp.netbuy") }}
       </div>
     </a>
+    <div class="urlImageCss eyeP" v-if="$store.state.zh" :style="eyeimg4">
+      <div class="urlImage">
+        <img src="../../public/static/url/jiaoyuandanb.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -111,7 +120,7 @@ export default {
   .eyes12gf {
     max-width: 1280px;
     min-width: 1280px;
-    height: 4000px;
+    height: 4400px;
     font-size: 1rem;
     overflow: hidden;
     position: relative;
@@ -226,6 +235,22 @@ export default {
       transition: 0.3s;
       background-color: #945901cc;
     }
+    .urlImageCss {
+      top: 3910px;
+      right: 35%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
   }
 }
 
@@ -239,7 +264,7 @@ export default {
     font-size: 0.8rem;
     padding-top: 30px;
     width: 420px;
-    height: 2000px;
+    height: 2080px;
     overflow: hidden;
     position: relative;
     margin: auto;
@@ -323,7 +348,7 @@ export default {
       margin: auto;
       margin-top: 60px;
     }
-        .netbuy {
+    .netbuy {
       width: 35%;
       left: 30%;
       text-align: center;
@@ -337,6 +362,23 @@ export default {
     .netbuy:hover {
       transition: 0.3s;
       background-color: #945901cc;
+    }
+    .urlImageCss {
+      top: 1860px;
+      right: 120px;
+width: 50%;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+        }
+      }
     }
   }
 }

@@ -7,21 +7,30 @@
     </div>
     <div class="airmaskback">
       <div class="airtext" :style="airmask2">
-        <div class="airtitle">{{this.$t('airmask.airmasktitle1')}}</div>
-        <div class="airinfo" v-html="this.$t('airmask.airmaskinfo1').replace(/\n/g,'<br\>')"></div>
+        <div class="airtitle">{{ this.$t("airmask.airmasktitle1") }}</div>
+        <div
+          class="airinfo"
+          v-html="this.$t('airmask.airmaskinfo1').replace(/\n/g, '<br\>')"
+        ></div>
       </div>
       <div class="airmaskimg2 airP" :style="airmask3"></div>
       <div class="airmaskimg3 airP" :style="airmask3"></div>
       <div class="airmaskimg4 airP" :style="airmask3"></div>
     </div>
     <div class="airtext1 airP" :style="airmask3">
-      <div class="airtitle">{{this.$t('airmask.airmasktitle2')}}</div>
-      <div class="airinfo" v-html="this.$t('airmask.airmaskinfo2').replace(/\n/g,'<br\>')"></div>
+      <div class="airtitle">{{ this.$t("airmask.airmasktitle2") }}</div>
+      <div
+        class="airinfo"
+        v-html="this.$t('airmask.airmaskinfo2').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="airmaskimg5 airP" :style="airmask4"></div>
     <div class="airtext airP" :style="airmask5">
-      <div class="airtitle">{{this.$t('airmask.airmasktitle3')}}</div>
-      <div class="airinfo" v-html="this.$t('airmask.airmaskinfo3').replace(/\n/g,'<br\>')"></div>
+      <div class="airtitle">{{ this.$t("airmask.airmasktitle3") }}</div>
+      <div
+        class="airinfo"
+        v-html="this.$t('airmask.airmaskinfo3').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="airmaskimg6 airP"></div>
     <div class="airmaskimg7 airP"></div>
@@ -29,18 +38,38 @@
     <div class="airmaskimg8 airP"></div>
     <div class="airmaskimg9 airP" :style="airmask6"></div>
     <div class="airtext2 airP" :style="airmask6">
-      <div class="airtitle">{{this.$t('airmask.airmasktitle4')}}</div>
-      <div class="airinfo" v-html="this.$t('airmask.airmaskinfo4').replace(/\n/g,'<br\>')"></div>
+      <div class="airtitle">{{ this.$t("airmask.airmasktitle4") }}</div>
+      <div
+        class="airinfo"
+        v-html="this.$t('airmask.airmaskinfo4').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
     <div class="airmaskimg10 airP"></div>
     <div class="airmaskbackR3 airP"></div>
     <div class="airtext3 airP" :style="airmask7">
-      <div class="airtitle">{{this.$t('airmask.airmasktitle5')}}</div>
-      <div class="airinfo" v-html="this.$t('airmask.airmaskinfo5').replace(/\n/g,'<br\>')"></div>
+      <div class="airtitle">{{ this.$t("airmask.airmasktitle5") }}</div>
+      <div
+        class="airinfo"
+        v-html="this.$t('airmask.airmaskinfo5').replace(/\n/g, '<br\>')"
+      ></div>
     </div>
-         <a href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0008.html" target="_blank">
-        <div class="netbuy airP" :style="airmask7">{{this.$t('hp.netbuy')}}</div>
-      </a>
+    <a
+      href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0008.html"
+      target="_blank"
+    >
+      <div class="netbuy airP" :style="airmask7" v-if="$store.state.jp">
+        {{ this.$t("hp.netbuy") }}
+      </div>
+    </a>
+    <div class="urlImageCss airP" v-if="$store.state.zh" :style="airmask7">
+      <div class="urlImage">
+        <img src="../../public/static/url/airmask.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -56,7 +85,7 @@ export default {
       airmask4: { opacity: 0 },
       airmask5: { opacity: 0 },
       airmask6: { opacity: 0 },
-      airmask7: { opacity: 0 }
+      airmask7: { opacity: 0 },
     };
   },
   mounted() {
@@ -93,7 +122,7 @@ export default {
         this$.airmask7 = { opacity: 1 };
       }
     });
-  }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -292,17 +321,35 @@ export default {
       }
     }
     .netbuy {
-    width: 25%;
-    left: 6%;
-    text-align: center;
-    padding: 5px;
-    color: #0a8af0;
-    top: 4910px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    transition: all 0.6s ease-out 0.4s;
-}
-
+      width: 25%;
+      left: 6%;
+      text-align: center;
+      padding: 5px;
+      color: #0a8af0;
+      top: 4910px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+    .urlImageCss {
+      top: 4730px;
+      right: 300px;
+      .urlImage {
+        width: 60%;
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          color: white;
+          line-height: 1rem;
+        }
+      }
+    }
   }
 }
 
@@ -318,7 +365,7 @@ export default {
     position: relative;
     width: 420px;
     min-width: 420px;
-    height: 3450px;
+    height: 3650px;
     margin: auto;
     clear: both;
     text-align: left;
@@ -397,7 +444,6 @@ export default {
       }
     }
     .airtext1 {
-      
       top: 1250px;
       text-align: center;
       transition: 0.6s;
@@ -499,17 +545,37 @@ export default {
         width: 250px;
       }
     }
-        .netbuy {
-    width: 35%;
-    left: 4%;
-    text-align: center;
-    padding: 2px;
-    color: #0a8af0;
-    top: 3395px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    transition: all 0.6s ease-out 0.4s;
-}
+    .netbuy {
+      width: 35%;
+      left: 4%;
+      text-align: center;
+      padding: 2px;
+      color: #0a8af0;
+      top: 3395px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      transition: all 0.6s ease-out 0.4s;
+    }
+        .urlImageCss {
+      top: 3380px;
+        width: 100%;
+left: 30px;
+      .urlImage {
+        width: 60%;
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          color: white;
+          line-height:1rem;
+        }
+      }
+    }
   }
 }
 </style>

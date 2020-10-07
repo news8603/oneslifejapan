@@ -180,7 +180,7 @@
         href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0015.html"
         target="_blank"
       >
-        <div class="netbuy productP bijin-abs" :style="bj1img18">
+        <div class="netbuy productP bijin-abs" :style="bj1img18"  v-if="$store.state.jp">
           {{ this.$t("hp.netbuy1") }}
         </div>
       </a>
@@ -188,10 +188,28 @@
         href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0014.html"
         target="_blank"
       >
-        <div class="netbuy1 productP bijin-abs" :style="bj1img18">
+        <div   v-if="$store.state.jp" class="netbuy1 productP bijin-abs" :style="bj1img18">
           {{ this.$t("hp.netbuy2") }}
         </div>
       </a>
+      <div class="urlImageCss"  v-if="$store.state.zh" :style="bj1img18">
+      <div class="urlImage" >
+        <img src="../../public/static/url/meiren-rimo.png" alt="">
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+            <p>(柠檬味道)</p>
+        <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+           <div class="urlImage" >
+        <img src="../../public/static/url/meiren-rose.png" alt="">
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>(玫瑰味道)</p>
+        <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </template>
@@ -341,7 +359,7 @@ export default {
 @media screen and(max-width:500px) {
   .product-details0 {
     width: 420px;
-    max-height: 2550px;
+    max-height: 2700px;
     overflow: hidden;
     font-size: 0.4rem;
     .bijin-title {
@@ -485,10 +503,31 @@ export default {
       height: 950px;
       background-image: url(../bijin-6.png);
       z-index: -1;
-      top: 2320px;
+      top: 2450px;
       right: 0px;
       transition: 0.6s;
     }
+    .urlImageCss{
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+.urlImage{
+ display: inline-block;
+ text-align: center;
+margin-top: 5px;
+width:45%;
+padding-left: 10px;
+ img{
+   width: 100%;
+   height: 100%;
+ }
+
+  p{
+    line-height: 0.6rem;
+    text-align: center;
+  }
+}
+}
     .netbuy {
       width: 25%;
       left: 73%;
@@ -521,9 +560,10 @@ export default {
   position: relative;
   max-width: 1280px;
   min-width: 1280px;
-  height: 6830px;
+  height: 6800px;
   margin: auto;
   clear: both;
+  overflow: hidden;
   text-align: left;
   line-height: 2em;
 }
@@ -716,7 +756,7 @@ export default {
   height: 950px;
   background-image: url(../bijin-6.png);
   z-index: -1;
-  top: 5880px;
+  top: 6100px;
   right: 0px;
   transition: 0.6s;
 }
@@ -742,6 +782,24 @@ export default {
   background-color: #945901;
   border-radius: 5px;
   transition: all 0.6s ease-out 0.4s;
+}
+.urlImageCss{
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+.urlImage{
+ display: inline-block;
+ text-align: center;
+margin-top: 15px;
+ img{
+   width: 60%;
+   height: 60%;
+ }
+  p{
+    text-align: center;
+    line-height: 1rem;
+  }
+}
 }
 .netbuy1 {
   width: 25%;

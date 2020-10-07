@@ -3,71 +3,132 @@
     <div class="tsgfimg1 bgP bgimg" :style="tsgfdh1"></div>
     <div class="tsgfimg2 bgP bgimg" :style="tsgfdh1"></div>
     <div class="tsgfinfo1 bgP" :style="tsgfdh1">
-      <div v-html="this.$t('product6GF.tsgfinfotitle1').replace(/\n/g,'<br\>')"></div>
+      <div
+        v-html="this.$t('product6GF.tsgfinfotitle1').replace(/\n/g, '<br\>')"
+      ></div>
       <p></p>
-      <div v-html="this.$t('product6GF.tsgfinfotitle2').replace(/\n/g,'<br\>')" class="iiifont"></div>
+      <div
+        v-html="this.$t('product6GF.tsgfinfotitle2').replace(/\n/g, '<br\>')"
+        class="iiifont"
+      ></div>
     </div>
     <div class="tsgfimg3 bgP bgimg" :style="tsgfdh1"></div>
     <div class="tsgfimg4 bgP bgimg" :style="tsgfdh1"></div>
     <div class="gf6gai bgP">
       <div class="gf6gai-in">
-        <span class="gf6gai-innertext bgP">{{this.$t('product6GF.tsgfinfoadd1') }}</span>
+        <span class="gf6gai-innertext bgP">{{
+          this.$t("product6GF.tsgfinfoadd1")
+        }}</span>
         <div class="gf6show bgP bgimg"></div>
       </div>
       <div class="gf6show-1 bgP bgimg"></div>
       <div class="gf6gai-in-1 bgP">
-        <span class="gf6gai-innertext-1 bgP">{{this.$t('product6GF.tsgfinfoadd2') }}</span>
+        <span class="gf6gai-innertext-1 bgP">{{
+          this.$t("product6GF.tsgfinfoadd2")
+        }}</span>
       </div>
       <div class="tsgfimg4-1 bgP bgimg" :style="tsgfdh1"></div>
 
       <div class="tsgfinfo2 bgP" :style="tsgfdh2">
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle3') }}</span>
-        <span class="tsgftitle-2">{{this.$t('product6GF.tsgfinfotitle4') }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle3")
+        }}</span>
+        <span class="tsgftitle-2">{{
+          this.$t("product6GF.tsgfinfotitle4")
+        }}</span>
         <br />
         <br />
-        <div v-html="this.$t('product6GF.tsgfinfo1').replace(/\n/g,'<br\>')" class="ininfo"></div>
+        <div
+          v-html="this.$t('product6GF.tsgfinfo1').replace(/\n/g, '<br\>')"
+          class="ininfo"
+        ></div>
       </div>
       <div class="tsgfimg5 bgP bgimg" :style="tsgfdh3"></div>
       <div class="tsgfimg6 bgP bgimg" :style="tsgfdh3"></div>
       <div class="tsgfimg7 bgP bgimg" :style="tsgfdh3"></div>
       <div class="tsgfinfo3 bgP" :style="tsgfdh3">
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle5') }}</span>
-        <span class="tsgftitle-2">{{this.$t('product6GF.tsgfinfotitle6') }}</span>
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle7') }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle5")
+        }}</span>
+        <span class="tsgftitle-2">{{
+          this.$t("product6GF.tsgfinfotitle6")
+        }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle7")
+        }}</span>
         <br />
         <br />
-        <div v-html="this.$t('product6GF.tsgfinfo2').replace(/\n/g,'<br\>')" class="ininfo"></div>
+        <div
+          v-html="this.$t('product6GF.tsgfinfo2').replace(/\n/g, '<br\>')"
+          class="ininfo"
+        ></div>
       </div>
       <div class="tsgfimg8 bgP bgimg" :style="tsgfdh4"></div>
       <div class="tsgfinfo4 bgP" :style="tsgfdh4">
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle8') }}</span>
-        <span class="tsgftitle-2">{{this.$t('product6GF.tsgfinfotitle9') }}</span>
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle10') }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle8")
+        }}</span>
+        <span class="tsgftitle-2">{{
+          this.$t("product6GF.tsgfinfotitle9")
+        }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle10")
+        }}</span>
         <br />
         <br />
-        <div v-html="this.$t('product6GF.tsgfinfo3').replace(/\n/g,'<br\>')" class="ininfo"></div>
+        <div
+          v-html="this.$t('product6GF.tsgfinfo3').replace(/\n/g, '<br\>')"
+          class="ininfo"
+        ></div>
       </div>
       <div class="tsgfimg9 bgP bgimg" :style="tsgfdh5"></div>
       <div class="tsgfimg10 bgP bgimg" :style="tsgfdh5"></div>
       <div class="tsgfinfo5 bgP" :style="tsgfdh5">
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle11') }}</span>
-        <span class="tsgftitle-2">{{this.$t('product6GF.tsgfinfotitle12') }}</span>
-        <span class="tsgftitle-1">{{this.$t('product6GF.tsgfinfotitle13') }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle11")
+        }}</span>
+        <span class="tsgftitle-2">{{
+          this.$t("product6GF.tsgfinfotitle12")
+        }}</span>
+        <span class="tsgftitle-1">{{
+          this.$t("product6GF.tsgfinfotitle13")
+        }}</span>
         <br />
         <br />
-        <div v-html="this.$t('product6GF.tsgfinfo4').replace(/\n/g,'<br\>')" class="ininfo"></div>
+        <div
+          v-html="this.$t('product6GF.tsgfinfo4').replace(/\n/g, '<br\>')"
+          class="ininfo"
+        ></div>
       </div>
       <div class="tsgfimg11 bgP bgimg" :style="tsgfdh6"></div>
       <div class="tsgfimg12 bgP bgimg" :style="tsgfdh6"></div>
       <div class="tsgfinfo6 bgP" :style="tsgfdh6">
-        <div class="tsgftitle-3">{{this.$t('product6GF.tsgfinfotitle14') }}</div>
+        <div class="tsgftitle-3">
+          {{ this.$t("product6GF.tsgfinfotitle14") }}
+        </div>
         <br />
-        <div class="tsgftitle-4">{{this.$t('product6GF.tsgfinfotitle15') }}</div>
+        <div class="tsgftitle-4">
+          {{ this.$t("product6GF.tsgfinfotitle15") }}
+        </div>
       </div>
-      <div class="tsgfimg13 bgP bgimg" ></div>
-      <a href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0006.html" target="_blank">
-        <div class="netbuy bgP bgimg" :style="tsgfdh6">{{this.$t('hp.netbuy')}}</div>
+      <div class="tsgfimg13 bgP bgimg"></div>
+      <a
+        href="https://store.shopping.yahoo.co.jp/oneslifejapan/olj0006.html"
+        target="_blank"
+      >
+        <div class="netbuy bgP bgimg" :style="tsgfdh6" v-if="$store.state.jp">
+          {{ this.$t("hp.netbuy") }}
+        </div>
       </a>
+    </div>
+    <div class="urlImageCss bgP" v-if="$store.state.zh" :style="tsgfdh6">
+      <div class="urlImage">
+        <img src="../../public/static/url/6gf.png" alt="" />
+        <div>
+          <p>请用微信扫描小程序码购买产品</p>
+          <p>（微信环境下可直接长按扫码）</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -154,7 +215,7 @@ export default {
   .product-details1 {
     position: relative;
     width: 420px;
-    height: 1990px;
+    height: 2150px;
     margin: auto;
     clear: both;
     text-align: left;
@@ -378,20 +439,38 @@ export default {
         z-index: -1;
         transition: all 0.6s ease-out 0.4s;
       }
-            .netbuy {
-    width: 40%;
-    left: 55%;
-    text-align: center;
-    /* padding: 1px; */
-    color: white;
-    top: 1530px;
-    background-color: #184f7e;
-    border-radius: 5px;
-    transition: all 0.6s ease-out 0.4s;
+      .netbuy {
+        width: 40%;
+        left: 55%;
+        text-align: center;
+        /* padding: 1px; */
+        color: white;
+        top: 1530px;
+        background-color: #184f7e;
+        border-radius: 5px;
+        transition: all 0.6s ease-out 0.4s;
       }
-      .netbuy:hover{
+      .netbuy:hover {
         transition: 0.3s;
         background-color: #184f7ebf;
+      }
+    }
+  }
+  .urlImageCss {
+    top: 1900px;
+    right: -85px;
+    .urlImage {
+      display: inline-block;
+      text-align: center;
+      margin-top: 15px;
+      img {
+        width: 30%;
+        height: 30%;
+      }
+      p {
+        text-align: center;
+        font-size: 0.8rem;
+        line-height: 0.5rem;
       }
     }
   }
@@ -640,11 +719,28 @@ export default {
         top: 3860px;
         background-color: #184f7e;
         border-radius: 5px;
-         transition: all 0.6s ease-out 0.4s;
+        transition: all 0.6s ease-out 0.4s;
       }
-      .netbuy:hover{
+      .netbuy:hover {
         transition: 0.3s;
         background-color: #184f7ebf;
+      }
+    }
+    .urlImageCss {
+      top: 4620px;
+      right: -50px;
+      .urlImage {
+        display: inline-block;
+        text-align: center;
+        margin-top: 15px;
+        img {
+          width: 60%;
+          height: 60%;
+        }
+        p {
+          text-align: center;
+          line-height: 1rem;
+        }
       }
     }
   }
