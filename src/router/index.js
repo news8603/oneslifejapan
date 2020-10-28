@@ -194,6 +194,22 @@ const routes = [{
             searchlist: () =>
                 import ( /* webpackChunkName: "searchlist" */ "../views/Searchlist.vue")
         }
+    },
+    {
+        path: "/otc",
+        name: "otc",
+        component: () =>
+            import ( /* webpackChunkName: "searchlist" */ "../views/otc.vue")
+    }, {
+        path: "/law",
+        name: "law",
+        component: () =>
+            import ( /* webpackChunkName: "searchlist" */ "../views/law.vue")
+    }, {
+        path: "/precautions",
+        name: "precautions",
+        component: () =>
+            import ( /* webpackChunkName: "searchlist" */ "../views/precautions.vue")
     }
 ]
 

@@ -6,10 +6,33 @@
         <img src="../map.jpg" alt />
       </div>
       <div class="address">
-        <div class="addresstext">{{this.$t('shopinfo[0].shopname')}}</div>
+        <div class="addresstext">{{ this.$t("shopinfo[0].shopname") }}</div>
         <p></p>
-        <div class="addresstext">{{this.$t('shopinfo[0].shopinfo')}}</div>
-        <div class="addresstext"  v-html="this.$t('shopinfo[0].shoptel').replace(/\n/g,'<br\>')">{{}}</div>
+        <div class="addresstext">{{ this.$t("shopinfo[0].shopinfo") }}</div>
+        <div
+          class="addresstext"
+          v-html="this.$t('shopinfo[0].shoptel').replace(/\n/g, '<br\>')"
+        >
+          
+        </div>
+      </div>
+      <div class="address">
+        <div class="addresstext">
+          <router-link tag="a" to="otc" class="fontLink">{{
+            this.$t("hp.otctitle")
+          }}</router-link>
+        </div>
+            <div class="addresstext">
+          <router-link tag="a" to="law" class="fontLink">{{
+            this.$t("hp.otctitle1")
+          }}</router-link>
+        </div>
+            <div class="addresstext">
+          <router-link tag="a" to="precautions" class="fontLink">{{
+            this.$t("hp.otctitle2")
+          }}</router-link>
+        </div>
+ 
       </div>
     </div>
     <div class="bottomcopyright">
@@ -25,38 +48,47 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="less" scoped >
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
 .copyright {
   background-color: #081f2c;
   color: #ffffff;
   font-size: 12px;
   .info {
-    max-width: 1000px;
-    width: 90%;
+    max-width: 1200px;
+    width: 100%;
     padding-top: 30px;
+    padding-bottom: 15px;
     display: flex;
     margin: auto;
     flex-direction: row;
     flex-wrap: wrap;
     .map {
       margin: auto;
-      padding: 15px;
+      padding: 5px;
       img {
         width: 300px;
         height: 200px;
       }
     }
     .address {
-      margin: auto;
+      margin-right: auto;
 
-      padding: 10px;
+      display: inline-block;
+      padding: 15px;
       text-align: left;
-      align-self: center;
+      // align-self: center;
+      align-items: flex-start;
       .addresstext {
         margin-top: 10px;
       }
