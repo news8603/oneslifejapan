@@ -1,10 +1,13 @@
 <template>
   <div class="otc">
     <div class="otcinfo">
-      <p class="otcfont">医薬品の区分と通販制度について</p>
+      <p class="otcfont">医薬品の区分と販売制度について</p>
       <table cellpadding="1" cellspacing="1">
         <tr>
-          <td class="otctitle">区分／事項</td>
+          <td class="otctitle">
+            <div class="otct-1">
+            </div>
+          </td>
           <td>要指導医薬品</td>
           <td>
             <tr>
@@ -63,7 +66,7 @@
           <td>
             <tr>
               <td class="otctitle-4">
-                努力義務<br />服用してはいけない人や使用について注意すること等での情報提供を受けて下さい。
+                努力義務<br />服用してはいけない人や使用について注意すること等の情報提供を受けて下さい。
               </td>
               <td class="otctitle-4">努力義務</td>
               <td class="otctitle-4">規定なし</td>
@@ -87,7 +90,7 @@
         <tr>
           <td class="otctitle">相談があった場合の対応</td>
           <td colspan="2">
-            薬剤師が対面で情報提供するため、お客様が直接手に取れない陳列となります。ご希望のお客様はスタッフにお申し付けください。また、専門家が不在の場合は、いやくひん売場を閉鎖します（閉鎖時に販売できません）。
+            義務（全ての医薬品に対するご相談に対応しています。）
           </td>
         </tr>
       </table>
@@ -96,16 +99,16 @@
 </template>
 <style scoped lang="less">
 .otc {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
   margin-top: 30px;
   padding: 20px;
   .otcinfo {
     margin: auto;
     max-width: 1000px;
-    .otcfont{
-        // border-bottom: 1px solid #7b7b7b;
-        padding-bottom: 10px;
-        font-size: 1.2rem;
+    .otcfont {
+      // border-bottom: 1px solid #7b7b7b;
+      padding-bottom: 10px;
+      font-size: 1.2rem;
     }
     table {
       width: 100%;
@@ -113,13 +116,26 @@
         text-align: center;
         background-color: white;
         td {
-          padding: 0px;
           border: solid 1px #eaeaea;
         }
       }
     }
     .otctitle {
       width: 20%;
+      height: 10vh;
+      .otct-1 {
+        position: relative;
+        // margin: 50px auto;
+        width: 100%;
+        height:100%;
+        box-sizing: border-box;
+        // border: 1px solid #333;
+        background-image: url(../../src/line.png);
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size: contain;
+      }
+
     }
     .otctitle-1 {
       width: 15%;
@@ -138,18 +154,17 @@
     }
   }
 }
-@media screen  and(max-width: 500px) {
-    .otc{
-        .otcinfo{
-         .otcfont{
-             font-size: 0.8rem;
-         }   
-         table{
-            font-size: 0.6rem;
-
-         }
-        }
+@media screen and(max-width: 500px) {
+  .otc {
+    .otcinfo {
+      .otcfont {
+        font-size: 0.8rem;
+      }
+      table {
+        font-size: 0.6rem;
+      }
     }
+  }
 }
 </style>
 <script>
