@@ -199,17 +199,17 @@ const routes = [{
         path: "/otc",
         name: "otc",
         component: () =>
-            import ( /* webpackChunkName: "searchlist" */ "../views/otc.vue")
+            import ( /* webpackChunkName: "otc" */ "../views/otc.vue")
     }, {
         path: "/law",
         name: "law",
         component: () =>
-            import ( /* webpackChunkName: "searchlist" */ "../views/law.vue")
+            import ( /* webpackChunkName: "law" */ "../views/law.vue")
     }, {
         path: "/precautions",
         name: "precautions",
         component: () =>
-            import ( /* webpackChunkName: "searchlist" */ "../views/precautions.vue")
+            import ( /* webpackChunkName: "precautions" */ "../views/precautions.vue")
     }
 ]
 

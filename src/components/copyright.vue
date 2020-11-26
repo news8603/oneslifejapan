@@ -18,17 +18,17 @@
       </div>
       <div class="address">
         <div class="addresstext">
-          <router-link tag="a" to="otc" class="fontLink">{{
+          <router-link tag="a" to="/otc" class="fontLink">{{
             this.$t("hp.otctitle")
           }}</router-link>
         </div>
             <div class="addresstext">
-          <router-link tag="a" to="law" class="fontLink">{{
+          <router-link tag="a" to="/law" class="fontLink">{{
             this.$t("hp.otctitle1")
           }}</router-link>
         </div>
             <div class="addresstext">
-          <router-link tag="a" to="precautions" class="fontLink">{{
+          <router-link tag="a" to="/precautions" class="fontLink">{{
             this.$t("hp.otctitle2")
           }}</router-link>
         </div>
